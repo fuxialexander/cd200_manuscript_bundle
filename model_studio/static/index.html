@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CD200 Model Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M8 3c8 5 8 17 0 22M20 3c-8 5-8 17 0 22M9.5 7h9M8 14h12M9.5 21h9" />
+        </svg>
+        <h1>CD200 Model Studio</h1>
+        <span class="local-status"><i></i>Local inference</span>
+      </div>
+      <div class="topbar-actions">
+        <span id="topDevice">Device · checking</span>
+        <a href="/README.html" target="_blank" rel="noreferrer">Docs</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="setup-rail">
+        <section class="setup-section">
+          <h2><span>1.</span> Analysis workflow</h2>
+          <label>
+            <span>Preset</span>
+            <select id="analysisPreset"></select>
+          </label>
+          <p id="presetDescription" class="help-text"></p>
+          <div class="compatibility-metadata">
+            <div id="presetProvenance" class="validation neutral"></div>
+          </div>
+        </section>
+
+        <section class="setup-section">
+          <h2><span>2.</span> Sequence Input</h2>
+          <div class="tabs" id="sourceTabs">
+            <button type="button" data-source="region" class="active">Genomic region</button>
+            <button type="button" data-source="sequence">Paste sequence</button>
+            <button type="button" data-source="fasta">FASTA</button>
+          </div>
+
+          <div class="source-panel" data-source-panel="region">
+            <label>
+              <span>Region</span>
+              <input id="region" value="chr16:45408000-45409426" spellcheck="false" />
+            </label>
+            <details class="advanced-settings custom-only">
+              <summary>Sequence settings</summary>
+              <label>
+                <span>Reference genome zarr</span>
+                <input id="genomeZarr" spellcheck="false" />
+              </label>
+              <div class="field-grid">
+                <label>
+                  <span>Model context (bp)</span>
+                  <input id="contextBp" type="number" min="32" value="4096" />
+                </label>
+                <label>
+                  <span>Display window (bp)</span>
+                  <input id="displayBp" type="number" min="32" value="2000" />
+                </label>
+              </div>
+            </details>
+          </div>
+
+          <div class="source-panel hidden" data-source-panel="sequence">
+            <label>
+              <span>DNA sequence</span>
+              <textarea id="sequenceText" rows="6" spellcheck="false" placeholder="Paste A, C, G, T, or N sequence"></textarea>
+            </label>
+          </div>
+
+          <div class="source-panel hidden" data-source-panel="fasta">
+            <label class="file-control">
+              <span>FASTA file</span>
+              <input id="fastaFile" type="file" accept=".fa,.fasta,.fna,.txt" />
+            </label>
+            <p class="help-text">The sequence stays local and is read by this browser.</p>
+          </div>
+          <button id="validateSequence" class="secondary full" type="button">Validate sequence</button>
+          <div id="sequenceStatus" class="validation neutral">Sequence not validated</div>
+        </section>
+
+        <section class="setup-section">
+          <h2><span>3.</span> Deletion Analysis</h2>
+          <div class="field-grid primary-settings">
+            <label>
+              <span>Deletion size (bp)</span>
+              <input id="deletionSize" type="number" min="1" value="15" />
+            </label>
+            <label>
+              <span>Stride (bp)</span>
+              <input id="stride" type="number" min="1" value="1" />
+            </label>
+          </div>
+          <details class="advanced-settings">
+            <summary>Advanced inference settings</summary>
+            <div class="field-grid">
+              <label>
+                <span>Batch size</span>
+                <input id="batchSize" type="number" min="1" value="8" />
+              </label>
+              <label>
+                <span>Smoothing</span>
+                <input id="smoothing" type="number" min="1" value="1" />
+              </label>
+            </div>
+            <p id="batchHelp" class="help-text">
+              Batch size is selected conservatively for the active device.
+            </p>
+            <label>
+              <span>Scan scope</span>
+              <select id="scanScope">
+                <option value="display">Displayed interval (fast)</option>
+                <option value="context">Full model context</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Perturbation</legend>
+              <label class="radio"><input name="perturbation" type="radio" value="real" checked />Real deletion</label>
+              <label class="radio"><input name="perturbation" type="radio" value="mask" />Mask</label>
+            </fieldset>
+            <label>
+              <span>Output head</span>
+              <select id="outputHead" disabled>
+                <option value="regression">Regression</option>
+              </select>
+            </label>
+          </details>
+        </section>
+
+        <section class="setup-section model-section">
+          <h2><span>4.</span> Model &amp; device</h2>
+          <div class="custom-only">
+            <label>
+              <span>Architecture</span>
+              <select id="architecture"></select>
+            </label>
+            <label>
+              <span>Checkpoint path</span>
+              <input id="checkpointPath" spellcheck="false" />
+            </label>
+            <label class="file-control compact-file">
+              <span>Or upload checkpoint</span>
+              <input id="checkpointFile" type="file" accept=".ckpt,.pt,.pth" />
+            </label>
+            <div id="adapterOptions"></div>
+            <div id="profileModelFields">
+              <label>
+                <span>Profile checkpoint path</span>
+                <input id="profileCheckpointPath" spellcheck="false" />
+              </label>
+            </div>
+          </div>
+          <label>
+            <span>Device</span>
+            <select id="device">
+              <option value="auto">Auto</option>
+              <option value="mps">Apple MPS</option>
+              <option value="cuda">NVIDIA CUDA</option>
+              <option value="cpu">CPU</option>
+            </select>
+          </label>
+          <button id="loadModel" class="secondary full" type="button">Load model</button>
+          <div id="modelStatus" class="validation neutral">No model loaded</div>
+          <button id="runInference" class="primary full" type="button" disabled>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 4 9 6-9 6Z" /></svg>
+            Run inference
+          </button>
+        </section>
+
+        <section class="setup-section annotation-section">
+          <h2><span>5.</span> Motifs &amp; gene filters</h2>
+          <div class="custom-only">
+            <label>
+              <span>Motif annotations (TSV/CSV)</span>
+              <input id="motifPath" spellcheck="false" />
+            </label>
+            <label class="file-control compact-file">
+              <span>Or upload motif annotations</span>
+              <input id="motifFile" type="file" accept=".tsv,.csv,.txt,.bed" />
+            </label>
+            <label>
+              <span>Primary RNA table (CSV/TSV)</span>
+              <input id="rnaPath" spellcheck="false" />
+            </label>
+            <label class="file-control compact-file">
+              <span>Or upload primary RNA table</span>
+              <input id="rnaFile" type="file" accept=".csv,.tsv,.txt" />
+            </label>
+            <label>
+              <span>Second RNA table (consensus differential)</span>
+              <input id="rnaPath2" spellcheck="false" />
+            </label>
+            <label>
+              <span>Precomputed gene list (manuscript mode)</span>
+              <input id="geneListPath" spellcheck="false" />
+            </label>
+          </div>
+          <button id="loadAnnotations" class="secondary full" type="button" disabled>
+            Load annotations
+          </button>
+          <div id="annotationStatus" class="validation neutral">
+            Complete a genomic-region run first
+          </div>
+
+          <div id="annotationFilters" class="hidden">
+            <fieldset>
+              <legend>Show motifs by</legend>
+              <label class="radio">
+                <input name="annotationMode" type="radio" value="expression" />
+                Expression (baseMean)
+              </label>
+              <label class="radio">
+                <input name="annotationMode" type="radio" value="differential" />
+                Single differential
+              </label>
+              <label class="radio">
+                <input name="annotationMode" type="radio" value="consensus_de" />
+                Consensus differential
+              </label>
+              <label class="radio">
+                <input name="annotationMode" type="radio" value="gene_list" checked />
+                Manuscript gene list
+              </label>
+              <label class="radio">
+                <input name="annotationMode" type="radio" value="tf" />
+                Direct TF
+              </label>
+            </fieldset>
+
+            <div id="rnaFilterControls">
+              <label class="range-control">
+                <span>Minimum |log2FC| <output id="logfcValue">2.0</output></span>
+                <input id="logfcThreshold" type="range" min="0" max="6" step="0.1" value="2" />
+              </label>
+              <label class="range-control">
+                <span>Maximum adjusted p <output id="padjValue">0.05</output></span>
+                <input id="padjThreshold" type="range" min="0" max="0.25" step="0.01" value="0.05" />
+              </label>
+              <label class="range-control">
+                <span>Minimum expression <output id="expressionValue">10</output></span>
+                <input id="expressionThreshold" type="range" min="0" max="1000" step="1" value="10" />
+              </label>
+            </div>
+
+            <label id="tfFilterControl" class="hidden">
+              <span>Transcription factor</span>
+              <select id="tfSelector"></select>
+            </label>
+
+            <label class="range-control">
+              <span>Minimum deletion effect <output id="effectValue">10%</output></span>
+              <input id="effectThreshold" type="range" min="0" max="100" step="1" value="10" />
+            </label>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div id="modelSummary" class="model-summary compatibility-metadata"></div>
+
+        <section class="run-strip" aria-label="Current inference status">
+          <div class="run-strip-state">
+            <span>Inference</span>
+            <strong id="runState" class="run-state neutral">Idle</strong>
+          </div>
+          <div class="run-strip-progress">
+            <div class="progress-track"><i id="progressBar"></i></div>
+            <span id="runProgress">Ready to run</span>
+          </div>
+          <div class="run-strip-meta">
+            <span id="runStage">—</span>
+            <span id="runElapsed">—</span>
+          </div>
+          <pre id="runError" class="error-output hidden"></pre>
+        </section>
+
+        <section class="genome-browser-section" aria-labelledby="genomeBrowserTitle">
+          <div class="section-heading genome-browser-heading">
+            <div>
+              <h2 id="genomeBrowserTitle">Observed ATAC browser</h2>
+              <p>Pan or zoom, or Shift-drag across the ruler to mark a region.</p>
+            </div>
+            <div class="genome-browser-actions">
+              <span id="igvLocus" class="locus-badge">Starting browser…</span>
+              <button id="runIgvRegion" class="primary" type="button" disabled>
+                Run selection / view
+              </button>
+            </div>
+          </div>
+          <div id="igvBrowser" class="igv-browser" aria-label="Observed ATAC genome browser"></div>
+          <div id="igvStatus" class="igv-status" role="status">
+            Loading the local mm10 reference and observed ATAC track…
+          </div>
+        </section>
+
+        <section class="chart-section">
+          <div class="section-heading">
+            <div>
+              <h2>Predicted accessibility</h2>
+              <p id="baselineSubtitle">Baseline model output</p>
+            </div>
+            <div class="chart-actions">
+              <button type="button" id="resetZoom">Reset zoom</button>
+              <button type="button" id="downloadJson" disabled>JSON</button>
+              <button type="button" id="downloadCsv" disabled>CSV</button>
+            </div>
+          </div>
+          <div class="chart-frame">
+            <canvas id="baselineChart" aria-label="Baseline prediction chart"></canvas>
+            <div id="baselineEmpty" class="chart-empty">Run inference to display a baseline prediction.</div>
+            <div id="chartTooltip" class="chart-tooltip hidden"></div>
+          </div>
+          <div class="profile-legend" id="profileLegend">
+            <span><i class="predicted"></i>Predicted accessibility</span>
+            <span><i class="observed"></i>Observed ATAC</span>
+          </div>
+        </section>
+
+        <section class="chart-section deletion-section">
+          <div class="section-heading">
+            <div>
+              <h2>Deletion effect</h2>
+              <p id="deletionSubtitle">Reference minus perturbed model score</p>
+            </div>
+          </div>
+          <div class="chart-frame small">
+            <canvas id="deletionChart" aria-label="Deletion effect chart"></canvas>
+            <div id="deletionEmpty" class="chart-empty">No deletion scan result yet.</div>
+          </div>
+        </section>
+
+        <section class="chart-section motif-section">
+          <div class="section-heading">
+            <div>
+              <h2>Motif annotations</h2>
+              <p id="motifSubtitle">
+                Load a motif table and optionally an RNA table after inference.
+              </p>
+            </div>
+            <div class="motif-legend" aria-label="RNA direction legend">
+              <span><i class="rna-up"></i>RNA up</span>
+              <span><i class="rna-down"></i>RNA down</span>
+              <span><i class="rna-missing"></i>No RNA</span>
+            </div>
+          </div>
+          <div id="motifTrack" class="motif-track-frame">
+            <div id="motifCanvas"></div>
+            <div id="motifEmpty" class="chart-empty">
+              No filtered motif annotations yet.
+            </div>
+          </div>
+        </section>
+
+        <section class="jobs-section compatibility-metadata">
+          <div class="section-heading">
+            <div>
+              <h2>Results &amp; status</h2>
+              <p>Local jobs remain on this computer.</p>
+            </div>
+            <button id="refreshJobs" type="button">Refresh</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Status</th>
+                  <th>Stage</th>
+                  <th>Progress</th>
+                  <th>Started</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="jobRows">
+                <tr><td colspan="6" class="empty-cell">No runs yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <aside class="details-rail">
+        <section>
+          <h2>Run details</h2>
+          <dl id="modelDetails">
+            <div><dt>Architecture</dt><dd>—</dd></div>
+            <div><dt>Checkpoint</dt><dd>—</dd></div>
+            <div><dt>Device</dt><dd>—</dd></div>
+            <div><dt>Output heads</dt><dd>—</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3>Input</h3>
+          <dl id="inputDetails">
+            <div><dt>Source</dt><dd>—</dd></div>
+            <div><dt>Length</dt><dd>—</dd></div>
+            <div><dt>GC content</dt><dd>—</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3>Validation</h3>
+          <ul class="validation-list" id="validationList">
+            <li class="pending">Sequence not validated</li>
+            <li class="pending">Model checkpoint not loaded</li>
+            <li class="pending">No completed inference</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Annotations</h3>
+          <dl id="annotationDetails">
+            <div><dt>Motifs</dt><dd>—</dd></div>
+            <div><dt>RNA columns</dt><dd>—</dd></div>
+            <div><dt>Filter</dt><dd>—</dd></div>
+          </dl>
+        </section>
+      </aside>
+    </main>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

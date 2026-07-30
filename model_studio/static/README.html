@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CD200 Model Studio — Local Help</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      body { min-width: 0; padding: 32px; max-width: 880px; margin: auto; line-height: 1.6; }
+      h1 { font-size: 26px; }
+      h2 { margin-top: 30px; font-size: 18px; }
+      code, pre { background: #f3f6f7; border: 1px solid #d7dfe2; border-radius: 3px; }
+      code { padding: 2px 4px; }
+      pre { padding: 12px; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>CD200 Model Studio</h1>
+    <p>This application runs PyTorch DNA-profile inference on the same computer as the browser. It binds to <code>127.0.0.1</code> by default.</p>
+    <h2>Workflow</h2>
+    <ol>
+      <li>Select the manuscript differential, regression, or custom workflow.</li>
+      <li>Pan/zoom the observed-ATAC browser. Shift-drag across its ruler to mark an ROI, then choose <code>Run selection / view</code>. Without an ROI, the current view is used.</li>
+      <li>Select Auto, MPS, CUDA, or CPU and load the model role(s).</li>
+      <li>Validate the input context, scoring core, and displayed interval.</li>
+      <li>Configure deletion analysis and run inference.</li>
+      <li>Inspect current predicted accessibility, observed ATAC, the deletion-effect track, and filtered motifs on one aligned genomic axis.</li>
+      <li>Filter motifs by expression, single differential, consensus differential, a precomputed gene list, or one selected TF.</li>
+      <li>Download raw and transformed results as JSON or CSV.</li>
+    </ol>
+    <h2>Genome browser</h2>
+    <p>IGV.js, mm10 chromosome sizes, and the observed <code>SCCApos.cd200_scc</code> signal are served locally. IGV shows 1-based coordinates; inference receives its underlying 0-based half-open interval without a coordinate shift. Select at most 2,000 bp; the model still uses a fixed 4,096-bp context.</p>
+    <h2>Manuscript preset</h2>
+    <p>The promoter preset scans a 4,096-bp context with the phase-3 <code>differential</code> head, scores the promoter core, and renders the central 2 kb. A separate regression checkpoint supplies current predicted accessibility. Predicted accessibility, deletion effect, and motif annotations share the same displayed genomic axis.</p>
+    <h2>Deletion-effect scale</h2>
+    <p>The plotted value is <code>100 × |raw deletion effect| ÷ max(|baseline prediction|)</code>, matching <code>analysis/plot_scan_results.py::prepare_plot_effects</code>. Raw signed effects remain available in exports.</p>
+    <h2>Motif filtering</h2>
+    <p>Expression mode applies <code>baseMean</code> only. Single and consensus differential modes add fold-change, adjusted-p, and (for consensus) same-sign requirements. Manuscript gene-list mode uses the precomputed relaxed TF list. Every mode independently applies the adjustable deletion-effect cutoff.</p>
+    <h2>Speed</h2>
+    <p>Batch size 32 is the fast manuscript-parity default. Display-only scanning retains the full 4,096-bp model input but evaluates only deletion windows that can contribute to the visible 2-kb track. The genome browser reads only local Zarr chunks around its viewport and bins wide views. Use full-context scope for a complete export, or batch size 1 for the legacy one-deletion-at-a-time numerical path. Auto selects CUDA, then Apple MPS, then CPU.</p>
+    <h2>Start</h2>
+    <pre>source scripts/bundle_env.sh
+"${PYTHON_CMD[@]}" -m model_studio.server</pre>
+    <h2>Architecture adapters</h2>
+    <p>The studio uses a stable channels-last one-hot DNA contract. Model-specific adapters reconstruct checkpoints and normalize their outputs. The bundled CD200 motif CNN is registered by default.</p>
+  </body>
+</html>

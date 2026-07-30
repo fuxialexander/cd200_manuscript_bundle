@@ -1,0 +1,22 @@
+# Local caches / tooling
+.matplotlib-cache/
+.numba-cache/
+.ruff_cache/
+.uv-cache/
+.tmp-eval/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Model Studio local run artifacts
+model_studio/runs/
+model_studio/uploads/
+
+# Not published yet
+model_studio/adapters/get_model_v2.py
+**/*cherimoya*
+**/*Cherimoya*

@@ -1,0 +1,2 @@
+n_peaks,criterion,mean_obs,mean_pred,shrinkage_mean_ratio,inverse_shrinkage_mean_ratio,shrinkage_ols_slope,inverse_shrinkage_ols
+2123,Diff_scca>=0.05,0.06799069543836204,0.020558156105555905,0.3023671985263513,3.307237044473427,0.28403629697436855,3.5206767960724403

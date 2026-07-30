@@ -1,0 +1,10 @@
+{
+    "assembly": "mm10",
+    "celltype": "SCCAneg",
+    "chunk_size": 2000000,
+    "id": "cd200_scc",
+    "library_size": 272874511.0,
+    "library_size_blacklist": 5720855.0,
+    "library_size_nonblacklist": 272874511.0,
+    "library_size_total": 278595366.0
+}

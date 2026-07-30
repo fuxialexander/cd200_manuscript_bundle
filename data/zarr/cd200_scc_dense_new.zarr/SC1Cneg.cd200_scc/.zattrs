@@ -1,0 +1,7 @@
+{
+    "assembly": "mm10",
+    "celltype": "SC1Cneg",
+    "chunk_size": 2000000,
+    "id": "cd200_scc",
+    "library_size": 132289344
+}

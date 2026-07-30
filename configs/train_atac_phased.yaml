@@ -1,0 +1,141 @@
+# Configuration for phased ATAC training with bias model and differential prediction
+# This config extends the standard ATAC training with three-phase learning
+
+# Model configuration
+model:
+  # Main model predicts negative samples only
+  target_condition: "neg"  # Always predict SCCAneg or SCC1neg
+  num_atac_samples: 1      # Single condition (negative)
+
+  # Motif configuration
+  motif_filter_prefix: null
+  use_random_motif_init: false
+  num_random_kernels: 256
+
+  # Architecture settings
+  enable_chromosome_prediction: false
+  num_chromosomes: 25
+  chromosome_loss_weight: 1.0
+  freeze_atac_components: false
+
+# Bias model configuration
+bias_model:
+  enable: true
+  use_learnable_kernels: false  # Use TN5 motifs from MEME file instead of random kernels
+  tn5_motifs_path: "artifacts/bias.meme"
+  motif_filter_prefix: "TN5_"
+  freeze_motif_layer: true
+  target_condition: "neg"  # Bias model also targets negative samples
+
+# Phased learning configuration
+phased_learning:
+  enable: true
+  phase_epochs: [50, 100, 50]  # [phase1, phase2, phase3]
+
+  # Phase 1: Bias model training (background regions only)
+  phase1_config:
+    learning_rate: 1e-3
+    batch_size: 64
+    regions_filter: "background"
+
+  # Phase 2: Main model training (for_count and for_profile regions)
+  phase2_config:
+    learning_rate: 1e-4
+    batch_size: 32
+    regions_filter: ["for_count", "for_profile"]
+
+  # Phase 3: Full training with differential prediction
+  phase3_config:
+    learning_rate: 5e-5
+    batch_size: 32
+    differential_threshold: 0.05
+    enable_differential_head: true
+    num_conditions: 1  # DiffSCCA only (could extend to 2)
+    differential_loss_weight: 1.0
+
+# Data configuration for negative-only training
+data:
+  celltype_ids: ["SCCAneg.cd200_scc"]  # Only negative samples for main training
+  # Uses deduplicated dataset: scc_all_peaks_updated_deduplicated.bed
+  # Differential info comes from bed file columns (Diff_scca, Diff_scc1)
+
+  # Standard data settings
+  batch_size: 32
+  num_workers: 16
+  extend_bp: 2048
+  max_regions: 455777  # All deduplicated peaks (26.2% reduction from 617K original)
+
+  # Split configuration
+  train_split: 0.75
+  val_split: 0.15
+  test_split: 0.10
+
+# Training configuration
+training:
+  max_epochs: 30  # Total epochs across all phases
+  learning_rate: 1e-4  # Base learning rate (overridden by phase configs)
+  precision: "16-mixed"
+  val_check_interval: 0.5
+  gradient_clip_val: 0.5
+
+  # Early stopping
+  early_stopping:
+    monitor: "val_loss"
+    patience: 20
+    mode: "min"
+
+# Logging configuration
+logging:
+  wandb_project: "ATAC-Phased-Learning-DDR"
+  run_name: null  # Will be auto-generated
+
+  # Differential validation logging
+  differential_validation:
+    enable: true
+    scatter_plot_frequency: 1  # Every epoch in Phase 3
+    metrics: ["mse", "mae", "correlation"]
+
+# Paths configuration (will be merged from env.yaml)
+paths:
+  # These will be loaded from configs/env.yaml
+  # atac_zarr_path: ""
+  # genome_zarr_path: ""
+  # summits_csv_path: ""
+
+  # Model-specific paths
+  simple_motifs_path: "artifacts/motifs_with_rc_aligned.pt"
+  aligned_motifs_path: null
+  pwm_path: null
+
+# Phase-specific curriculum learning
+curriculum_learning:
+  enable: true                    # Enabled for Phase 2 and 3
+  groups: 5                       # Number of curriculum groups
+  sampling_strategy: "equal"      # equal/proportional/random
+
+  # Phase 2: Use logSumValue_scca_neg for curriculum grouping
+  phase2_column: "logSumValue_scca_neg"
+
+  # Phase 3: Use Diff_scca for curriculum grouping (after 0.05 hard cutoff)
+  phase3_column: "Diff_scca"
+  phase3_hard_cutoff: 0.05
+
+  # Dynamic resampling settings
+  enable_epoch_downsampling: true  # Per-epoch random downsampling to original count
+  apply_to_validation: false       # Only apply to training set
+
+# Advanced settings
+advanced:
+  # Model compilation
+  compile_model: true
+
+  # Mixed precision training
+  use_mixed_precision: true
+
+  # Gradient accumulation
+  accumulate_grad_batches: 1
+
+  # Model checkpointing
+  save_top_k: 3
+  checkpoint_monitor: "val_loss"
+  checkpoint_mode: "min"

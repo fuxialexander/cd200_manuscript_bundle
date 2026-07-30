@@ -1,0 +1,43 @@
+section	path	reason
+analysis	analysis/scripts/run_cd200_mutation.sh	manuscript entrypoint for three CD200 regions
+analysis	analysis/scripts/run_cd200_promoter_mutation.sh	manuscript entrypoint for phase-3 promoter differential analysis
+analysis	analysis/scripts/run_cd200_promoter_regression_mutation.sh	manuscript entrypoint for promoter regression analysis with relaxed TF filter
+analysis	analysis/scripts/run_cd200_promoter_regression_deg_mutation.sh	manuscript entrypoint for promoter regression analysis with DEG filter
+analysis	analysis/mutation_analysis_cli.py	deletion/inference CLI called by all four analysis scripts
+analysis	analysis/motif_scan_cli.py	motif scanning CLI called by all four analysis scripts
+analysis	analysis/plot_scan_results.py	plotting CLI called by all four analysis scripts
+analysis	analysis/checkpoints/shapescale_loss_scca_pos_with_count_head_fixed_motif_curriculum_from_scratch-epoch=105-val_loss=6.76.ckpt	regression checkpoint used by three scripts and overlay in phase-3 script
+analysis	analysis/checkpoints/ATAC-Sequential-20250919-022148_phase3_final_model.ckpt	phase-3 checkpoint used by promoter differential script
+analysis	analysis/fimo_mappings_cache.pkl	FIMO p-value cache used by motif_scan_cli.py
+analysis	analysis/rnaseq_deg_analysis/1F.deg.gene.csv	DEG input for DEG/gene-list motif filters
+analysis	analysis/rnaseq_deg_analysis/AF.deg.gene.csv	DEG input for DEG/gene-list motif filters
+analysis	analysis/rnaseq_deg_analysis/1C.deg.gene.csv	guard cohort input for relaxed TF rebuild helper
+analysis	analysis/rnaseq_deg_analysis/shared_DEGs_1F_AF.xlsx	relaxed TF rebuild input/output workbook
+analysis	analysis/rnaseq_deg_analysis/shared_DEGs_1F_AF_tf_relaxed.csv	relaxed TF list used by promoter scripts
+analysis	analysis/rnaseq_deg_analysis/make_shared_deg_excel.py	helper used when relaxed TF list is missing
+analysis	analysis/rnaseq_deg_analysis/rebuild_relaxed_tf.py	helper used when relaxed TF list is missing
+analysis	analysis/rnaseq_deg_analysis/mouse_tfs.txt	TF whitelist input for relaxed TF helper
+training	training/scripts/train_regression_checkpoint.sh	clean launcher for regression checkpoint training family
+training	training/scripts/train_phase3_checkpoint.sh	clean launcher for phase-3 checkpoint training family
+training	training/data/total.bed	regression training regions used by cleaned launcher
+training	training/data/scc_all_peaks.deduplicated.bed	phase-3 phased training regions used by cleaned launcher
+shared	src/mutation_analysis	model loading, dataset, analyzer, motif, and result code used by analysis
+shared	src/atac_prediction	ATAC model, data module, and base training code used by analysis and training
+shared	src/atac_diff_prediction	phase-3/bias model and phased training code
+shared	src/checkpoint_manager.py	checkpoint loading and compile-prefix cleanup
+shared	src/checkpoint_utils.py	checkpoint state-dict cleanup helpers
+shared	src/utils.py	motif PWM loading/padding helpers
+shared	artifacts/motifs_with_rc_aligned.pt	model motif kernels
+shared	artifacts/motifs_with_rc_aligned.txt	motif names used for scanning and plotting
+shared	artifacts/bias.meme	TN5 bias motifs used by phase-3/bias model
+shared	artifacts/data/hocomoco/H13CORE_annotation.jsonl	motif-to-TF mapping used by filters
+shared	artifacts/data/hocomoco/H13CORE_pwms.txt	PWM fallback source used by motif loading
+shared	configs/train_atac_phased.yaml	phase training/model config
+shared	configs/env.yaml	bundle-relative environment/motif config
+shared	configs/config_utils.py	config loader used by training/inference
+shared	configs/__init__.py	config package marker
+data	data/zarr/cd200_scc_dense_new.zarr	CD200 SCC ATAC zarr store copied from /mnt/storage/get_data
+data	data/zarr/mm10.zarr	mm10 genome zarr store copied from /mnt/storage/get_data
+env	pyproject.toml	uv project dependency declaration
+env	scripts/bundle_env.sh	shared uv/PYTHONPATH/cache bootstrap
+validation	scripts/validate_bundle.py	smoke test for files, checkpoints, imports, and CLI help

@@ -1,0 +1,23 @@
+{
+    "assembly": "mm10",
+    "library_size_annotated": true,
+    "library_size_annotation_date": "2025-08-04T22:26:40.841984",
+    "library_size_blacklist": {
+        "SCC1neg.cd200_scc": 5829682.0,
+        "SCC1pos.cd200_scc": 4759688.0,
+        "SCCAneg.cd200_scc": 5720855.0,
+        "SCCApos.cd200_scc": 6032018.0
+    },
+    "library_size_nonblacklist": {
+        "SCC1neg.cd200_scc": 257089676.0,
+        "SCC1pos.cd200_scc": 207395630.0,
+        "SCCAneg.cd200_scc": 272874511.0,
+        "SCCApos.cd200_scc": 297377386.0
+    },
+    "library_size_total": {
+        "SCC1neg.cd200_scc": 262919358.0,
+        "SCC1pos.cd200_scc": 212155318.0,
+        "SCCAneg.cd200_scc": 278595366.0,
+        "SCCApos.cd200_scc": 303409404.0
+    }
+}

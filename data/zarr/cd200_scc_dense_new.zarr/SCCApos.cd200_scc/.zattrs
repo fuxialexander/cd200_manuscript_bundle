@@ -1,0 +1,10 @@
+{
+    "assembly": "mm10",
+    "celltype": "SCCApos",
+    "chunk_size": 2000000,
+    "id": "cd200_scc",
+    "library_size": 297377386.0,
+    "library_size_blacklist": 6032018.0,
+    "library_size_nonblacklist": 297377386.0,
+    "library_size_total": 303409404.0
+}
