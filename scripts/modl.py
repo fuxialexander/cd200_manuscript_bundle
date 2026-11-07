@@ -123,6 +123,8 @@ def train(args) -> dict:
     from atac_prediction.prepare_local_data import fingerprint
 
     checked = validate_data(args.data, args.track_id, args.val_chr, args.test_chr)
+    if checked["context_bp"] < 2048:
+        raise ValueError("Training requires at least 2048 bp of sequence context for the model central crop; prepare the data with --context-bp 4096 (default) or another supported context >=2048.")
     if min(args.batch_size, args.max_epochs) < 1 or args.num_workers < 0:
         raise ValueError("Batch/epochs must be positive; workers must be nonnegative")
     if not math.isfinite(args.learning_rate) or args.learning_rate <= 0:

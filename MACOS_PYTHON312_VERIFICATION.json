@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-07",
+  "package_version": "0.2.2",
+  "wheel_sha256": "265ebcdf420ec1eb36975957126b5d2e3df749b398c9ffcbe0ad1a7b536882c9",
+  "source_report_sha256": "c099233c22b9faaa08f33242c11c32e79d81e6157a6b579cbb3430ab96f9f28b",
+  "environment": {
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+  },
+  "fresh_install": {
+    "system_site_packages": false,
+    "dependencies_from_public_sources": true,
+    "pip_check": "passed"
+  },
+  "source_payload": {
+    "changed_engine_config_or_artifact_files": [],
+    "checked_source_files": 217,
+    "independent_wheel_payload_byte_comparison": true
+  },
+  "unit_tests": {
+    "passed": 31
+  },
+  "checkpoint_execution": {
+    "passed": true,
+    "devices": [
+      "cpu",
+      "mps"
+    ],
+    "models": [
+      "epoch105 profile/count",
+      "phase3 profile/count/differential"
+    ],
+    "details": "checkpoint_results.json"
+  },
+  "installed_cli_actual_checkpoint": {
+    "regression": "passed",
+    "count": "passed",
+    "device": "mps",
+    "interval": "chr16:45408930-45408970"
+  },
+  "synthetic_workflow": {
+    "passed": true,
+    "optimizer_global_step": 1,
+    "adam_moment_absolute_sum": 22.454737135834876,
+    "steps": [
+      {
+        "name": "prepare",
+        "exit_code": 0,
+        "seconds": 0.16839262500070618
+      },
+      {
+        "name": "validate",
+        "exit_code": 0,
+        "seconds": 0.1298634589984431
+      },
+      {
+        "name": "train",
+        "exit_code": 0,
+        "seconds": 4.52467012499983
+      },
+      {
+        "name": "reload_interpret",
+        "exit_code": 0,
+        "seconds": 2.6225886669999454
+      }
+    ]
+  },
+  "native_promoter_website": {
+    "passed": true,
+    "device": "mps",
+    "deletion_head": "differential",
+    "profile_overlay": "regression checkpoint",
+    "observed_atac": "original compressed source chunk and exact stored library-size metadata",
+    "deletion_size": 15,
+    "stride": 1,
+    "effect_smoothing": 1,
+    "observed_smoothing": 20,
+    "annotation_filter": "manuscript relaxed TF list, deletion effect >=10%",
+    "retained_motifs": 4,
+    "retained_TFs": 4,
+    "display_rows": [
+      "SNAI",
+      "CEBPB"
+    ],
+    "seconds": 44.356785333002335,
+    "raw_deletion_pearson_vs_cuda": 0.9999937242488021,
+    "mean_plot_difference_percentage_points": 0.07637142858355947
+  },
+  "limitations": [
+    "Only Python3.12 and this Apple Silicon Mac were tested; no Intel Mac test",
+    "Existing Apple command-line compiler tools were available for source-built dependencies",
+    "Transferred genomic stores contain one exact chr16 chunk covering 44-46Mb, not the full reference genome",
+    "CLI training smoke test is execution evidence only; no manuscript weights retrained",
+    "MPS and CUDA numerical outputs are not bitwise identical",
+    "Benchmark comparator CUDA/TensorFlow runtimes were outside this Mac local-interpretation test"
+  ],
+  "private_genomic_test_inputs_included": false,
+  "scientific_models_retrained": false,
+  "processed_figure_scripts": {
+    "results": [
+      {
+        "figure": "R1_held_out_benchmarks",
+        "exit_code": 0,
+        "original_png_sha256": "116344902710b9c191cf7e38775578b541cb32aa04bfa3eca4fa446d8b3ff84f",
+        "regenerated_png_sha256": "3378a1efd82af0100b6a50e2450d7a3c379ee6efb856cb8b3ccebd3e9264a2d2",
+        "png_bitwise_identical": false,
+        "log": "R1_held_out_benchmarks.log"
+      },
+      {
+        "figure": "R2_120_donor_violin",
+        "exit_code": 0,
+        "original_png_sha256": "5d71b1bb37e547efb56216c32a094b0cb841f7784b4192b87bb076ee72e4300e",
+        "regenerated_png_sha256": "9aa5133da216744385b52b2c353d3cbed3e4e8abf6da0862addf3edae39b9526",
+        "png_bitwise_identical": false,
+        "log": "R2_120_donor_violin.log"
+      },
+      {
+        "figure": "R3_regenerated_S5_native_scale",
+        "exit_code": 0,
+        "original_png_sha256": "0c50593163b6869c61c082d0c55be5a7fa6dea3adcda5707be0a0aa9d58fb435",
+        "regenerated_png_sha256": "1d7f4390d556b2076855445f0a59f54f94c0c30dd13c8359931d31ef78bf93a5",
+        "png_bitwise_identical": false,
+        "log": "R3_regenerated_S5_native_scale.log"
+      },
+      {
+        "figure": "R4_locus_attribution",
+        "exit_code": 0,
+        "original_png_sha256": "80cc3bfa0422575d7ab4601124ef42ba0595f66859d1f1711542d841df0f40bb",
+        "regenerated_png_sha256": "a63939d0bf2eaf16dd2be60c22396cd8834cc02f73788ab4a0a545f7685d6e96",
+        "png_bitwise_identical": false,
+        "log": "R4_locus_attribution.log"
+      }
+    ],
+    "scope": "Existing analysis runtime; archived processed inputs and unchanged plotting scripts; no model retraining"
+  }
+}

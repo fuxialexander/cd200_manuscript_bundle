@@ -1,8 +1,12 @@
 # CD200 Manuscript Bundle
 
-Minimal, self-contained package for the CD200 ATAC deletion figures: train the
-motif CNN checkpoints, regenerate the manuscript deletion scans, or explore the
-same models in a local browser app (Model Studio).
+MoDL predicts chromatin accessibility from DNA and provides tools for local
+training, sequence-deletion analysis, and interactive interpretation in Model
+Studio.
+
+**New users: start with [GETTING_STARTED.md](GETTING_STARTED.md).** It covers
+Python 3.12 installation, your own data, supplied checkpoints, and Codex or Claude
+Code workflows.
 
 For new local datasets, including 10x fragment files, see
 [the agent/CLI workflow](AGENT_WORKFLOW.md). It covers FASTA/fragments or raw
