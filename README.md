@@ -1,12 +1,12 @@
 # CD200 Manuscript Bundle
 
-Minimal, self-contained package for the CD200 ATAC deletion figures: train the
-motif CNN checkpoints, regenerate the manuscript deletion scans, or explore the
-same models in a local browser app (Model Studio).
+MoDL predicts chromatin accessibility from DNA and provides tools for local
+training, sequence-deletion analysis, and interactive interpretation in Model
+Studio.
 
 ## Get started with Codex or Claude Code
 
-Download the source and reproduction-support archives from the [release page](https://github.com/fuxialexander/cd200_manuscript_bundle/releases/tag/v0.2.0-revision-20261107), follow its installation instructions, and open the resulting `modl_revision` folder in Codex or Claude Code. Then paste: **“Read `AGENTS.md` and `AGENT_WORKFLOW.md`; set up the documented Python 3.12 environment, run `cd200-modl doctor`, check my local data or supplied checkpoints, run a small test, and help me open Model Studio for interpretation. Ask me for missing inputs before starting.”** See the [agent workflow](https://github.com/fuxialexander/cd200_manuscript_bundle/blob/v0.2.0-revision-20261107/AGENT_WORKFLOW.md) and [Model Studio guide](MODEL_STUDIO.md) for detailed steps.
+Download the source archive and Python wheel from the [latest release](https://github.com/fuxialexander/cd200_manuscript_bundle/releases/latest), follow the [getting-started guide](https://github.com/fuxialexander/cd200_manuscript_bundle/blob/v0.2.2/GETTING_STARTED.md), and open the extracted `modl-0.2.2` folder in Codex or Claude Code. Then paste: **“Read `AGENTS.md` and `AGENT_WORKFLOW.md`; set up Python 3.12, run `cd200-modl doctor`, check my local data or supplied checkpoints, run a small test, and help me open Model Studio for interpretation. Ask me for missing inputs before starting.”** See the [agent workflow](https://github.com/fuxialexander/cd200_manuscript_bundle/blob/v0.2.2/AGENT_WORKFLOW.md) and [Model Studio guide](https://github.com/fuxialexander/cd200_manuscript_bundle/blob/v0.2.2/MODEL_STUDIO.md) for detailed steps.
 
 ## Model Studio promoter analysis
 
