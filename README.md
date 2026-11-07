@@ -4,6 +4,17 @@ Minimal, self-contained package for the CD200 ATAC deletion figures: train the
 motif CNN checkpoints, regenerate the manuscript deletion scans, or explore the
 same models in a local browser app (Model Studio).
 
+## Model Studio promoter analysis
+
+![Cd200 promoter analysis in CD200 Model Studio](docs/assets/model-studio-promoter.jpg)
+
+**Promoter** — score deletions with the phase-3 **differential** head, and
+overlay the accessibility profile from the **regression** checkpoint.
+
+**Verified setup:** released checkpoints, local mm10/ATAC/RNA inputs, CUDA analysis server.
+
+[Model Studio setup and workflow](MODEL_STUDIO.md)
+
 ## What this model does
 
 The model is a **DNA → chromatin accessibility** predictor built around
