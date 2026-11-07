@@ -1,0 +1,31 @@
+# default.yaml
+data_key: "joung_tfatlas"
+data_type: "sc"
+root_path: "/pmglocal/xf2217/joung_tfatlas/"
+codebase: "/burg/pmg/users/xf2217/repos/caesar"
+annotation_dir: "/burg/pmg/users/xf2217/repos/caesar/data"
+atac_metadata: ""
+output_dir: "/pmglocal/xf2217/joung_tfatlas/dense/"
+labels_column: "sub.cluster"
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+integrated: true
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 32
+tempdir: "/pmglocal/xf2217/tmp"
+
+# peak
+specific_peak_names:
+  - "fetal_tfatlas_peaks"
+merged_peak_names:
+  - "fetal_tfatlas_peaks_tissue"
+
+n_insertions: 10000000
+n_cells: null

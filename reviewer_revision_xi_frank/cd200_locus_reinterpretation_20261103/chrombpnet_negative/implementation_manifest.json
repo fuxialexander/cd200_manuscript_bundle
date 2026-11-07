@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/run_negative_chrombpnet.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/00_run_negative_chrombpnet.py",
+      "sha256": "5daec480f7d0d970412f81616318bad30a06c2a1689ead9fa8fe5dc6bf9d8d34"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/prepare_negative_cache.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/01_prepare_negative_cache.py",
+      "sha256": "4adf0d5f2bc0df3dbcac9ba5595289a4900c217a783701f461d140c2f15cdd03"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/prepare_mouse_cache.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/02_prepare_mouse_cache.py",
+      "sha256": "841c0abe6e3663965472058bf955deb849dd914a8c4d56bfbdce6bd09f861f2c"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/03_train_mouse_chrombpnet.py",
+      "sha256": "8b2f531054e5cfa8cebc53745df743a7936f498a0ff681906ae23b16226a1261"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/04_predict_loci.py",
+      "sha256": "d5c2fa4ba99f10e0c6642935670013734295356598a6af98a7cbc0ea81a71321"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/05_evaluate_loci.py",
+      "sha256": "04530721f40ac1cb63f3ed1c7b1916662b20dbb316d7f83dcad508ab3af06ea5"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/06_evaluate_mouse.py",
+      "sha256": "b394937b7446b56337255d5f698a2c2e3042a1775f42f73119d514936b6f4113"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/07_evaluate_losses.py",
+      "sha256": "4eb4fc6beeb6362c8e993e71726f4dc40dfd2546d83abe1aa3db59429b4c69fa"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/08_train_chrombpnet.py",
+      "sha256": "327d6540f6fa25c9fde13275c88bf3034c0ae21aa6fca74c2e3f4539e6244e54"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/09_evaluate.py",
+      "sha256": "41ff075f8360941414c99293a8410214de743dfc5427f87a89bd87a833ccd08b"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/models/bpnet_model.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/10_bpnet_model.py",
+      "sha256": "8ddbab40fa13d4ee7b5e326560e184a2502ddbd009444c5143420bca12d7ee28"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/models/chrombpnet_with_bias_model.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/11_chrombpnet_with_bias_model.py",
+      "sha256": "bedc63a36ee27bb25ab39a00f1d9e3d4d64809754bf46aebe10d17b3a331dd33"
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/utils/losses.py",
+      "snapshot": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/source_snapshots/12_losses.py",
+      "sha256": "c32e816398274bf7995cf83aab9bebb3b40ddaac7d162cebfa0672c31d259a6d"
+    }
+  ],
+  "read_only_positive_cache_reused": {
+    "manifest": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache/cache_manifest.json",
+    "manifest_sha256": "b781ae471214d8b6c28d383727f14c022cc2c81a0ffc83db6e72800bceb56816",
+    "peak_label_universe": "unchanged shared source region peak_type classification",
+    "policy": "exact same eligible rows/order/splits and DNA; x arrays linked read-only at consumer mmap; new negative target arrays",
+    "source_sample": "SCCApos.cd200_scc"
+  }
+}

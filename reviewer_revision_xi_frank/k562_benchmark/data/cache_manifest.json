@@ -1,0 +1,163 @@
+{
+  "status": "complete",
+  "assembly": "GRCh38",
+  "dataset": "ENCSR868FGK",
+  "model_annotation": "ENCSR467RSV",
+  "fold": {
+    "CV_type": "chr_holdout",
+    "test": [
+      "chr1",
+      "chr3",
+      "chr6"
+    ],
+    "valid": [
+      "chr8",
+      "chr20"
+    ],
+    "train": [
+      "chr2",
+      "chr4",
+      "chr5",
+      "chr7",
+      "chr9",
+      "chr10",
+      "chr11",
+      "chr12",
+      "chr13",
+      "chr14",
+      "chr15",
+      "chr16",
+      "chr17",
+      "chr18",
+      "chr19",
+      "chr21",
+      "chr22",
+      "chrX",
+      "chrY"
+    ]
+  },
+  "input_length": 2114,
+  "output_length": 1000,
+  "cache_sequence_length": 3114,
+  "cache_target_length": 2000,
+  "cache_target_sequence_offset": 557,
+  "evaluation_cache_offset": 500,
+  "missing_signal_policy": "bigWig omitted positions converted from NaN to zero as native insertion loader; infinity/negative/IO failures rejected",
+  "cache_is_filtered_by_target": false,
+  "source_region_filtering": "Official released post-filtered training/validation/test BEDs; no additional target filtering",
+  "reference": {
+    "path": "/mnt/storage/get_data/hg38.fa",
+    "fai_sha256": "3b425de206296a5c8053023fa5ca61da43cfe78c1737c12e58c83367c7e83c21",
+    "sha256": "5be01555d98347fdb3714dc84c6f77c9d8bc774adcf32c6f7a8fa06f5baf5e51"
+  },
+  "observed_signal": {
+    "path": "/tmp/cd200_k562_benchmark/ENCFF874FUM.bigWig",
+    "accession": "ENCFF874FUM",
+    "md5": "7265bdcfaf55605530eff48f98901ff2",
+    "sha256": "df4b2af6ad7612207dcb4f6acce41e8f731b08d2d84c00263f280325c9be8f53"
+  },
+  "fold_file": {
+    "path": "/tmp/cd200_k562_benchmark/regions/fold_0/cv_params.fold_0.json",
+    "sha256": "01768d037e1d55e61e565b71c11cffae810539ab1c1f127fb0cbde490fccc401"
+  },
+  "splits": {
+    "train": {
+      "regions": 366656,
+      "peaks": 183494,
+      "chromosome_counts": {
+        "chr10": 25233,
+        "chr11": 25725,
+        "chr12": 23838,
+        "chr13": 11024,
+        "chr14": 14577,
+        "chr15": 16996,
+        "chr16": 19957,
+        "chr17": 22957,
+        "chr18": 10961,
+        "chr19": 19930,
+        "chr2": 40638,
+        "chr21": 6918,
+        "chr22": 12305,
+        "chr4": 22370,
+        "chr5": 25956,
+        "chr7": 30428,
+        "chr9": 19596,
+        "chrX": 17217,
+        "chrY": 30
+      },
+      "sources": [
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/peaks.trainingset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "7b18ea18835aa9394e20bd1700a939e1d741a3aded7e32bfc2e9f02fa194a18d"
+        },
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/nonpeaks.trainingset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "6a7caffc1c31a2fda30469e52e633ad278f45cebf2f89f69c82ac2f46108befc"
+        }
+      ],
+      "region_ids_sha256": "d5e7895ebec685dbb6b73163b72b1521148e9c2c08298b41f55d6aeb8ea615d4",
+      "regions_sha256": "58889e6bb56a175a270c57229042449884bf89288436bfa58dca2edaf5de4556",
+      "omitted_bigwig_bases_set_to_zero": 593257895,
+      "fractional_signal_bases": 0,
+      "maximum_insertion_signal": 899.0,
+      "x_sha256": "74e05154ec1ede94747440168e6959eaac1fdca397e3445a2c565270a4ff31cb",
+      "y_sha256": "35d5060563a74523990f0f2fd60c961520796123cb6aa00e894bfdbb21446632",
+      "elapsed_seconds": 39.0367042630096
+    },
+    "valid": {
+      "regions": 35360,
+      "peaks": 17514,
+      "chromosome_counts": {
+        "chr20": 13982,
+        "chr8": 21378
+      },
+      "sources": [
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/peaks.validationset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "f4447767f51dfd61a0386aab9b99c976a4004af2a1667eff2a4b1c64ad5b60a7"
+        },
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/nonpeaks.validationset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "073e33ce17d20e223e9f39f4ec45c03c2d504900500a69ad33b99dcd2b8ef719"
+        }
+      ],
+      "region_ids_sha256": "1ac0d30ee95c52bfad26d1384776210100fd21901fdb6fe747edfab107620389",
+      "regions_sha256": "5799fa622313c36ab421c28a50eb5e746e098e4fbd8ea01c33ccc8e038df80ee",
+      "omitted_bigwig_bases_set_to_zero": 57622128,
+      "fractional_signal_bases": 0,
+      "maximum_insertion_signal": 607.0,
+      "x_sha256": "2c8aeab1fc78146380465c2e9e67865c354228ab9253b5ac33351eeb0bf47b0f",
+      "y_sha256": "515cb2da0ffcf0d34ffded2946bf43f09011fce701c4f378a7c28ed5d1653e42",
+      "elapsed_seconds": 4.645391622005263
+    },
+    "test": {
+      "regions": 332370,
+      "peaks": 66474,
+      "chromosome_counts": {
+        "chr1": 135176,
+        "chr3": 106503,
+        "chr6": 90691
+      },
+      "sources": [
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/peaks.testset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "ee606d6732a76893a71e7a1f38c75ecb803479963f9fc76b2687193367b13d5d"
+        },
+        {
+          "path": "/tmp/cd200_k562_benchmark/regions/fold_0/nonpeaks.testset.fold_0.ENCSR868FGK.bed.gz",
+          "sha256": "8fd030a0c7903e5e300912bc92586f9c88b8f74a3f3294d95f1c829be03aad74"
+        }
+      ],
+      "region_ids_sha256": "d846f1de1541c21376efde8b602265e48acad9c3a95be8e9f0e32c2ea4d59b95",
+      "regions_sha256": "a664bdb7c38fe3e38c57f8e5702942b2abc0f7c1b981535b5ce1fc0e0c45e61d",
+      "omitted_bigwig_bases_set_to_zero": 579888352,
+      "fractional_signal_bases": 0,
+      "maximum_insertion_signal": 709.0,
+      "x_sha256": "6cfc82bb6aa7e490e4aa8f39a6e0a1dc8c6d92242c88ce720bd7716ae71fc423",
+      "y_sha256": "9b0179bc81a244755c6cf71fa404581c4f43b414c9bf1867fd24826118be13f1",
+      "elapsed_seconds": 34.4569552349858
+    }
+  },
+  "excluded_boundary_regions": [],
+  "cross_split_chromosomes_overlap": false
+}

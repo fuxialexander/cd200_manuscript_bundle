@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "device": "cpu",
+  "torch_version": "2.8.0+cu128",
+  "cpu_threads": 4,
+  "original_module": "/home/xf2217/Repos/motif_chip_model/atac_prediction/dna_atac_lightning_module.py",
+  "model_weights_loaded": "strict=True for regression, phase3 components and assembled full state",
+  "regression_native_input_bp": 4096,
+  "phase3_original_S5B_input_bp": 8192,
+  "matched_output_bp": 1000,
+  "matched_input_choices": [
+    4096,
+    2114
+  ],
+  "input2114_status": "inference-context adaptation; no retraining",
+  "original_overlay_target": "20bp mean convolution of stored ATAC counts, nearest-edge padding; normalize_factor1e8 is identity in FactorNormalizer",
+  "native_scalar_count_units": "original positive scalar count-head output; do not treat as raw counts or common1000bp ln1p counts",
+  "normalization_of_exported_shapes": "divide positive profile by its sum over the exported1000bp window",
+  "differential_caveat": "Native phase3 learns supplied Diff_scca, not an independently identifiable pair of pos/neg profile heads. Current rawZarr or BED-row sums with finalBED library sums do not reproduce saved Diff_scca. Redefined center2048 contrast is separate and is not a verified native model target.",
+  "no_shared_unit_count_loss_computed": true,
+  "no_new_fitting_or_calibration": true,
+  "old_scale_status": "legacy2123-positive-peak inverse shrinkage factor retained only for historical display",
+  "deletion_definition": {
+    "length": 15,
+    "mode": "real shortened sequence, no padding",
+    "profile_effect": "max(ref profile within annotated locus core)-max(deleted profile within same sequence-index core); matches region CLI default",
+    "count_effect": "log2((alt_native_count+1)/(ref_native_count+1))",
+    "differential_effect": "alt_native_diff-ref_native_diff",
+    "per_base_distribution": "sum of1/15 of all deletion-window effects covering each nucleotide",
+    "sampled_positions_only": true
+  },
+  "sources_sha256": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/checkpoints/shapescale_loss_scca_pos_with_count_head_fixed_motif_curriculum_from_scratch-epoch=105-val_loss=6.76.ckpt": "196e25dbb6f77289fe96adde5e478c146c732d7218a13cdb2715ba975936f032",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/checkpoints/ATAC-Sequential-20250919-022148_phase3_final_model.ckpt": "fdc08ed248cb39082b0145faf0e0d8e52b4eb68e8a69bb06c43a73dded8a0967",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/export_original_modl.py": "319e58585470e4be1d8978f02a93d071f9342cff146aabaa3ef607879d2a10ae",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/prepare_mouse_cache.py": "841c0abe6e3663965472058bf955deb849dd914a8c4d56bfbdce6bd09f861f2c",
+    "/home/xf2217/Repos/motif_chip_model/atac_prediction/dna_atac_lightning_module.py": "d0b79a71dee71564ee4a58c3f0737aab987ea985d17918fac395fa088a8f74db",
+    "/home/xf2217/Repos/motif_chip_model/atac_diff_prediction/models.py": "834e187577220abaddd486c5ae97af5dacc328c5fa9402859e578668ea146e55",
+    "/home/xf2217/Repos/motif_chip_model/atac_diff_prediction/bias_model.py": "7a0859c32ad709f2f6930d6d0d9bbdf254006526bc510866e4db197d0a406aa4",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/src/mutation_analysis/dataset.py": "5ef79e7f089ec9e1726b7995469b11f7e347a65f4cc96e99a27ea367aa481260",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/src/mutation_analysis/analyzer.py": "75113d5152af2012988a7fd0c3b82cf4a69744a65296d23cfbab680f39c5d1b7",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/src/mutation_analysis/metrics.py": "96bc0e58d6af9dbabc0e351325dd9cc3964eacd5ecfba25073c3a836c2ae74f5",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/mutation_analysis_cli.py": "5e07b42eac6b6607df4311fed3f40d2ed6a1b5ea5397f43ebea4c21002c9791b",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/plot_cd200_profile_corr_and_diff_logfc.py": "cf41be067682fdb75c02178e78e18935604b4026361ea97086922b7679e85dc9",
+    "/home/xf2217/Repos/Caesarion/src/caesar/io/normalizer.py": "e5dea6e56c27fe87e39ab40e0fa5fe84b8be6fd52b827a0c0c973885d1caabb4",
+    "/home/xf2217/Repos/Caesarion/src/caesar/io/genomic_io.py": "19998ab5f75710f598182669d76d47f3d74c6e099689680aa984dbda9d97d1fd",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/chr16_45383863_45384762_deletion_regression_nucleotide.csv": "12640fb1034f0acc81b9fd352517c33a0ef27486117b8529b52c3cb3a0b72a8b",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/chr16_45383863_45384762_deletion_count_nucleotide.csv": "adec3f2399c485ec43a06996c1453f61fa0dc2510b73c4959cf154cc56f70180",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/chr16_45356164_45357191_deletion_regression_nucleotide.csv": "09424bfe688051d049a2d62956c0f37fd0a0d85955b908a758cbb5006ce529b7",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/chr16_45356164_45357191_deletion_count_nucleotide.csv": "354ba1c0be6c3238342822f379f64b57f7b2ae98f0a1434fa998e306c6e8f1a4",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_promoter_analysis/regression_profile_overlay/chr16_45408000_45409426_deletion_regression_nucleotide.csv": "aa73ec9245ea70a41afe4bc0e9c773fb7f0925689f089c20185542534799185e",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_promoter_analysis/regression_profile_overlay/chr16_45408000_45409426_deletion_count_nucleotide.csv": "ac53db22a840c80e91a4b114a6b444f31a9ce063c636b071a9308c13f7d8c82c",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_promoter_analysis/chr16_45408000_45409426_deletion_differential_nucleotide.csv": "1ebf9d9b1239ef796f2887f54ef8ae44a445be230e195150c547fd43517986ff",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache/locus_windows.tsv": "513934869fd7ef36c85458d7847dc0842e67a253cf487511e0d326733b34f5da",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/training/data/scc_all_peaks.deduplicated.bed": "9bae09ac24fe937cb8c8eddbda6fa1d1431268f9cce9b9c42669e56b3eddf1fa",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_deletion_vs_chrombpnet_original/diff_head_shrinkage_factor.csv": "a003bf631372d1ec171864643ca63db29010e35cdd750186aeca52fe8a085357",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_deletion_vs_chrombpnet_original/diff_scca_logfc_summary.csv": "1c767eee6fa10f72091e3019a69b1fb4d60a554fa6c78f2e276c5c9ba831a7e0"
+  },
+  "zarr_accessed_sources": {
+    "genome": {
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/mm10.zarr/chrs/chr16/.zarray": {
+        "sha256": "ad7a891c7c32a93330c549895f967e08ddd3b6668856dba0263ee76df4f432f4",
+        "kind": "array_metadata"
+      },
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/mm10.zarr/chrs/chr16/22.0": {
+        "sha256": "9abfd42935db814c0f5a7bab6cc130342a60a2dc7e7cc987f5022ab832ba0ca5",
+        "kind": "data_chunk"
+      }
+    },
+    "SCCApos": {
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCApos.cd200_scc/chrs/chr16/.zarray": {
+        "sha256": "95a951192102a80edbc99ebb397d6a9138ef036316a316ee103a575224114120",
+        "kind": "array_metadata"
+      },
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCApos.cd200_scc/chrs/chr16/22": {
+        "sha256": "c9706b103be8c0c627dbfd95feb6579c74c110729906a382fe42739fcc5bc33a",
+        "kind": "data_chunk"
+      }
+    },
+    "SCCAneg": {
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCAneg.cd200_scc/chrs/chr16/.zarray": {
+        "sha256": "95a951192102a80edbc99ebb397d6a9138ef036316a316ee103a575224114120",
+        "kind": "array_metadata"
+      },
+      "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCAneg.cd200_scc/chrs/chr16/22": {
+        "sha256": "955b0535b0267f594a1f70301d88ce3b1d6ef22306d469186a38d62c8a686427",
+        "kind": "data_chunk"
+      }
+    }
+  },
+  "outputs_sha256": {
+    "phase3_8192_promoter.npz": "1d62460256ad447c49dadfdd697c486d835f83627ea2bd449642bfec9c0b4d6f",
+    "native4096_P2.npz": "05e81a440ed2d8ebc2cfd8aa4a6b1774cd393c75f060951a39b02cd1a4d469c0",
+    "native4096_P1.npz": "d129d4f33e52b581d2eb574b3d7e030ee2fbaae6f6a61d8343b7b05ff159dde3",
+    "matched1000_profiles.npz": "c179a91e5c8047b631e6358d7ec36a2b87942b2fb54fc157e36a7e58a918a58b",
+    "native4096_promoter.npz": "e19ee5b31a9ed9b3bf7fd13aaf04f3e42ec9698dd6be381b8c55c963cbb30df3",
+    "deletion_validation.tsv": "1fbbcdd77f3c4bd8b54150a5b9b153ac473665bb9f919d7f225883f47a1c39e2",
+    "phase3_8192_P1.npz": "dd1dab927fbdd128b3bc83f4a467ab69a75cd27914af14e453df0f5378bc6ba6",
+    "phase3_8192_P2.npz": "fe009d4f84032f3c0c9620b6b348fd6b307d0e643e73b612c2d04a971c3b1117",
+    "archived_deletion_tracks.tsv": "539e0eb3ef6602e3d8849408b67a69778736c53b25e82fd06c5b695168535c30",
+    "profile_reproduction_audit.tsv": "0c7443aaf560cadd3ae4c401fa583541dac9f52cc7ab0d5cc8fd65d305b3657c",
+    "s5b_original_and_redefined_contrasts.tsv": "fb35e643079e460d2efedca350ba5e3fad8194a811da72208c6d51736d9338db",
+    "matched1000_windows.tsv": "513934869fd7ef36c85458d7847dc0842e67a253cf487511e0d326733b34f5da",
+    "archived_deletion_tracks/P2_count_epoch105.csv": "354ba1c0be6c3238342822f379f64b57f7b2ae98f0a1434fa998e306c6e8f1a4",
+    "archived_deletion_tracks/P1_regression_epoch105.csv": "12640fb1034f0acc81b9fd352517c33a0ef27486117b8529b52c3cb3a0b72a8b",
+    "archived_deletion_tracks/P2_regression_epoch105.csv": "09424bfe688051d049a2d62956c0f37fd0a0d85955b908a758cbb5006ce529b7",
+    "archived_deletion_tracks/promoter_differential_phase3.csv": "1ebf9d9b1239ef796f2887f54ef8ae44a445be230e195150c547fd43517986ff",
+    "archived_deletion_tracks/P1_count_epoch105.csv": "adec3f2399c485ec43a06996c1453f61fa0dc2510b73c4959cf154cc56f70180",
+    "archived_deletion_tracks/promoter_regression_epoch105.csv": "aa73ec9245ea70a41afe4bc0e9c773fb7f0925689f089c20185542534799185e",
+    "archived_deletion_tracks/promoter_count_epoch105.csv": "ac53db22a840c80e91a4b114a6b444f31a9ce063c636b071a9308c13f7d8c82c"
+  }
+}

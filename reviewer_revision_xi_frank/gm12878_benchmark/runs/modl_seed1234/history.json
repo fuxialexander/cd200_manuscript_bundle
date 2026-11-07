@@ -1,0 +1,50 @@
+[
+  {
+    "epoch": 0,
+    "seconds": 315.1865426150034,
+    "train": {
+      "examples": 213283,
+      "logcount_mse": 1.5046711145090739,
+      "loss": 10220.66883967692,
+      "profile_nll_without_constant": 10080.283013208977
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_mse": 1.052028219325847,
+      "loss": 10285.580717277804,
+      "profile_nll_without_constant": 10187.426496858305
+    }
+  },
+  {
+    "epoch": 1,
+    "seconds": 315.2573112300015,
+    "train": {
+      "examples": 213283,
+      "logcount_mse": 1.2738272338943657,
+      "loss": 10043.666717730044,
+      "profile_nll_without_constant": 9924.818627284889
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_mse": 1.4503486442820663,
+      "loss": 10265.68356605148,
+      "profile_nll_without_constant": 10130.366038390906
+    }
+  },
+  {
+    "epoch": 2,
+    "seconds": 314.98239875998115,
+    "train": {
+      "examples": 213283,
+      "logcount_mse": 1.1848495439968816,
+      "loss": 10017.853925630794,
+      "profile_nll_without_constant": 9907.307452532257
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_mse": 1.081498604500508,
+      "loss": 10207.162902766817,
+      "profile_nll_without_constant": 10106.259091943904
+    }
+  }
+]

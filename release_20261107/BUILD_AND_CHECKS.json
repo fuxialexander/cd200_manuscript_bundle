@@ -1,0 +1,9 @@
+{
+  "workflow_interface_tests": 27,
+  "tests_passed": true,
+  "vendored_import_check": "caesar.io.zarr_io and caesar.io.normalizer resolve to vendor/caesarion/src",
+  "wheel_built": true,
+  "wheel_vendored_source_files": 151,
+  "fresh_external_environment_installation": "not performed",
+  "scientific_models_retrained": false
+}

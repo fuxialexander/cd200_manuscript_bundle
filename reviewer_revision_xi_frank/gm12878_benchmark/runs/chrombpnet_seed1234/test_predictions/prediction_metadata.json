@@ -1,0 +1,21 @@
+{
+  "bias_model_sha256": "29f7d2c5f2e6df2b9d4e05107478a548e40cd5a315c9151f206c2db171766399",
+  "checkpoint_sha256": "eec5be5400878f1603b92e67fc909932148871ba4f5f47361284f699a749e4e1",
+  "count_transform": "ln1p_raw_insertion_count",
+  "model": "chrombpnet_native_fresh",
+  "pilot": false,
+  "prediction_counts_units": "native full-model ln1p total counts",
+  "prediction_profiles_units": "softmax native full-model profile logits",
+  "recombined_components": false,
+  "region_ids_sha256": "427bf4380710d6e9cba77840f68235469daa8aa6ce410ab26dfb57376ee6a0f8",
+  "source_sha256": "327d6540f6fa25c9fde13275c88bf3034c0ae21aa6fca74c2e3f4539e6244e54",
+  "target_end": 1500,
+  "target_start": 500,
+  "tensorflow": "2.21.0",
+  "test_chromosomes": [
+    "chr1",
+    "chr3",
+    "chr6"
+  ],
+  "test_rows": 314645
+}

@@ -1,0 +1,40 @@
+{
+  "sample": "SCCAneg.cd200_scc",
+  "count_loss_weight": 37.5,
+  "count_weight_rule": "max(1,median centered TRAIN peak counts/10)",
+  "training_peaks": 76344,
+  "training_nonpeaks": 67095,
+  "peak_quantiles": [
+    23.0,
+    95.0,
+    375.0,
+    4104.569999999992,
+    8791.0
+  ],
+  "nonpeak_quantiles": [
+    6.0,
+    22.0,
+    64.0,
+    178.0,
+    506.0
+  ],
+  "bias_train_only_gates": {
+    "peak_count_quantile": 0.01,
+    "training_peak_count_quantile_value": 95.0,
+    "bias_threshold_factor": 0.5,
+    "background_count_upper_cutoff": 47.5,
+    "outlier_quantile": 0.9999,
+    "strict_count_lower": 7.513199999999613,
+    "strict_count_upper": 47.0,
+    "count_loss_weight": 3.8,
+    "training_nonpeaks_before_filtering": 67095,
+    "training_nonpeaks_below_background_cutoff": 17567,
+    "training_nonpeaks_selected": 16584,
+    "fitted_on": "training chromosomes only"
+  },
+  "cache_manifest_sha256": "d125e8aa7d23f28533da58a7c6a2f62a3643e4089fcc91c89fecff689f9b7fa1",
+  "negative_targets": {
+    "state": "complete",
+    "geometry_and_region_orders_match_positive": true
+  }
+}

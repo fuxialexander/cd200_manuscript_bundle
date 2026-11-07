@@ -1,0 +1,5 @@
+root_path: /home/xf2217/Projects/cd200_scc
+annotation_dir: /home/xf2217/Projects/caesar
+output_dir: /home/xf2217/Projects/cd200_scc/dense
+tempdir: /tmp
+n_jobs: 16

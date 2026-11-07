@@ -16,8 +16,11 @@ Dependencies: pytorch_lightning, torch, argparse, wandb, utils (motif processing
 from __future__ import annotations
 
 import argparse
+import json
+import math
 import os
 import sys
+from pathlib import Path
 from typing import List, Optional, Tuple
 
 import pytorch_lightning as pl
@@ -369,6 +372,15 @@ def _add_training_arguments(parser: argparse.ArgumentParser) -> None:
         action="store_true",
         help="Find optimal learning rate before training"
     )
+    training_group.add_argument("--output-dir", type=Path, help="Local run directory")
+    training_group.add_argument("--seed", type=int, help="Seed Python, NumPy, PyTorch and workers")
+    training_group.add_argument("--accelerator", default="auto", choices=["auto", "cpu", "gpu", "mps"])
+    training_group.add_argument("--devices", type=int, default=1)
+    training_group.add_argument("--wandb-mode", choices=["online", "offline", "disabled"],
+                                help="Use disabled for local runs without a W&B account")
+    training_group.add_argument("--compile", action=argparse.BooleanOptionalAction, default=True)
+    training_group.add_argument("--fast-dev-run", action="store_true",
+                                help="One train/validation batch; checks execution, not performance")
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -591,6 +603,9 @@ def main() -> None:
     args = parse_arguments()
     config_manager = ConfigManager("train_atac")
     config = config_manager.load_config(args.config)
+    config.setdefault('model', {})
+    if args.seed is not None:
+        pl.seed_everything(args.seed, workers=True)
     
     # Load split strategy from config if not specified via command line
     if hasattr(args, 'split_strategy') and args.split_strategy == 'random':
@@ -757,7 +772,7 @@ def main() -> None:
     print("\n4. Setting up callbacks and logger...")
     checkpoint_callback = ModelCheckpoint(
         monitor='val_loss',
-        dirpath='checkpoints/',
+        dirpath=str(args.output_dir / 'checkpoints') if args.output_dir else 'checkpoints/',
         filename=f'{args.run_name}-{{epoch:02d}}-{{val_loss:.2f}}',
         save_top_k=3,  # Save top 3 models
         mode='min',
@@ -774,7 +789,12 @@ def main() -> None:
     # Use standard callbacks
     callbacks = [checkpoint_callback, early_stopping_callback, gradient_monitor_callback]
 
-    wandb_logger = WandbLogger(project=args.wandb_project, name=args.run_name)
+    wandb_options = {'mode': args.wandb_mode} if args.wandb_mode else {}
+    if args.output_dir:
+        args.output_dir.mkdir(parents=True, exist_ok=True)
+        wandb_options['save_dir'] = str(args.output_dir)
+    wandb_logger = (False if args.wandb_mode == 'disabled' else
+                    WandbLogger(project=args.wandb_project, name=args.run_name, **wandb_options))
 
     # --- 5. Initialize and Run Trainer ---
     print("\n5. Starting training...")
@@ -787,6 +807,9 @@ def main() -> None:
         val_check_interval=args.val_check_interval,
         gradient_clip_val=args.gradient_clip_val,
         detect_anomaly=False,  # Enable anomaly detection for debugging
+        accelerator=args.accelerator,
+        devices=args.devices,
+        fast_dev_run=args.fast_dev_run,
     )
 
     # Test data loading before training
@@ -882,8 +905,23 @@ def main() -> None:
             print("   Attempting standard resume...")
     
     # Start training - compile after loading weights
-    model.model = torch.compile(model.model)
+    if args.compile:
+        model.model = torch.compile(model.model)
     trainer.fit(model, datamodule=data_module, ckpt_path=resume_checkpoint)
+
+    if args.output_dir:
+        # A smoke run still exports weights so the interpretation path can be tested.
+        if args.fast_dev_run:
+            trainer.save_checkpoint(args.output_dir / 'smoke.ckpt')
+        metrics = {key: float(value.detach().cpu()) for key, value in trainer.callback_metrics.items()
+                   if isinstance(value, torch.Tensor) and value.numel() == 1}
+        metrics = {key: value if math.isfinite(value) else None for key, value in metrics.items()}
+        summary = {'seed': args.seed, 'smoke_only': args.fast_dev_run,
+                   'best_checkpoint': checkpoint_callback.best_model_path,
+                   'smoke_checkpoint': str(args.output_dir / 'smoke.ckpt') if args.fast_dev_run else None,
+                   'metrics': metrics}
+        with (args.output_dir / 'summary.json').open('w') as handle:
+            json.dump(summary, handle, indent=2, allow_nan=False)
     
     print("\nTraining completed!")
     print(f"Best checkpoint: {checkpoint_callback.best_model_path}")

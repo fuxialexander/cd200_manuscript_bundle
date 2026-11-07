@@ -1,0 +1,9 @@
+{
+  "positive_checkpoint_sha256": "ded077e7d84e528f44076c27f94bfe09c1df53aaa4483e68fff8a46b619c5871",
+  "negative_checkpoint_sha256": "883a642b90a10e365bf2cc1ea28176adac569e99e72805677eb3321a15a74916",
+  "both_state_checkpoints_and_tiling": "PASS",
+  "minimum_implementation_pearson": 0.9999998807907104,
+  "font_checks": "Embedded TrueType; no Type3 fonts",
+  "negative_job_state": "complete",
+  "negative_postcontrast_state": "complete"
+}

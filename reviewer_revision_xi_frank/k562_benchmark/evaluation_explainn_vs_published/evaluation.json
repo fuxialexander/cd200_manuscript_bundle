@@ -1,0 +1,1027 @@
+{
+  "contract": {
+    "target_start": 500,
+    "target_end": 1500,
+    "count_transform": "ln1p_raw_insertion_count",
+    "region_ids_sha256": "d846f1de1541c21376efde8b602265e48acad9c3a95be8e9f0e32c2ea4d59b95",
+    "model_input_length": 2114,
+    "model_input_half_width": 1057,
+    "profile_definition": "per-window shape; 20bp bins are nonoverlapping sums",
+    "js_distance": "sqrt natural-log Jensen-Shannon divergence, matching scipy.spatial.distance.jensenshannon",
+    "js_divergence": "natural-log Jensen-Shannon divergence, range [0,ln(2)]",
+    "spearman_ci": "point estimate only; block CI computed for Pearson/RMSE and mean profile metrics",
+    "population": "fixed supplied test regions; no filtering on target/prediction quality",
+    "uncertainty": "conditional on trained checkpoint; excludes training seed/assay uncertainty"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 1729,
+    "block_bp": 1000000,
+    "unit": "genomic bins merged if 2114bp input windows overlap; resampled within chromosome",
+    "blocks_per_chromosome": {
+      "chr1": 140,
+      "chr3": 110,
+      "chr6": 103
+    },
+    "warning": "Chromosomes with one block contribute no within-chromosome resampling variation"
+  },
+  "runtime": {
+    "python": "3.12.11",
+    "numpy": "2.2.0",
+    "scipy": "1.16.3",
+    "evaluator_sha256": "41ff075f8360941414c99293a8410214de743dfc5427f87a89bd87a833ccd08b"
+  },
+  "sources": [
+    {
+      "path": "/tmp/cd200_k562_benchmark/cache/test.regions.tsv",
+      "sha256": "a664bdb7c38fe3e38c57f8e5702942b2abc0f7c1b981535b5ce1fc0e0c45e61d"
+    },
+    {
+      "path": "/tmp/cd200_k562_benchmark/cache/test.y.npy",
+      "sha256": "9b0179bc81a244755c6cf71fa404581c4f43b414c9bf1867fd24826118be13f1"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "sha256": "c9c8557b27c602361f368476bb55b038f18a6c36aa5660c9e69da5b386fe446b"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_counts.npy",
+      "sha256": "ed32ad59a3dad139b5d1844677ed136e3d50bb2070a815ed2b02dccfe8be882d"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_profiles.npy",
+      "sha256": "b820f60a1863b427cb78c3b7ce889fae45095bea13f570e11eb235c67b3e68ef"
+    },
+    {
+      "model": "ExplaiNN",
+      "path": "reviewer_revision_xi_frank/k562_benchmark/runs/explainn_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "4edb5cb0b3b0b48ab8ffe3bf3f8b94111e16b29e98e4e42bad1c1862d898d4ae"
+    },
+    {
+      "model": "ExplaiNN",
+      "path": "reviewer_revision_xi_frank/k562_benchmark/runs/explainn_seed1234/test_predictions/prediction_counts.npy",
+      "sha256": "c08a8fc8cedc959839fac384a6cab4cb0ddd8bf1516e3b27750b3d3388638602"
+    }
+  ],
+  "scopes": {
+    "all": {
+      "ChromBPNet_published": {
+        "n_regions": 332370,
+        "zero_count_targets": 5023,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6881205715088281,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6734446566496599,
+              "upper": 0.7033116283866817,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.5165646393824115,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.4631050169525694,
+              "upper": 1.571922442650858,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6036630431608718,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3168639305026261,
+            "n_defined": 327347,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.3098335734785067,
+              "upper": 0.32393871134076874,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5464607451880463,
+            "n_defined": 327347,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.5397883049078243,
+              "upper": 0.5531758289006886,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5767311166051433,
+            "n_defined": 327347,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.5675691699416704,
+              "upper": 0.5856379064646534,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6417150654517306,
+            "n_defined": 327347,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.6335813590548882,
+              "upper": 0.6495440450009868,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 332370,
+        "zero_count_targets": 5023,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6179711386716339,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6015936643063571,
+              "upper": 0.6347126889385458,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6818562292904802,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.6264359605563241,
+              "upper": 1.7383139918543289,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5634455789254627,
+            "n_defined": 332370,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    },
+    "peaks": {
+      "ChromBPNet_published": {
+        "n_regions": 66474,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6995259023159314,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6877918349290514,
+              "upper": 0.7104504159218017,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.8018580230962458,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.7846191084156626,
+              "upper": 0.8198161015344072,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6048118232026262,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.12067477169222723,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.11893182258140413,
+              "upper": 0.12231771101369984,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.3377625763232438,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.3351353265566414,
+              "upper": 0.3401327481708986,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.8338530176163862,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8325651842726282,
+              "upper": 0.8351558853427123,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.847262370863371,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8449744129219332,
+              "upper": 0.8494996148261927,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 66474,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6814916359690313,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6699565627394021,
+              "upper": 0.6926127146604233,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.7979463863505261,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.7828604416720469,
+              "upper": 0.8128055209453229,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5684485708323395,
+            "n_defined": 66474,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    },
+    "nonpeaks": {
+      "ChromBPNet_published": {
+        "n_regions": 265896,
+        "zero_count_targets": 5023,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.45681596409129727,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.4282478370341918,
+              "upper": 0.4853270522442153,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6474878784016687,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.589819533450431,
+              "upper": 1.7088282510434125,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.42678740031400036,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.36685560515949933,
+            "n_defined": 260873,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.36168511264021797,
+              "upper": 0.3723711988123975,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5996398862916444,
+            "n_defined": 260873,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.5953567575240979,
+              "upper": 0.6041962394079337,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5112129478110506,
+            "n_defined": 260873,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.5040213054393782,
+              "upper": 0.5179555318899327,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.5893388073493844,
+            "n_defined": 260873,
+            "n_undefined": 5023,
+            "ci95": {
+              "lower": 0.5823060477063998,
+              "upper": 0.5960579105097652,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 265896,
+        "zero_count_targets": 5023,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.3444874706969016,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.31970945581663934,
+              "upper": 0.3685396617051817,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.837558396658872,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7806171822241021,
+              "upper": 1.897871600603211,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.3992107974754218,
+            "n_defined": 265896,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    },
+    "chrom:chr1": {
+      "ChromBPNet_published": {
+        "n_regions": 135176,
+        "zero_count_targets": 2271,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.68208485402838,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6525796191765834,
+              "upper": 0.7124555786289165,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.4394444930045536,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.3299791150481308,
+              "upper": 1.5586342731120393,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6297275505804952,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.29318653001272754,
+            "n_defined": 132905,
+            "n_undefined": 2271,
+            "ci95": {
+              "lower": 0.2826474017483556,
+              "upper": 0.30346105855850364,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.524380236185299,
+            "n_defined": 132905,
+            "n_undefined": 2271,
+            "ci95": {
+              "lower": 0.5141897720332356,
+              "upper": 0.5344417284714474,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.6062750003819548,
+            "n_defined": 132905,
+            "n_undefined": 2271,
+            "ci95": {
+              "lower": 0.5934546534479918,
+              "upper": 0.6196429955504847,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.662664909264916,
+            "n_defined": 132905,
+            "n_undefined": 2271,
+            "ci95": {
+              "lower": 0.6517521187897469,
+              "upper": 0.674082473454083,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 135176,
+        "zero_count_targets": 2271,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6171440109870999,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5862022359681972,
+              "upper": 0.6492827798466885,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.5914373945194207,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.4804024036784098,
+              "upper": 1.7092747799879944,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5903508753225514,
+            "n_defined": 135176,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    },
+    "chrom:chr3": {
+      "ChromBPNet_published": {
+        "n_regions": 106503,
+        "zero_count_targets": 1541,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6839204725069351,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6658634432895771,
+              "upper": 0.7008965927960358,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6696082042561518,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5941973400852099,
+              "upper": 1.753938144898934,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5632340664001277,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3521739658148791,
+            "n_defined": 104962,
+            "n_undefined": 1541,
+            "ci95": {
+              "lower": 0.3382966831378857,
+              "upper": 0.36788419068126843,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5789151687725803,
+            "n_defined": 104962,
+            "n_undefined": 1541,
+            "ci95": {
+              "lower": 0.5660193513264477,
+              "upper": 0.5932349015017848,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5314668049528518,
+            "n_defined": 104962,
+            "n_undefined": 1541,
+            "ci95": {
+              "lower": 0.5111764852401689,
+              "upper": 0.5490817747636009,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6047246673592348,
+            "n_defined": 104962,
+            "n_undefined": 1541,
+            "ci95": {
+              "lower": 0.5868661903836474,
+              "upper": 0.6196427564822659,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 106503,
+        "zero_count_targets": 1541,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6061464811812007,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5846905022780418,
+              "upper": 0.6269186178590473,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.8488173249594257,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7698790279685739,
+              "upper": 1.9362484000471454,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5219724554313708,
+            "n_defined": 106503,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    },
+    "chrom:chr6": {
+      "ChromBPNet_published": {
+        "n_regions": 90691,
+        "zero_count_targets": 1211,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7024481969143643,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6743956073728394,
+              "upper": 0.7240222818878976,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.437747049462042,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.362732895711308,
+              "upper": 1.5184877898273896,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6236359544838279,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.310612622787665,
+            "n_defined": 89480,
+            "n_undefined": 1211,
+            "ci95": {
+              "lower": 0.2979952900363261,
+              "upper": 0.32468235880854,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5411872633008123,
+            "n_defined": 89480,
+            "n_undefined": 1211,
+            "ci95": {
+              "lower": 0.5290994076838376,
+              "upper": 0.5543594980352999,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.585945497542679,
+            "n_defined": 89480,
+            "n_undefined": 1211,
+            "ci95": {
+              "lower": 0.5674802189661062,
+              "upper": 0.6021978777254352,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6539887262987704,
+            "n_defined": 89480,
+            "n_undefined": 1211,
+            "ci95": {
+              "lower": 0.6379158142636414,
+              "upper": 0.6678706383645583,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 90691,
+        "zero_count_targets": 1211,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6298558812117967,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5987734834064699,
+              "upper": 0.655617119926269,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6054660504379459,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5255568555663213,
+              "upper": 1.6922154821317437,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5849224762607274,
+            "n_defined": 90691,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      }
+    }
+  },
+  "paired_deltas": [
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.07014943283719421,
+      "n_common_defined_regions": 332370,
+      "ci95": {
+        "lower": 0.06565045141989707,
+        "upper": 0.07466866231546221,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.1652915899080687,
+      "n_common_defined_regions": 332370,
+      "ci95": {
+        "lower": -0.16992576356833197,
+        "upper": -0.16060371951904626,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.04021746423540917,
+      "n_common_defined_regions": 332370,
+      "ci95": null
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.018034266346900085,
+      "n_common_defined_regions": 66474,
+      "ci95": {
+        "lower": 0.011616918861341622,
+        "upper": 0.024396192688758724,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.003911636745719704,
+      "n_common_defined_regions": 66474,
+      "ci95": {
+        "lower": -0.0035911540977433183,
+        "upper": 0.011354990534124507,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.0363632523702867,
+      "n_common_defined_regions": 66474,
+      "ci95": null
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.11232849339439566,
+      "n_common_defined_regions": 265896,
+      "ci95": {
+        "lower": 0.10324090726670059,
+        "upper": 0.12096974760588461,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.19007051825720334,
+      "n_common_defined_regions": 265896,
+      "ci95": {
+        "lower": -0.19444012784287734,
+        "upper": -0.185610274985699,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.027576602838578546,
+      "n_common_defined_regions": 265896,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.06494084304128012,
+      "n_common_defined_regions": 135176,
+      "ci95": {
+        "lower": 0.05960221433642989,
+        "upper": 0.07090422173428561,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.1519929015148671,
+      "n_common_defined_regions": 135176,
+      "ci95": {
+        "lower": -0.1589019002691937,
+        "upper": -0.1446891015754483,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.03937667525794386,
+      "n_common_defined_regions": 135176,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.07777399132573437,
+      "n_common_defined_regions": 106503,
+      "ci95": {
+        "lower": 0.07011089129423458,
+        "upper": 0.08594661923346587,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.179209120703274,
+      "n_common_defined_regions": 106503,
+      "ci95": {
+        "lower": -0.18558843233590736,
+        "upper": -0.17295104189439073,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.04126161096875691,
+      "n_common_defined_regions": 106503,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.07259231570256763,
+      "n_common_defined_regions": 90691,
+      "ci95": {
+        "lower": 0.061270117113740905,
+        "upper": 0.08477991700407475,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.16771900097590398,
+      "n_common_defined_regions": 90691,
+      "ci95": {
+        "lower": -0.17918764503621964,
+        "upper": -0.1561490783177841,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.03871347822310056,
+      "n_common_defined_regions": 90691,
+      "ci95": null
+    }
+  ]
+}

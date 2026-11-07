@@ -1,0 +1,36 @@
+{
+  "detected_interruption_utc": "2026-10-27T02:50:57+00:00",
+  "cause": "Not established; no error logged; old supervisor/child absent, GPU idle",
+  "service": "cd200-gm12878-benchmark-recovery.service",
+  "supervisor_pid": 2302338,
+  "fresh_training": "MoDL restarts from scratch; optimizer state was not saved in the interrupted checkpoint",
+  "preserved_partial_runs": [
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234"
+  ],
+  "reused_completed_predictions": [
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions"
+  ],
+  "verification": "Persistent service active and GPU utilization96%,11172MiB; two recovery tests passed",
+  "files": [
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/run_benchmark.py",
+      "sha256": "1597dd03e73659a4e2e55d9bd6af8007c30163d5da0a1b48a58edf323f85ba54"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/test_run_benchmark.py",
+      "sha256": "29b7fc3db7d69d8ed25b08271097f8dfc76882848420418cba608558586177be"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/source_snapshots/run_benchmark_initial.py",
+      "sha256": "ade83dac15369b20bdc4412b4811b1862685d962c68cb240c892eb361cb775ee"
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/benchmark_status.restart_20261027T025330Z.json",
+      "sha256": "dccb8f71e62bb369f16903b64ee23cbd3766c02a5dd7fc909ebb427977f7f617"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/logs/recovery_tests.log",
+      "sha256": "f4eaa1193fecd16a431afbc89d7bfcc138a0a8810a101e331a7e4f45a4c2b314"
+    }
+  ]
+}

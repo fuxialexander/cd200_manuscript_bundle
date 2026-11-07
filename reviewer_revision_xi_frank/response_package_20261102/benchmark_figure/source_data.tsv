@@ -1,0 +1,37 @@
+panel	dataset	scope	metric	model	source_model	value	ci95_lower	ci95_upper	n_regions	n_defined	n_undefined	status
+a	GM12878	peaks	count_pearson_ln1p	MoDL	MoDL	0.6795846600013495	0.6637736560166315	0.6942146161159178	62929	62929	0	evaluated
+a	GM12878	peaks	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet_fresh	0.6232822442512458	0.607610270801274	0.6373887762117626	62929	62929	0	evaluated
+a	GM12878	peaks	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published	0.6330755297530363	0.6167151026157626	0.6475656291926504	62929	62929	0	evaluated
+a	GM12878	peaks	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.6006485309166835	0.5852672429468337	0.6149949712186935	62929	62929	0	evaluated
+a	K562	peaks	count_pearson_ln1p	MoDL	MoDL	0.7285557732326984	0.7169913591820252	0.7399763154559906	66474	66474	0	evaluated
+a	K562	peaks	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet_fresh	0.7082010727337354	0.6963219030578987	0.7191664439983503	66474	66474	0	evaluated
+a	K562	peaks	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published	0.6995259023159314	0.6877918349290514	0.7104504159218017	66474	66474	0	evaluated
+a	K562	peaks	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.6814916359690313	0.6699565627394021	0.6926127146604233	66474	66474	0	evaluated
+a	Mouse cSCC	peaks	count_pearson_ln1p	MoDL	MoDL	0.7082045062336122	0.6945175754336597	0.721142899761037	13593	13593	0	evaluated
+a	Mouse cSCC	peaks	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet	0.6986296129870508	0.6854014947241323	0.7112808104165238	13593	13593	0	evaluated
+a	Mouse cSCC	peaks	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published							N/A: published checkpoint not included for mouse
+a	Mouse cSCC	peaks	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.5337719574170516	0.5151951592966562	0.5522705231447349	13593	13593	0	evaluated
+b	GM12878	peaks	profile_js_distance	MoDL	MoDL	0.3184512665078451	0.31587090011687186	0.32141299649887484	62929	62929	0	evaluated
+b	GM12878	peaks	profile_js_distance	ChromBPNet_fresh	ChromBPNet_fresh	0.3255097681165941	0.3229487696594875	0.3284210514309525	62929	62929	0	evaluated
+b	GM12878	peaks	profile_js_distance	ChromBPNet_published	ChromBPNet_published	0.32673199677515974	0.3242227454410135	0.32960028454390605	62929	62929	0	evaluated
+b	GM12878	peaks	profile_js_distance	ExplaiNN	ExplaiNN							N/A: native ExplaiNN is scalar-only
+b	K562	peaks	profile_js_distance	MoDL	MoDL	0.3325505775332622	0.3298679308742609	0.33510400037659066	66474	66474	0	evaluated
+b	K562	peaks	profile_js_distance	ChromBPNet_fresh	ChromBPNet_fresh	0.3374635372810287	0.3348755359618733	0.3398729394372924	66474	66474	0	evaluated
+b	K562	peaks	profile_js_distance	ChromBPNet_published	ChromBPNet_published	0.3377625763232438	0.3351353265566414	0.3401327481708986	66474	66474	0	evaluated
+b	K562	peaks	profile_js_distance	ExplaiNN	ExplaiNN							N/A: native ExplaiNN is scalar-only
+b	Mouse cSCC	peaks	profile_js_distance	MoDL	MoDL	0.49745760206229506	0.4934042929939659	0.5018376511759503	13593	13593	0	evaluated
+b	Mouse cSCC	peaks	profile_js_distance	ChromBPNet_fresh	ChromBPNet	0.5011767091820607	0.4971430016975219	0.5055294398957112	13593	13593	0	evaluated
+b	Mouse cSCC	peaks	profile_js_distance	ChromBPNet_published	ChromBPNet_published							N/A: published checkpoint not included for mouse
+b	Mouse cSCC	peaks	profile_js_distance	ExplaiNN	ExplaiNN							N/A: native ExplaiNN is scalar-only
+c	GM12878	all	count_pearson_ln1p	MoDL	MoDL	0.7007043354435022	0.6789542433141251	0.72212982164864	314645	314645	0	evaluated
+c	GM12878	all	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet_fresh	0.7102123600496368	0.6858040443196155	0.7344575692142615	314645	314645	0	evaluated
+c	GM12878	all	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published	0.711388107156278	0.6885003336630353	0.7348397179290406	314645	314645	0	evaluated
+c	GM12878	all	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.6154603761286063	0.5939632460697952	0.6362735019557861	314645	314645	0	evaluated
+c	K562	all	count_pearson_ln1p	MoDL	MoDL	0.6406569106361668	0.6264605371186655	0.6556188241551927	332370	332370	0	evaluated
+c	K562	all	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet_fresh	0.6873484127467069	0.6708910516581985	0.7036350110388117	332370	332370	0	evaluated
+c	K562	all	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published	0.6881205715088281	0.6734446566496599	0.7033116283866817	332370	332370	0	evaluated
+c	K562	all	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.6179711386716339	0.6015936643063571	0.6347126889385458	332370	332370	0	evaluated
+c	Mouse cSCC	all	count_pearson_ln1p	MoDL	MoDL	0.8289031366943888	0.8207447530716149	0.8361681246005807	26350	26350	0	evaluated
+c	Mouse cSCC	all	count_pearson_ln1p	ChromBPNet_fresh	ChromBPNet	0.8315601347538406	0.8240446199974687	0.8386558006297538	26350	26350	0	evaluated
+c	Mouse cSCC	all	count_pearson_ln1p	ChromBPNet_published	ChromBPNet_published							N/A: published checkpoint not included for mouse
+c	Mouse cSCC	all	count_pearson_ln1p	ExplaiNN	ExplaiNN	0.7038995500548564	0.6895628046725528	0.7169987798179854	26350	26350	0	evaluated

@@ -1,0 +1,578 @@
+{
+  "contract": {
+    "target_start": 500,
+    "target_end": 1500,
+    "count_transform": "ln1p_raw_insertion_count",
+    "region_ids_sha256": "427bf4380710d6e9cba77840f68235469daa8aa6ce410ab26dfb57376ee6a0f8",
+    "model_input_length": 2114,
+    "model_input_half_width": 1057,
+    "profile_definition": "per-window shape; 20bp bins are nonoverlapping sums",
+    "js_distance": "sqrt natural-log Jensen-Shannon divergence, matching scipy.spatial.distance.jensenshannon",
+    "js_divergence": "natural-log Jensen-Shannon divergence, range [0,ln(2)]",
+    "spearman_ci": "point estimate only; block CI computed for Pearson/RMSE and mean profile metrics",
+    "population": "fixed supplied test regions; no filtering on target/prediction quality",
+    "uncertainty": "conditional on trained checkpoint; excludes training seed/assay uncertainty"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 1729,
+    "block_bp": 1000000,
+    "unit": "genomic bins merged if 2114bp input windows overlap; resampled within chromosome",
+    "blocks_per_chromosome": {
+      "chr1": 125,
+      "chr3": 122,
+      "chr6": 103
+    },
+    "warning": "Chromosomes with one block contribute no within-chromosome resampling variation"
+  },
+  "runtime": {
+    "python": "3.12.11",
+    "numpy": "2.2.0",
+    "scipy": "1.16.3",
+    "evaluator_sha256": "41ff075f8360941414c99293a8410214de743dfc5427f87a89bd87a833ccd08b"
+  },
+  "sources": [
+    {
+      "path": "/tmp/cd200_gm12878_benchmark/cache/test.regions.tsv",
+      "sha256": "3af5d585827a29971bcd9aae8cec29660f6020168e2d2bc081c41799db95752d"
+    },
+    {
+      "path": "/tmp/cd200_gm12878_benchmark/cache/test.y.npy",
+      "sha256": "ce1ef8fc3ffd5c9f6fecdddc29d5773c7e278e00d42f76c0424da97eea203c91"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "sha256": "a4da52ec1563c5d563f27cd197b8e15dd13f8e70b6a0819cdfa28a00d7de79f0"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_counts.npy",
+      "sha256": "40d025c8257d61964bb2cdfedf44698abce62474ea2ac226d36430a5c19c9f4b"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_profiles.npy",
+      "sha256": "eae8c6d5a26387e588311a54f301579979f435b4a282a8d9214c511a7c99afad"
+    }
+  ],
+  "scopes": {
+    "all": {
+      "ChromBPNet_published": {
+        "n_regions": 314645,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.711388107156278,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6885003336630353,
+              "upper": 0.7348397179290406,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6418097522125596,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5811965882013856,
+              "upper": 1.7079115426271556,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6372170390759981,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.33066183881682815,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.3261774184263836,
+              "upper": 0.335199905417846,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5582186018128094,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5538875573863595,
+              "upper": 0.5625458575028426,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5609809229738301,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5545708651930275,
+              "upper": 0.5673409560594018,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6233768591086568,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.6151945463598062,
+              "upper": 0.6308549730386217,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "peaks": {
+      "ChromBPNet_published": {
+        "n_regions": 62929,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6330755297530363,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6167151026157626,
+              "upper": 0.6475656291926504,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.8455796971391966,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.829513494725887,
+              "upper": 0.8616724036857192,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5713863214075605,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.11425570232309126,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.11259876137212846,
+              "upper": 0.11612690919337428,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.32673199677515974,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.3242227454410135,
+              "upper": 0.32960028454390605,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.8504042153393152,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8490163036994546,
+              "upper": 0.851742412529817,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.864518695273732,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8616077495984421,
+              "upper": 0.8674552049109854,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "nonpeaks": {
+      "ChromBPNet_published": {
+        "n_regions": 251716,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.3827528246641253,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.3421861141803176,
+              "upper": 0.427912883842378,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.7862454540241188,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7193924222611938,
+              "upper": 1.8581840166261803,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.4283319532063115,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3856006066214691,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.3826542017081562,
+              "upper": 0.38874702238071124,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.6169858301830462,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.614662690569413,
+              "upper": 0.6194066923759897,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.4875053768819001,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.48251245249780017,
+              "upper": 0.4921147821442827,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.5621584687260847,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5540600627894176,
+              "upper": 0.5689229414720539,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr1": {
+      "ChromBPNet_published": {
+        "n_regions": 130850,
+        "zero_count_targets": 2145,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.702449866994882,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6653535645912627,
+              "upper": 0.7451943783984221,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.7042826786741736,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5736657604289224,
+              "upper": 1.8369719146651633,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6274034423688858,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3310499180583091,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.32322623446606247,
+              "upper": 0.3386149458057363,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5581622793517245,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5510539650042691,
+              "upper": 0.5652331553043748,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.558404189953568,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5474033546294419,
+              "upper": 0.5696062676587463,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6165548964589961,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.601579771068041,
+              "upper": 0.630611356268711,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr3": {
+      "ChromBPNet_published": {
+        "n_regions": 98384,
+        "zero_count_targets": 913,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7107395886586484,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6789394897344384,
+              "upper": 0.7357178973861171,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.598304998321506,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5502245328927435,
+              "upper": 1.6509518379351658,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6395624242684179,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.33193675531312783,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.3258825679641849,
+              "upper": 0.3377389006988373,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5602133627210772,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.554266051580169,
+              "upper": 0.5658986485191845,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5611171526164442,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.5534301015979207,
+              "upper": 0.5691300151795388,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6264195859319094,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.6185743396544522,
+              "upper": 0.6346100068545365,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr6": {
+      "ChromBPNet_published": {
+        "n_regions": 85411,
+        "zero_count_targets": 778,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7295016564377023,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6878717502413214,
+              "upper": 0.7567447559009511,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.5930033231796454,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5332606018582327,
+              "upper": 1.6657468917389,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6521893629489279,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.32860336133658263,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.31963187143138455,
+              "upper": 0.3383156204262676,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5560069071058297,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.5470585737910837,
+              "upper": 0.5657204400938494,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5647425760391546,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.5517461181969984,
+              "upper": 0.5764688001218761,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6302470288608267,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.6161205067529433,
+              "upper": 0.6415711272243468,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    }
+  },
+  "paired_deltas": []
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5a_profiles.pdf",
+    "profile": "main",
+    "file_size_mb": 0.076,
+    "info": {
+      "kind": "pdf"
+    },
+    "failures": [],
+    "warnings": [
+      "PyMuPDF is unavailable; PDF dimensions, fonts, and text editability were not checked.",
+      "Manual checks remain required for accessibility, image integrity, font embedding/type, layers, links, stroke widths, and scientific accuracy."
+    ],
+    "passes": [
+      "File extension is compatible with the main profile."
+    ]
+  },
+  {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/locus_interpretation_comparison.pdf",
+    "profile": "main",
+    "file_size_mb": 0.155,
+    "info": {
+      "kind": "pdf"
+    },
+    "failures": [],
+    "warnings": [
+      "PyMuPDF is unavailable; PDF dimensions, fonts, and text editability were not checked.",
+      "Manual checks remain required for accessibility, image integrity, font embedding/type, layers, links, stroke widths, and scientific accuracy."
+    ],
+    "passes": [
+      "File extension is compatible with the main profile."
+    ]
+  },
+  {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5b_contrast.pdf",
+    "profile": "main",
+    "file_size_mb": 0.02,
+    "info": {
+      "kind": "pdf"
+    },
+    "failures": [],
+    "warnings": [
+      "PyMuPDF is unavailable; PDF dimensions, fonts, and text editability were not checked.",
+      "Manual checks remain required for accessibility, image integrity, font embedding/type, layers, links, stroke widths, and scientific accuracy."
+    ],
+    "passes": [
+      "File extension is compatible with the main profile."
+    ]
+  },
+  {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/FigS5_regenerated.pdf",
+    "profile": "main",
+    "file_size_mb": 0.031,
+    "info": {
+      "kind": "pdf"
+    },
+    "failures": [],
+    "warnings": [
+      "PyMuPDF is unavailable; PDF dimensions, fonts, and text editability were not checked.",
+      "Manual checks remain required for accessibility, image integrity, font embedding/type, layers, links, stroke widths, and scientific accuracy."
+    ],
+    "passes": [
+      "File extension is compatible with the main profile."
+    ]
+  },
+  {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/FigS5_regenerated_legacy_calibrated.pdf",
+    "profile": "main",
+    "file_size_mb": 0.031,
+    "info": {
+      "kind": "pdf"
+    },
+    "failures": [],
+    "warnings": [
+      "PyMuPDF is unavailable; PDF dimensions, fonts, and text editability were not checked.",
+      "Manual checks remain required for accessibility, image integrity, font embedding/type, layers, links, stroke widths, and scientific accuracy."
+    ],
+    "passes": [
+      "File extension is compatible with the main profile."
+    ]
+  }
+]

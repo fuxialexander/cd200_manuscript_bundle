@@ -1,0 +1,4 @@
+locus	pearson_difference_modl_minus_chrombpnet	ci_lower	ci_upper	test
+P2	0.058976963481213396	-0.043099898362031035	0.1454364982997965	paired spatial-block bootstrap difference interval; no across-fold hypothesis test
+P1	0.009549257259861665	-0.030534911966338795	0.059140637926959214	paired spatial-block bootstrap difference interval; no across-fold hypothesis test
+promoter	0.3714211420955147	0.01650219303044445	0.5966488708152524	paired spatial-block bootstrap difference interval; no across-fold hypothesis test

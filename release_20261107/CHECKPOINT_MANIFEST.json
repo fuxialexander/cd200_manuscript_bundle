@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "GM12878",
+    "model": "MoDL",
+    "path": "GM12878/MoDL/best.pt",
+    "sha256": "61c41121f199fdb27e422df1a667d6ea6b59104c06de6ea42df6991fd07ea4a2",
+    "bytes": 12487082
+  },
+  {
+    "dataset": "GM12878",
+    "model": "ExplaiNN",
+    "path": "GM12878/ExplaiNN/best.pt",
+    "sha256": "fc54c53fd15332364c135101583f4253803d13827228cc5f9ac24250c3f30707",
+    "bytes": 12246983
+  },
+  {
+    "dataset": "GM12878",
+    "model": "ChromBPNet",
+    "path": "GM12878/ChromBPNet/best.weights.h5",
+    "sha256": "eec5be5400878f1603b92e67fc909932148871ba4f5f47361284f699a749e4e1",
+    "bytes": 77555832
+  },
+  {
+    "dataset": "K562",
+    "model": "MoDL",
+    "path": "K562/MoDL/best.pt",
+    "sha256": "814561de6309f359686d5698678220b0169c4f4ed55193399ae488d7b1cae15c",
+    "bytes": 12487018
+  },
+  {
+    "dataset": "K562",
+    "model": "ExplaiNN",
+    "path": "K562/ExplaiNN/best.pt",
+    "sha256": "9df179b0ccaa7635d3b8cae1ad39210eeef07fcef36ae8a816cda99332b7a8f5",
+    "bytes": 12246919
+  },
+  {
+    "dataset": "K562",
+    "model": "ChromBPNet",
+    "path": "K562/ChromBPNet/best.weights.h5",
+    "sha256": "3252fa3bd96064fea6734d72d4c75a49b804c015c2f5d5f37f42003f052eb3a0",
+    "bytes": 77555832
+  },
+  {
+    "dataset": "mouse_SCCApos",
+    "model": "MoDL",
+    "path": "mouse_SCCApos/MoDL/best.pt",
+    "sha256": "f1ea1d8834a85fb3a13cd0f692a9869713988bae128c5328c51f03db90db7955",
+    "bytes": 12487594
+  },
+  {
+    "dataset": "mouse_SCCApos",
+    "model": "ExplaiNN",
+    "path": "mouse_SCCApos/ExplaiNN/best.pt",
+    "sha256": "9573b2a99b7e8488a8e2166db98f325c3d7fa534d5c4e9d5736109b7a0323fed",
+    "bytes": 12247495
+  },
+  {
+    "dataset": "mouse_SCCApos",
+    "model": "ChromBPNet",
+    "path": "mouse_SCCApos/ChromBPNet/best.weights.h5",
+    "sha256": "ded077e7d84e528f44076c27f94bfe09c1df53aaa4483e68fff8a46b619c5871",
+    "bytes": 77555832
+  },
+  {
+    "dataset": "mouse_SCCAneg",
+    "model": "ChromBPNet",
+    "path": "mouse_SCCAneg/ChromBPNet/best.weights.h5",
+    "sha256": "883a642b90a10e365bf2cc1ea28176adac569e99e72805677eb3321a15a74916",
+    "bytes": 77555832
+  },
+  {
+    "dataset": "historical_cSCC",
+    "model": "ATAC-Sequential-20250919-022148_phase3_final_model",
+    "path": "historical_MoDL/ATAC-Sequential-20250919-022148_phase3_final_model.ckpt",
+    "sha256": "fdc08ed248cb39082b0145faf0e0d8e52b4eb68e8a69bb06c43a73dded8a0967",
+    "bytes": 12635493
+  },
+  {
+    "dataset": "historical_cSCC",
+    "model": "shapescale_loss_scca_pos_with_count_head_fixed_motif_curriculum_from_scratch-epoch=105-val_loss=6.76",
+    "path": "historical_MoDL/shapescale_loss_scca_pos_with_count_head_fixed_motif_curriculum_from_scratch-epoch=105-val_loss=6.76.ckpt",
+    "sha256": "196e25dbb6f77289fe96adde5e478c146c732d7218a13cdb2715ba975936f032",
+    "bytes": 35889667
+  }
+]

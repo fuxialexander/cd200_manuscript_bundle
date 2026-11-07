@@ -1,0 +1,2326 @@
+{
+  "contract": {
+    "target_start": 500,
+    "target_end": 1500,
+    "count_transform": "ln1p_raw_insertion_count",
+    "region_ids_sha256": "427bf4380710d6e9cba77840f68235469daa8aa6ce410ab26dfb57376ee6a0f8",
+    "model_input_length": 2114,
+    "model_input_half_width": 1057,
+    "profile_definition": "per-window shape; 20bp bins are nonoverlapping sums",
+    "js_distance": "sqrt natural-log Jensen-Shannon divergence, matching scipy.spatial.distance.jensenshannon",
+    "js_divergence": "natural-log Jensen-Shannon divergence, range [0,ln(2)]",
+    "spearman_ci": "point estimate only; block CI computed for Pearson/RMSE and mean profile metrics",
+    "population": "fixed supplied test regions; no filtering on target/prediction quality",
+    "uncertainty": "conditional on trained checkpoint; excludes training seed/assay uncertainty"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 1729,
+    "block_bp": 1000000,
+    "unit": "genomic bins merged if 2114bp input windows overlap; resampled within chromosome",
+    "blocks_per_chromosome": {
+      "chr1": 125,
+      "chr3": 122,
+      "chr6": 103
+    },
+    "warning": "Chromosomes with one block contribute no within-chromosome resampling variation"
+  },
+  "runtime": {
+    "python": "3.12.11",
+    "numpy": "2.2.0",
+    "scipy": "1.16.3",
+    "evaluator_sha256": "41ff075f8360941414c99293a8410214de743dfc5427f87a89bd87a833ccd08b"
+  },
+  "sources": [
+    {
+      "path": "/tmp/cd200_gm12878_benchmark/cache/test.regions.tsv",
+      "sha256": "3af5d585827a29971bcd9aae8cec29660f6020168e2d2bc081c41799db95752d"
+    },
+    {
+      "path": "/tmp/cd200_gm12878_benchmark/cache/test.y.npy",
+      "sha256": "ce1ef8fc3ffd5c9f6fecdddc29d5773c7e278e00d42f76c0424da97eea203c91"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "sha256": "a4da52ec1563c5d563f27cd197b8e15dd13f8e70b6a0819cdfa28a00d7de79f0"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_counts.npy",
+      "sha256": "40d025c8257d61964bb2cdfedf44698abce62474ea2ac226d36430a5c19c9f4b"
+    },
+    {
+      "model": "ChromBPNet_published",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_profiles.npy",
+      "sha256": "eae8c6d5a26387e588311a54f301579979f435b4a282a8d9214c511a7c99afad"
+    },
+    {
+      "model": "ExplaiNN",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "5690c7e680af7903831882209c9107398f71bb9ad270e287fdae691cc47a0fe6"
+    },
+    {
+      "model": "ExplaiNN",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions/prediction_counts.npy",
+      "sha256": "58b46a2aa5c9f578baf93c009ef9d2bf4785519a6f199340b9405ae74a9d0d2a"
+    },
+    {
+      "model": "MoDL",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions/prediction_metadata.json",
+      "sha256": "bb5346b6dd60ed1b999dde6033c92ad5574871dc78e7812c3609331c116521e6"
+    },
+    {
+      "model": "MoDL",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions/prediction_counts.npy",
+      "sha256": "ba86a7943f1570f761c094e902d976167932e8ae7441cfefa6d07723b879b7a5"
+    },
+    {
+      "model": "MoDL",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions/prediction_profiles.npy",
+      "sha256": "b722a54f1dbf51a7df1e2e88eac67f7113cee17066dd01f8e5bb0e97e09ac5d6"
+    }
+  ],
+  "scopes": {
+    "all": {
+      "ChromBPNet_published": {
+        "n_regions": 314645,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.711388107156278,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6885003336630353,
+              "upper": 0.7348397179290406,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.6418097522125596,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5811965882013856,
+              "upper": 1.7079115426271556,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6372170390759981,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.33066183881682815,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.3261774184263836,
+              "upper": 0.335199905417846,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5582186018128094,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5538875573863595,
+              "upper": 0.5625458575028426,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5609809229738301,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5545708651930275,
+              "upper": 0.5673409560594018,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6233768591086568,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.6151945463598062,
+              "upper": 0.6308549730386217,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 314645,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6154603761286063,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5939632460697952,
+              "upper": 0.6362735019557861,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.8087407344970177,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7495790251929775,
+              "upper": 1.8731465047517855,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5707517596086117,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 314645,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7007043354435022,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6789542433141251,
+              "upper": 0.72212982164864,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.4017800008184262,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.3389470120491012,
+              "upper": 1.4711186243702337,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6355712629654329,
+            "n_defined": 314645,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.32985787123748683,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.32532476141986794,
+              "upper": 0.3344360223724219,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5566142672250305,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5521908437171973,
+              "upper": 0.5610137193354393,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5585182183720824,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5520787110826451,
+              "upper": 0.565055316967877,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6134134410160871,
+            "n_defined": 310809,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.6053751987478909,
+              "upper": 0.6207817279764813,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "peaks": {
+      "ChromBPNet_published": {
+        "n_regions": 62929,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6330755297530363,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6167151026157626,
+              "upper": 0.6475656291926504,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.8455796971391966,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.829513494725887,
+              "upper": 0.8616724036857192,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5713863214075605,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.11425570232309126,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.11259876137212846,
+              "upper": 0.11612690919337428,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.32673199677515974,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.3242227454410135,
+              "upper": 0.32960028454390605,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.8504042153393152,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8490163036994546,
+              "upper": 0.851742412529817,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.864518695273732,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8616077495984421,
+              "upper": 0.8674552049109854,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 62929,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6006485309166835,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5852672429468337,
+              "upper": 0.6149949712186935,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.8715483041170056,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8569547570823784,
+              "upper": 0.885884808249497,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5345799649932147,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 62929,
+        "zero_count_targets": 0,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6795846600013495,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6637736560166315,
+              "upper": 0.6942146161159178,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 0.8026948744834397,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.7851436089869325,
+              "upper": 0.8213541069085287,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6292562033237901,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.10948733893033397,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.10782481498481072,
+              "upper": 0.11137120916930743,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.3184512665078451,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.31587090011687186,
+              "upper": 0.32141299649887484,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.8633128068408162,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8618206379353986,
+              "upper": 0.8646735836249715,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.8785510206349846,
+            "n_defined": 62929,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.8759659696051582,
+              "upper": 0.8811362997708355,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "nonpeaks": {
+      "ChromBPNet_published": {
+        "n_regions": 251716,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.3827528246641253,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.3421861141803176,
+              "upper": 0.427912883842378,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.7862454540241188,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7193924222611938,
+              "upper": 1.8581840166261803,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.4283319532063115,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3856006066214691,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.3826542017081562,
+              "upper": 0.38874702238071124,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.6169858301830462,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.614662690569413,
+              "upper": 0.6194066923759897,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.4875053768819001,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.48251245249780017,
+              "upper": 0.4921147821442827,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.5621584687260847,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.5540600627894176,
+              "upper": 0.5689229414720539,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 251716,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.3277724611750408,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.29653443808079816,
+              "upper": 0.3612005878272245,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.9747226879194228,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.9097773571918413,
+              "upper": 2.0435413192269,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.41167249183515287,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 251716,
+        "zero_count_targets": 3836,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.2804423910998985,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.2496621644356409,
+              "upper": 0.31195785679243193,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.5149766328190146,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.4447848608622254,
+              "upper": 1.5920399256657802,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.39498656556296885,
+            "n_defined": 251716,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.385803075479688,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.38283504590390544,
+              "upper": 0.38894561380955966,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.6170764242047454,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.6147383951521013,
+              "upper": 0.6195288520670489,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.4811403796688837,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.47619417325409424,
+              "upper": 0.48563589374424715,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.5461032798581171,
+            "n_defined": 247880,
+            "n_undefined": 3836,
+            "ci95": {
+              "lower": 0.538366361855203,
+              "upper": 0.5527673260760496,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr1": {
+      "ChromBPNet_published": {
+        "n_regions": 130850,
+        "zero_count_targets": 2145,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.702449866994882,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6653535645912627,
+              "upper": 0.7451943783984221,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.7042826786741736,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5736657604289224,
+              "upper": 1.8369719146651633,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6274034423688858,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3310499180583091,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.32322623446606247,
+              "upper": 0.3386149458057363,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5581622793517245,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5510539650042691,
+              "upper": 0.5652331553043748,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.558404189953568,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5474033546294419,
+              "upper": 0.5696062676587463,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6165548964589961,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.601579771068041,
+              "upper": 0.630611356268711,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 130850,
+        "zero_count_targets": 2145,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6071932205746898,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5722806060593965,
+              "upper": 0.6461468498260469,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.8721434086691817,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7438319218552871,
+              "upper": 2.004189570926635,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5629558756462519,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 130850,
+        "zero_count_targets": 2145,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6887609493366788,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6513376206365762,
+              "upper": 0.7301390670563589,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.46777498141156,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.331917292553937,
+              "upper": 1.607534673827078,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.623431872439919,
+            "n_defined": 130850,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.33025794781021833,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.3224127094349822,
+              "upper": 0.3378165048655304,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5565389993205558,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.549267971588932,
+              "upper": 0.5636771755653526,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5560826316655528,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5449658900811232,
+              "upper": 0.5673505149212211,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6071467808095998,
+            "n_defined": 128705,
+            "n_undefined": 2145,
+            "ci95": {
+              "lower": 0.5925973025004345,
+              "upper": 0.6212883212846348,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr3": {
+      "ChromBPNet_published": {
+        "n_regions": 98384,
+        "zero_count_targets": 913,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7107395886586484,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6789394897344384,
+              "upper": 0.7357178973861171,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.598304998321506,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5502245328927435,
+              "upper": 1.6509518379351658,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6395624242684179,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.33193675531312783,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.3258825679641849,
+              "upper": 0.3377389006988373,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5602133627210772,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.554266051580169,
+              "upper": 0.5658986485191845,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5611171526164442,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.5534301015979207,
+              "upper": 0.5691300151795388,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6264195859319094,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.6185743396544522,
+              "upper": 0.6346100068545365,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 98384,
+        "zero_count_targets": 913,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6154614931064718,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5923900106955992,
+              "upper": 0.6362015221346737,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.7639758678378357,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7167712749072288,
+              "upper": 1.81341092021599,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5705311314895921,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 98384,
+        "zero_count_targets": 913,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.6997864451997726,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6774597922158985,
+              "upper": 0.7193553044798684,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.3610800771255778,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.3137836273507562,
+              "upper": 1.4139322637416103,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6375671594922682,
+            "n_defined": 98384,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.3311900861638086,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.32512277627184827,
+              "upper": 0.33704325328975177,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5587148948229091,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.5526801111402708,
+              "upper": 0.564484276410871,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5584039828576728,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.5505016349980028,
+              "upper": 0.5665677269507304,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6155735970809149,
+            "n_defined": 97471,
+            "n_undefined": 913,
+            "ci95": {
+              "lower": 0.6076163503422293,
+              "upper": 0.6238668893482491,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    },
+    "chrom:chr6": {
+      "ChromBPNet_published": {
+        "n_regions": 85411,
+        "zero_count_targets": 778,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.7295016564377023,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6878717502413214,
+              "upper": 0.7567447559009511,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.5930033231796454,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.5332606018582327,
+              "upper": 1.6657468917389,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6521893629489279,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.32860336133658263,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.31963187143138455,
+              "upper": 0.3383156204262676,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5560069071058297,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.5470585737910837,
+              "upper": 0.5657204400938494,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.5647425760391546,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.5517461181969984,
+              "upper": 0.5764688001218761,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6302470288608267,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.6161205067529433,
+              "upper": 0.6415711272243468,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      },
+      "ExplaiNN": {
+        "n_regions": 85411,
+        "zero_count_targets": 778,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.631341738847388,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.5960461062379231,
+              "upper": 0.6579826085425741,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.760179335101736,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.7043926257560478,
+              "upper": 1.828025198531576,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.5853263735588121,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          }
+        },
+        "profile_status": "N/A: checkpoint provides scalar counts only"
+      },
+      "MoDL": {
+        "n_regions": 85411,
+        "zero_count_targets": 778,
+        "metrics": {
+          "count_pearson_ln1p": {
+            "value": 0.723214521379304,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 0.6902940980069341,
+              "upper": 0.7466725765778897,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_rmse_ln1p": {
+            "value": 1.343275798683156,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": {
+              "lower": 1.2871397242531322,
+              "upper": 1.4116268386146789,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            }
+          },
+          "count_spearman_ln1p": {
+            "value": 0.6534021548329184,
+            "n_defined": 85411,
+            "n_undefined": 0,
+            "ci95": null,
+            "reason": "Point estimate only; no fixed-rank approximation used"
+          },
+          "profile_js_divergence_nats": {
+            "value": 0.327715158863154,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.318689494024418,
+              "upper": 0.33748679819837335,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_js_distance": {
+            "value": 0.5543094580259305,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.545201425574304,
+              "upper": 0.5641886349480216,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_1bp": {
+            "value": 0.562353682515962,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.5491382326791594,
+              "upper": 0.5744276088853192,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          },
+          "profile_pearson_20bp": {
+            "value": 0.6204555868703174,
+            "n_defined": 84633,
+            "n_undefined": 778,
+            "ci95": {
+              "lower": 0.6061674093551881,
+              "upper": 0.6321674308411113,
+              "valid_replicates": 2000,
+              "undefined_replicates": 0
+            },
+            "undefined_rule": "zero observed total or (for correlation) constant target/prediction"
+          }
+        },
+        "profile_status": "evaluated"
+      }
+    }
+  },
+  "paired_deltas": [
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.09592773102767171,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": 0.08911982711509078,
+        "upper": 0.10283440189842512,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.16693098228445802,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": -0.17142103487010046,
+        "upper": -0.16252480969468974,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.06646527946738645,
+      "n_common_defined_regions": 314645,
+      "ci95": null
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.010683771712775791,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": 0.004625855623454564,
+        "upper": 0.016559790286836514,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.2400297513941334,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": 0.23469943312150285,
+        "upper": 0.24566870808219493,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.0016457761105652668,
+      "n_common_defined_regions": 314645,
+      "ci95": null
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": 0.0016043345877790399,
+      "n_common_defined_regions": 310809,
+      "ci95": {
+        "lower": 0.001508614598079271,
+        "upper": 0.0017011165994738216,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": 0.000803967579341329,
+      "n_common_defined_regions": 310809,
+      "ci95": {
+        "lower": 0.0007352596229297557,
+        "upper": 0.0008734910098991207,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": 0.0024627046017476235,
+      "n_common_defined_regions": 310809,
+      "ci95": {
+        "lower": 0.002229656885627151,
+        "upper": 0.002725187062960774,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": 0.009963418092570023,
+      "n_common_defined_regions": 310809,
+      "ci95": {
+        "lower": 0.00951274609410477,
+        "upper": 0.010480093932787697,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.08524395931489592,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": -0.08981693494721754,
+        "upper": -0.08093187818304531,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.4069607336785914,
+      "n_common_defined_regions": 314645,
+      "ci95": {
+        "lower": 0.39948319861287956,
+        "upper": 0.4144165506811697,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "all",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.06481950335682118,
+      "n_common_defined_regions": 314645,
+      "ci95": null
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.032426998836352805,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": 0.024988877468513016,
+        "upper": 0.03886370805616471,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.025968606977809006,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": -0.032597927505001977,
+        "upper": -0.018951484214432348,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.03680635641434582,
+      "n_common_defined_regions": 62929,
+      "ci95": null
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.04650913024831327,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": -0.05124151135350687,
+        "upper": -0.04212453337194915,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.04288482265575688,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": 0.0360508782698203,
+        "upper": 0.049672598846182844,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.05786988191622955,
+      "n_common_defined_regions": 62929,
+      "ci95": null
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": 0.008280730267314665,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": 0.008051771289971386,
+        "upper": 0.00848944130876966,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": 0.004768363392757291,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": 0.004642346750106461,
+        "upper": 0.004888569224775832,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": -0.012908591501500935,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": -0.013385654826834516,
+        "upper": -0.012414008244712981,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": -0.014032325361252448,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": -0.014883736814564548,
+        "upper": -0.013111590470285796,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.07893612908466607,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": -0.0861843259993681,
+        "upper": -0.07115621882996896,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.06885342963356589,
+      "n_common_defined_regions": 62929,
+      "ci95": {
+        "lower": 0.05866278422375752,
+        "upper": 0.07844518613441671,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "peaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.09467623833057537,
+      "n_common_defined_regions": 62929,
+      "ci95": null
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.05498036348908453,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": 0.03941822070262727,
+        "upper": 0.07127107662690377,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.18847723389530402,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": -0.19371810923901697,
+        "upper": -0.18320535723768633,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.016659461371158646,
+      "n_common_defined_regions": 251716,
+      "ci95": null
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.10231043356422681,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": 0.08816346642351383,
+        "upper": 0.1182921528052927,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.2712688212051042,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": 0.26530502124607663,
+        "upper": 0.27747845568508106,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.03334538764334266,
+      "n_common_defined_regions": 251716,
+      "ci95": null
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": -9.059402169932653e-05,
+      "n_common_defined_regions": 247880,
+      "ci95": {
+        "lower": -0.00014539491482958548,
+        "upper": -3.471183371558912e-05,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": -0.00020246885821899498,
+      "n_common_defined_regions": 247880,
+      "ci95": {
+        "lower": -0.0002689920278725823,
+        "upper": -0.00013533447595487686,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": 0.006364997213016497,
+      "n_common_defined_regions": 247880,
+      "ci95": {
+        "lower": 0.006186382752013276,
+        "upper": 0.006573951181060613,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": 0.016055188867967776,
+      "n_common_defined_regions": 247880,
+      "ci95": {
+        "lower": 0.015607986756410699,
+        "upper": 0.01655054395815804,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.04733007007514228,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": 0.04024286745483307,
+        "upper": 0.05381903463368092,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.4597460551004082,
+      "n_common_defined_regions": 251716,
+      "ci95": {
+        "lower": 0.4510599187724531,
+        "upper": 0.4687170269315937,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "nonpeaks",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.016685926272184015,
+      "n_common_defined_regions": 251716,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.09525664642019216,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": 0.08648744914507026,
+        "upper": 0.1047352146928357,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.16786072999500812,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": -0.17428052499733448,
+        "upper": -0.16241801028775416,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.06444756672263385,
+      "n_common_defined_regions": 130850,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.013688917658203237,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": 0.008023953822086208,
+        "upper": 0.020903597907794016,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.23650769726261367,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": 0.22852063817701565,
+        "upper": 0.24512111518997398,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.003971569928966745,
+      "n_common_defined_regions": 130850,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": 0.0016232800311687286,
+      "n_common_defined_regions": 128705,
+      "ci95": {
+        "lower": 0.0014816916395658647,
+        "upper": 0.0017838966851347119,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": 0.0007919702480907183,
+      "n_common_defined_regions": 128705,
+      "ci95": {
+        "lower": 0.0006891773984113765,
+        "upper": 0.0009064824394924607,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": 0.002321558288015095,
+      "n_common_defined_regions": 128705,
+      "ci95": {
+        "lower": 0.001980387972187333,
+        "upper": 0.0027127300340250887,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": 0.009408115649396179,
+      "n_common_defined_regions": 128705,
+      "ci95": {
+        "lower": 0.008741806970558071,
+        "upper": 0.01021202103638017,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.08156772876198892,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": -0.0886626866080408,
+        "upper": -0.074693716575983,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.4043684272576218,
+      "n_common_defined_regions": 130850,
+      "ci95": {
+        "lower": 0.3942942623735494,
+        "upper": 0.41659560333989953,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr1",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.06047599679366711,
+      "n_common_defined_regions": 130850,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.09527809555217659,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": 0.0783518578726049,
+        "upper": 0.10831844888195691,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.1656708695163296,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": -0.17428476963800127,
+        "upper": -0.1551186602658471,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.0690312927788258,
+      "n_common_defined_regions": 98384,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.01095314345887577,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": -0.005681065427465481,
+        "upper": 0.023964636866358684,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.2372249211959283,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": 0.22986579931223453,
+        "upper": 0.2443255227756763,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.001995264776149752,
+      "n_common_defined_regions": 98384,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": 0.0014984678981680576,
+      "n_common_defined_regions": 97471,
+      "ci95": {
+        "lower": 0.0013518335017961576,
+        "upper": 0.0016392870398192177,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": 0.00074666914931924,
+      "n_common_defined_regions": 97471,
+      "ci95": {
+        "lower": 0.0006261267557216458,
+        "upper": 0.0008558128801874938,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": 0.002713169758771651,
+      "n_common_defined_regions": 97471,
+      "ci95": {
+        "lower": 0.0023400965732420878,
+        "upper": 0.003103445187929523,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": 0.010845988850994562,
+      "n_common_defined_regions": 97471,
+      "ci95": {
+        "lower": 0.010103020243583968,
+        "upper": 0.01163696460925507,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.08432495209330082,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": -0.09200917069169216,
+        "upper": -0.0770407149409124,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.4028957907122579,
+      "n_common_defined_regions": 98384,
+      "ci95": {
+        "lower": 0.3907933244134892,
+        "upper": 0.414030074421344,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr3",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.06703602800267605,
+      "n_common_defined_regions": 98384,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.09815991759031428,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": 0.08570323195980688,
+        "upper": 0.11129550585011921,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": -0.16717601192209064,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": -0.17509624849084635,
+        "upper": -0.15870076869100228,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "ExplaiNN",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": 0.06686298939011581,
+      "n_common_defined_regions": 85411,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": 0.0062871350583982855,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": -0.005597959412682071,
+        "upper": 0.017686198562384254,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.24972752449648938,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": 0.24001473567743706,
+        "upper": 0.259935757183746,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.0012127918839904828,
+      "n_common_defined_regions": 85411,
+      "ci95": null
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_distance",
+      "delta_a_minus_b": 0.0016974490798991595,
+      "n_common_defined_regions": 84633,
+      "ci95": {
+        "lower": 0.0014860341363164484,
+        "upper": 0.0018848705974842904,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_js_divergence_nats",
+      "delta_a_minus_b": 0.0008882024734286581,
+      "n_common_defined_regions": 84633,
+      "ci95": {
+        "lower": 0.0007598014243122727,
+        "upper": 0.0010028529857743825,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_1bp",
+      "delta_a_minus_b": 0.0023888935231926416,
+      "n_common_defined_regions": 84633,
+      "ci95": {
+        "lower": 0.0019058877759457094,
+        "upper": 0.002918111673725192,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ChromBPNet_published",
+      "model_b": "MoDL",
+      "metric": "profile_pearson_20bp",
+      "delta_a_minus_b": 0.009791441990509258,
+      "n_common_defined_regions": 84633,
+      "ci95": {
+        "lower": 0.008946779449452782,
+        "upper": 0.010791348654781291,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_pearson_ln1p",
+      "delta_a_minus_b": -0.091872782531916,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": -0.10099404990705782,
+        "upper": -0.0840963025202112,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_rmse_ln1p",
+      "delta_a_minus_b": 0.41690353641858,
+      "n_common_defined_regions": 85411,
+      "ci95": {
+        "lower": 0.4040219620710718,
+        "upper": 0.42969403876547085,
+        "valid_replicates": 2000,
+        "undefined_replicates": 0
+      }
+    },
+    {
+      "scope": "chrom:chr6",
+      "model_a": "ExplaiNN",
+      "model_b": "MoDL",
+      "metric": "count_spearman_ln1p",
+      "delta_a_minus_b": -0.0680757812741063,
+      "n_common_defined_regions": 85411,
+      "ci95": null
+    }
+  ]
+}

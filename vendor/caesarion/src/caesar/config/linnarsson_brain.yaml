@@ -1,0 +1,32 @@
+# default.yaml
+data_key: "linnarsson_brain"
+data_type: "sc"
+integrated: true
+
+# path
+root_path: "/pmglocal/xf2217/linnarsson_brain/"
+codebase: "/pmglocal/xf2217/GET_STARTED/caesar/"
+annotation_dir: "/pmglocal/xf2217/GET_STARTED/caesar/data"
+atac_metadata: ""
+output_dir: "/pmglocal/xf2217/linnarsson_brain/dense/"
+labels_column: "ClusterName"
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 64
+tempdir: "/pmglocal/xf2217/tmp"
+
+# peak
+specific_peak_names: "peaks"
+merged_peak_names: "peaks_tissue"
+
+# cdz
+n_insertions: 10000000
+n_cells: null

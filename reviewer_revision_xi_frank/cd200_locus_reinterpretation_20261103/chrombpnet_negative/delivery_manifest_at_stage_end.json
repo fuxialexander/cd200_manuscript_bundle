@@ -1,0 +1,133 @@
+{
+  "status": "complete",
+  "sample": "SCCAneg.cd200_scc",
+  "stored_target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+  "target_universe": "frozen positive-benchmark eligible regions, shared sequence symlinks, fresh negative targets",
+  "checkpoint_selection": "validation only; chr16/chr8/chr9 untouched during fitting",
+  "artifacts": [
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/README.md",
+      "sha256": "1903b9e01c5a6872570e9ce67d47e191895016a9c0f2c74c7c55cef13b330c0b",
+      "bytes": 4628
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/prepare_negative_cache.py",
+      "sha256": "4adf0d5f2bc0df3dbcac9ba5595289a4900c217a783701f461d140c2f15cdd03",
+      "bytes": 7296
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/run_negative_chrombpnet.py",
+      "sha256": "5daec480f7d0d970412f81616318bad30a06c2a1689ead9fa8fe5dc6bf9d8d34",
+      "bytes": 7595
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/run_postcontrast.py",
+      "sha256": "a209dfb8563ae92e13d7183cf06436208f64de5fa2ae64fe4f7c60020f78c600",
+      "bytes": 2954
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/cache_manifest.json",
+      "sha256": "d125e8aa7d23f28533da58a7c6a2f62a3643e4089fcc91c89fecff689f9b7fa1",
+      "bytes": 24732
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/training_target_audit.json",
+      "sha256": "a0acadf9339be239fca9d9cd1627398f585d627950a9916ebf99770f6291758e",
+      "bytes": 1089
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/implementation_manifest.json",
+      "sha256": "717f8fbb27edc0a822104535b8b53e5b25b3b4adf2fe0d373e281db75bf3e273",
+      "bytes": 5340
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/job_status.json",
+      "sha256": "bf57f944f95a7e1bbeac376e701a02076d8398091d39433fc8d26c1b1247ead1",
+      "bytes": 10438
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/postcontrast_status.json",
+      "sha256": "4a509ca273c3181d543cdaef4c6537812e491541eabece25652766a2e90a42d0",
+      "bytes": 2612
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/RESULTS.json",
+      "sha256": "76cd9a67ab85cf2e0aa722141c4de0624a57a59be902d2c94fdc687f8630c050",
+      "bytes": 5984
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/metadata.json",
+      "sha256": "685d0abc960b17446fcf11217c25f541dd385ff8284d780072eedf71a25e48b9",
+      "bytes": 3034
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/windows.tsv",
+      "sha256": "a5d904ce07c3193e33ae2a6676a188064e632b695a54f5817ca5f1ebc3793c29",
+      "bytes": 585
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/state_predictions.npz",
+      "sha256": "8df7aab7e73a6bfcc178ff4999cf790349ae7702f9489d4c0b2245f2fea031a8",
+      "bytes": 99528
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5b_contrast.pdf",
+      "sha256": "2385d8dc736d4c31b912555c74b84888f9632d6738b766289334c0f8ab8c6ec8",
+      "bytes": 19594
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5b_contrast.svg",
+      "sha256": "476bda6d319421ca815a41625312779ce92d95368bcb8c86f6761864869b370c",
+      "bytes": 12391
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5b_contrast.png",
+      "sha256": "4408366bcef0d04d16c0d97158dad91d8e4380c061093cdeca6fa5d34201c34a",
+      "bytes": 98102
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/state_contrast_source_data.tsv",
+      "sha256": "6e72ba6e586dacea6cdf75cec47350f2e66a66d36a57f4a1b47e4de7010b19fb",
+      "bytes": 990
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/state_profile_source_data.tsv",
+      "sha256": "b260db8574189418d5e953571bbaa33c29e142c5bce06f77d9e90c0fc7890c41",
+      "bytes": 377873
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/contrast_caption.txt",
+      "sha256": "37732251a5e9b4ef62c553573dc655c7adf27ca8a0448fdac18dc02654d42aa1",
+      "bytes": 1574
+    },
+    {
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/contrast_manifest.json",
+      "sha256": "fcca6d83cbc1cdc613f3ef14af2954faf5eb826d1f24e8ef815e74b75bdeba3b",
+      "bytes": 2458
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/evaluation_final/evaluation.json",
+      "sha256": "279490a431a191f378c2f443a42b49e331da7582b7d07e29500d16f7f95007d1",
+      "bytes": 20893
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/locus_evaluation_final/locus_evaluation.json",
+      "sha256": "71106a3955676d98997d0b0e3dcab12a136ac410fbdc9563522d8cc7b12cc15b",
+      "bytes": 16822
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/losses_final/losses.json",
+      "sha256": "e8cd770703c749f0bdc5708bb6503e4abd1281919e02fe976ef2a1f13727f6bd",
+      "bytes": 2608
+    }
+  ],
+  "original_artifacts_preserved": true,
+  "cleanup": "retain new data/checkpoints/logs/source snapshots; no deletion",
+  "external_publication": false,
+  "limits": [
+    "Single seed1234 and one chromosome partition",
+    "Original upstream fragment endpoint/Tn5-shift provenance remains unverified",
+    "Bias model motif purity remains unverified",
+    "Three-locus state contrast is descriptive; historical curated targets differ from current centered stored-count windows"
+  ]
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "dataset": "gm12878_benchmark",
+    "splits": [
+      {
+        "split": "train",
+        "rows": 387457,
+        "sha256": "c41018c99d36b004a6fb1d1ef592e94eb91dba5257ebde4f9f0fee1a23c0101e"
+      },
+      {
+        "split": "valid",
+        "rows": 37769,
+        "sha256": "508030e06f69b87bdda6919d9b5a5c3f89a6a953659fb42b49d099750b47e954"
+      },
+      {
+        "split": "test",
+        "rows": 314645,
+        "sha256": "3af5d585827a29971bcd9aae8cec29660f6020168e2d2bc081c41799db95752d"
+      }
+    ],
+    "official_archive": "ENCFF971WEQ",
+    "md5": "6b7ccb352e0fc2f76853144ed1cd846d"
+  },
+  {
+    "dataset": "k562_benchmark",
+    "splits": [
+      {
+        "split": "train",
+        "rows": 366656,
+        "sha256": "58889e6bb56a175a270c57229042449884bf89288436bfa58dca2edaf5de4556"
+      },
+      {
+        "split": "valid",
+        "rows": 35360,
+        "sha256": "5799fa622313c36ab421c28a50eb5e746e098e4fbd8ea01c33ccc8e038df80ee"
+      },
+      {
+        "split": "test",
+        "rows": 332370,
+        "sha256": "a664bdb7c38fe3e38c57f8e5702942b2abc0f7c1b981535b5ce1fc0e0c45e61d"
+      }
+    ],
+    "official_archive": "ENCFF991RUK",
+    "md5": "103ee3a49e9ff701da2acfdb59b67d70"
+  },
+  {
+    "dataset": "mouse_SCCApos",
+    "files": [
+      {
+        "file": "test.regions.tsv",
+        "sha256": "e60f8b9b03d574082fdd813d44aef22593398746661972da29ba5c42d1c99dbf"
+      },
+      {
+        "file": "loci.regions.tsv",
+        "sha256": "651f11ac0150240ddf3bb44ba71845af26d3abca02b10b3c890a26470df55bbd"
+      },
+      {
+        "file": "train.regions.tsv",
+        "sha256": "26225c3af966f2c1a94a507310830f3dddc36e2ad2283811316d9dbeb4426938"
+      },
+      {
+        "file": "valid.regions.tsv",
+        "sha256": "a25f2105245ccede99b5a29344d9edf9208bd022b694164f203ece540d0812c8"
+      }
+    ]
+  },
+  {
+    "dataset": "mouse_SCCAneg",
+    "files": [
+      {
+        "file": "test.regions.tsv",
+        "sha256": "e60f8b9b03d574082fdd813d44aef22593398746661972da29ba5c42d1c99dbf"
+      },
+      {
+        "file": "loci.regions.tsv",
+        "sha256": "651f11ac0150240ddf3bb44ba71845af26d3abca02b10b3c890a26470df55bbd"
+      },
+      {
+        "file": "train.regions.tsv",
+        "sha256": "26225c3af966f2c1a94a507310830f3dddc36e2ad2283811316d9dbeb4426938"
+      },
+      {
+        "file": "valid.regions.tsv",
+        "sha256": "a25f2105245ccede99b5a29344d9edf9208bd022b694164f203ece540d0812c8"
+      }
+    ]
+  }
+]

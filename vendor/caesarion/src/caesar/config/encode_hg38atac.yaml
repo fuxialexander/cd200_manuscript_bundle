@@ -1,0 +1,22 @@
+data_key: encode_hg38atac
+data_type: encode_bulk
+root_path: /home/xf2217/Projects/encode_hg38atac/
+codebase: /home/xf2217/Projects/caesar
+annotation_dir: /home/xf2217/Projects/caesar/data/
+atac_metadata: 
+output_dir: /home/xf2217/Projects/encode_hg38atac/dense/
+labels_column: CellType
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+assembly: hg38
+gencode_version: 44
+pathway_file: gprofiler_full_hsapiens.name.gmt
+n_jobs: 1
+tempdir: /tmp/
+specific_peak_names:
+  - peaks_q0.05
+  - peaks_q0.05_fetal_joint
+merged_peak_names:
+  - peaks_q0.05_tissue
+  - peaks_q0.05_fetal_joint_tissue

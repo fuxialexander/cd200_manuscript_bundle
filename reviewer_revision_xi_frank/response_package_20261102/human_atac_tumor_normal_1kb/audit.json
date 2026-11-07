@@ -1,0 +1,57 @@
+{
+  "status": "AUTHOR_REVIEW_FIRST_PASS",
+  "n_tumors": 404,
+  "n_cohorts": 23,
+  "fig4d_tumor_donors": 120,
+  "n_normal_profiles": 24,
+  "windows_hg38_half_open": {
+    "Promoter": [
+      112332655,
+      112333655
+    ],
+    "TEAD motif": [
+      112360267,
+      112361267
+    ]
+  },
+  "all_tumors_retained": true,
+  "noise_exclusions": 0,
+  "signal_gates": null,
+  "no_normal_reference": [
+    "PRAD",
+    "TGCT"
+  ],
+  "normalization": "Existing Fig4D track values: background-subtracted, clipped at zero, divided by each track own 1Mb maximum; technical replicates already averaged for tumors.",
+  "display_scale": "Original shared pair y-scale changes axes only; no additional pair scaling applied here. Both panels in each export share limits based on the included values; underlying values remain on the 0\u20131 scale.",
+  "within_bin_approximation": "100bp source bins; partial bins weighted by overlap for mean/area. Maximum is maximum overlapping bin, not base-resolution maximum.",
+  "source_grid_check": "Tumor and normal grids differ slightly; each source uses its own genomic bin coordinates. Original builder reassigns normal columns to tumor headers by position; this new regional summary does not.",
+  "violin": "Only n>=3 with nonconstant values; observed-range KDE plus every donor point; no outlier exclusion.",
+  "inference": "Descriptive relative signal, not absolute accessibility/fold change or tumor-normal hypothesis tests.",
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.7+dfsg1"
+  },
+  "inputs": {
+    "tumors": {
+      "path": "/mnt/storage/cd200/figures/human_cd200_atac_locus/data/tcga/bigwig_1mb_normalized/tcga_display_donors_normalized.tsv.gz",
+      "sha256": "da13fd2411f3199bed2500a625a8145ec0ce8c9ad39e9b87f02e3a077fc49e33"
+    },
+    "normals": {
+      "path": "/mnt/storage/cd200/figures/human_cd200_atac_locus/data/catlas_normals_1mb_normalized/catlas_display_normalized.tsv.gz",
+      "sha256": "15b381c9c6f0a07844c34b1a801e30997e85cef0a68ce32a012acac98f386102"
+    },
+    "normal_manifest": {
+      "path": "/mnt/storage/cd200/figures/human_cd200_atac_locus/data/catlas_normals_1mb_normalized/catlas_normal_manifest.tsv",
+      "sha256": "8fe856bee2c0f5f2e86f790d3d066b13a689d331b4d9d7123a63d1058a2286ec"
+    },
+    "tumor_contract": {
+      "path": "/mnt/storage/cd200/figures/human_cd200_atac_locus/data/tcga/bigwig_1mb_normalized/normalization_contract.json",
+      "sha256": "09db9f56c8c70a844c1257d7bfaccc2b1075d176984f3af2a3e015bc8c093cf6"
+    },
+    "normal_contract": {
+      "path": "/mnt/storage/cd200/figures/human_cd200_atac_locus/data/catlas_normals_1mb_normalized/normalization_contract.json",
+      "sha256": "aacf0ed160e2db3f6f7600775ac9deab79ecbce7b8f88778ef20772477252078"
+    }
+  }
+}

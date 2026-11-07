@@ -1,0 +1,338 @@
+{
+  "started_utc": "2026-10-27T06:34:43.238504+00:00",
+  "supervisor_pid": 3365287,
+  "state": "complete",
+  "stages": [
+    {
+      "name": "chrombpnet_published_predict",
+      "started_utc": "2026-10-27T07:38:23.324830+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+        "--mode",
+        "released",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_published_fold0",
+        "--bias-model",
+        "/tmp/cd200_k562_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR868FGK.h5",
+        "--released-nobias",
+        "/tmp/cd200_k562_benchmark/models/fold_0/model.chrombpnet_nobias.fold_0.ENCSR868FGK.h5",
+        "--batch-size",
+        "64"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/chrombpnet_published_predict.log",
+      "state": "passed",
+      "pid": 283650,
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T07:42:23.330293+00:00"
+    },
+    {
+      "name": "explainn_train",
+      "started_utc": "2026-10-27T07:42:23.330458+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/explainn_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "76.0",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/explainn_train.log",
+      "state": "passed",
+      "pid": 292584,
+      "last_completed_epoch": {
+        "epoch": 21,
+        "seconds": 72.1089430580032,
+        "train": {
+          "examples": 201843,
+          "logcount_mse": 0.6939992860226039,
+          "loss": 0.6939992860226039,
+          "profile_nll_without_constant": 0.0
+        },
+        "valid": {
+          "examples": 19265,
+          "logcount_mse": 0.6733639806733328,
+          "loss": 0.6733639806733328,
+          "profile_nll_without_constant": 0.0
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T08:09:03.411145+00:00"
+    },
+    {
+      "name": "explainn_predict",
+      "started_utc": "2026-10-27T08:09:03.418073+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/explainn_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "76.0",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/explainn_predict.log",
+      "state": "passed",
+      "pid": 367008,
+      "last_completed_epoch": {
+        "epoch": 21,
+        "seconds": 72.1089430580032,
+        "train": {
+          "examples": 201843,
+          "logcount_mse": 0.6939992860226039,
+          "loss": 0.6939992860226039,
+          "profile_nll_without_constant": 0.0
+        },
+        "valid": {
+          "examples": 19265,
+          "logcount_mse": 0.6733639806733328,
+          "loss": 0.6733639806733328,
+          "profile_nll_without_constant": 0.0
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T08:09:23.419239+00:00"
+    },
+    {
+      "name": "modl_train",
+      "started_utc": "2026-10-27T08:09:23.426192+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/modl_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "76.0",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/modl_train.log",
+      "state": "passed",
+      "pid": 367785,
+      "last_completed_epoch": {
+        "epoch": 29,
+        "seconds": 298.16213021599106,
+        "train": {
+          "examples": 201843,
+          "logcount_mse": 0.5281710459364085,
+          "loss": 8252.213415163933,
+          "profile_nll_without_constant": 8212.07241474887
+        },
+        "valid": {
+          "examples": 19265,
+          "logcount_mse": 0.5696479056903823,
+          "loss": 8232.891234217352,
+          "profile_nll_without_constant": 8189.597993649429
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T10:38:43.833021+00:00"
+    },
+    {
+      "name": "modl_predict",
+      "started_utc": "2026-10-27T10:38:43.840016+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/modl_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "76.0",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/modl_predict.log",
+      "state": "passed",
+      "pid": 725232,
+      "last_completed_epoch": {
+        "epoch": 29,
+        "seconds": 298.16213021599106,
+        "train": {
+          "examples": 201843,
+          "logcount_mse": 0.5281710459364085,
+          "loss": 8252.213415163933,
+          "profile_nll_without_constant": 8212.07241474887
+        },
+        "valid": {
+          "examples": 19265,
+          "logcount_mse": 0.5696479056903823,
+          "loss": 8232.891234217352,
+          "profile_nll_without_constant": 8189.597993649429
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T10:42:03.846546+00:00"
+    },
+    {
+      "name": "evaluation_published_reference",
+      "started_utc": "2026-10-27T10:42:03.853646+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+        "--data-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/evaluation_published_reference",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "ChromBPNet_published=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_published_fold0/test_predictions",
+        "--prediction",
+        "ExplaiNN=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/explainn_seed1234/test_predictions",
+        "--prediction",
+        "MoDL=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/modl_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/evaluation_published_reference.log",
+      "state": "passed",
+      "pid": 732690,
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T10:42:23.854606+00:00"
+    },
+    {
+      "name": "chrombpnet_train",
+      "started_utc": "2026-10-27T10:42:23.861881+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/tmp/cd200_k562_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR868FGK.h5",
+        "--count-weight",
+        "76.0",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--mode",
+        "train",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/chrombpnet_train.log",
+      "state": "passed",
+      "pid": 733349,
+      "last_completed_epoch": {
+        "epoch": 14,
+        "seconds": 426.5895728379837,
+        "train": {
+          "examples": 201843,
+          "logcount_predictions_loss": 0.46250740549914154,
+          "logits_profile_predictions_loss": 811.9618765789315,
+          "loss": 847.1124395679288
+        },
+        "valid": {
+          "examples": 19265,
+          "logcount_predictions_loss": 0.6612643546785685,
+          "logits_profile_predictions_loss": 885.297680505653,
+          "loss": 935.5537702364888
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T12:29:24.283566+00:00"
+    },
+    {
+      "name": "chrombpnet_predict",
+      "started_utc": "2026-10-27T12:29:24.293047+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+        "--cache-dir",
+        "/tmp/cd200_k562_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/tmp/cd200_k562_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR868FGK.h5",
+        "--count-weight",
+        "76.0",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--mode",
+        "predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/logs/chrombpnet_predict.log",
+      "state": "running",
+      "pid": 2753405
+    }
+  ],
+  "configuration": {
+    "seed": 1234,
+    "epochs_max": 50,
+    "early_stopping_patience": 5,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "negative_ratio": 0.1,
+    "count_weight": 76.0,
+    "dataset": "K562",
+    "experiment": "ENCSR868FGK",
+    "annotation": "ENCSR467RSV",
+    "torch_training_precision": "bfloat16 autocast; stored FP32 weights; FP32 inference",
+    "tensorflow_precision": "FP32",
+    "published_reference": "ENCSR467RSV fold0 only, no test-fold ensemble",
+    "fresh_native_comparator": true
+  },
+  "cache_manifest_sha256": "d056b1e8163236f5362647a64464c99820f3e64daf3c2c346cc8bb88b7a2c8e3",
+  "waiting_for": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/benchmark_status.json",
+  "updated_utc": "2026-10-27T13:10:34.779198+00:00",
+  "current_stage": "complete",
+  "initial_comparison_available": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/EVALUATION_PUBLISHED_REFERENCE.md",
+  "error": null,
+  "matched_comparison_available": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/EVALUATION_MATCHED_TRAINING.md",
+  "final_evaluation": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/evaluation_matched_training_storage_retry/evaluation.json",
+  "finished_utc": "2026-10-27T13:54:20.859213+00:00"
+}

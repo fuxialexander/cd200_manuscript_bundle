@@ -1,0 +1,14 @@
+defaults:
+  - base_config
+  - machine/manitou@_here_
+  - _self_
+
+data_key: 4dn_h1esc
+data_type: encode_bulk
+labels_column: CellType
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+assembly: hg38
+gencode_version: 44
+specific_peak_names: peaks

@@ -1,0 +1,20 @@
+{
+  "inputs": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/plot_state_contrast.py": "1dea9c871296fb7fe9c50c234aac35772dc0080812816799fba31adcf8ec1fd2",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/native_diff_recovered_contrasts.tsv": "ffc5b2457b4e6bb50c28aafa8635b54cb2fb0fd3f79f896fd476228d037394f5",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/s5b_original_and_redefined_contrasts.tsv": "fb35e643079e460d2efedca350ba5e3fad8194a811da72208c6d51736d9338db",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/native_diff_normalization_audit.json": "96b45ed457cc28314ae83d8fd18db84906e4c022d181fb4e34d9eac525369369",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/positive_contrast/state_predictions.npz": "e7bfacf9e2cfdabbd6a0ef771c2c981b72c5b6eaed26faddf33167c203aea387",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/positive_contrast/metadata.json": "c8eb3f8868a2c50b10c415cf718d2acc7a1b2587a7df093a98b9ad75d94057c5",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/positive_contrast/windows.tsv": "a5d904ce07c3193e33ae2a6676a188064e632b695a54f5817ca5f1ebc3793c29",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/state_predictions.npz": "8df7aab7e73a6bfcc178ff4999cf790349ae7702f9489d4c0b2245f2fea031a8",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/metadata.json": "685d0abc960b17446fcf11217c25f541dd385ff8284d780072eedf71a25e48b9",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/windows.tsv": "a5d904ce07c3193e33ae2a6676a188064e632b695a54f5817ca5f1ebc3793c29"
+  },
+  "normalization": {
+    "positive": 97975505,
+    "negative": 110158866
+  },
+  "legacy_modl_shrinkage_applied": false,
+  "n_folds_per_state": 1
+}

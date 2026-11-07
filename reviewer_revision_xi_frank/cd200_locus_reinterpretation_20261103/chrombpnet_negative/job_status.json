@@ -1,0 +1,257 @@
+{
+  "state": "complete",
+  "started_utc": "2026-11-03T21:44:17.193265+00:00",
+  "updated_utc": "2026-11-03T22:46:17.502295+00:00",
+  "supervisor_pid": 167748,
+  "sample": "SCCAneg.cd200_scc",
+  "storage": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103",
+  "cache_manifest_sha256": "d125e8aa7d23f28533da58a7c6a2f62a3643e4089fcc91c89fecff689f9b7fa1",
+  "configuration": {
+    "seed": 1234,
+    "max_epochs": 50,
+    "patience": 5,
+    "batch_size": 64,
+    "negative_ratio": 0.1,
+    "learning_rate": 0.001,
+    "count_loss_weight": 37.5,
+    "count_weight_rule": "max(1,median centered TRAIN peak counts/10)",
+    "test_chromosomes": [
+      "chr16",
+      "chr8",
+      "chr9"
+    ],
+    "validation_chromosomes": [
+      "chr14"
+    ],
+    "bias_initialization": "random; newly fitted negative-state training nonpeaks only",
+    "positive_or_human_checkpoint_used": false
+  },
+  "stages": [
+    {
+      "name": "negative_bias_train",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--negative-ratio",
+        "0.1",
+        "--mode",
+        "bias",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234"
+      ],
+      "started_utc": "2026-11-03T21:44:17.201275+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_bias_train.log",
+      "pid": 167780,
+      "last_completed_epoch": {
+        "epoch": 14,
+        "seconds": 5.179148773080669,
+        "train": {
+          "examples": 16584,
+          "logcount_predictions_loss": 0.0488371691063183,
+          "logits_profile_predictions_loss": 140.7198593721146,
+          "loss": 140.90544054074616
+        },
+        "valid": {
+          "examples": 1194,
+          "logcount_predictions_loss": 0.04863684941738395,
+          "logits_profile_predictions_loss": 140.0016677319704,
+          "loss": 140.18648706688555
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T21:45:57.204538+00:00"
+    },
+    {
+      "name": "negative_chrombpnet_train",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--negative-ratio",
+        "0.1",
+        "--mode",
+        "train",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/bias_model_scaled.h5",
+        "--count-weight",
+        "37.5"
+      ],
+      "started_utc": "2026-11-03T21:45:57.211598+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_chrombpnet_train.log",
+      "pid": 314353,
+      "last_completed_epoch": {
+        "epoch": 19,
+        "seconds": 173.06002408999484,
+        "train": {
+          "examples": 83978,
+          "logcount_predictions_loss": 0.4238104474638498,
+          "logits_profile_predictions_loss": 719.0065558726365,
+          "loss": 734.899447829598
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_predictions_loss": 0.695758935443341,
+          "logits_profile_predictions_loss": 722.8682071529719,
+          "loss": 748.9591656221196
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:44:17.420031+00:00"
+    },
+    {
+      "name": "negative_test_predict",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--negative-ratio",
+        "0.1",
+        "--mode",
+        "predict",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/bias_model_scaled.h5",
+        "--count-weight",
+        "37.5"
+      ],
+      "started_utc": "2026-11-03T22:44:17.427053+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_test_predict.log",
+      "pid": 1346953,
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:44:57.429142+00:00"
+    },
+    {
+      "name": "negative_loci_predict",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+        "--model",
+        "chrombpnet",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--run-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/bias_model_scaled.h5",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/locus_predictions"
+      ],
+      "started_utc": "2026-11-03T22:44:57.436235+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_loci_predict.log",
+      "pid": 1347985,
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:45:17.437885+00:00"
+    },
+    {
+      "name": "negative_loci_evaluate",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--prediction",
+        "ChromBPNet_negative=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/locus_predictions",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/locus_evaluation_final"
+      ],
+      "started_utc": "2026-11-03T22:45:17.444796+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_loci_evaluate.log",
+      "pid": 1348604,
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:45:37.446101+00:00"
+    },
+    {
+      "name": "negative_test_evaluate",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--prediction",
+        "ChromBPNet_negative=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/test_predictions",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/evaluation_final",
+        "--bootstrap",
+        "2000"
+      ],
+      "started_utc": "2026-11-03T22:45:37.453160+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_test_evaluate.log",
+      "pid": 1349085,
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:45:57.454484+00:00"
+    },
+    {
+      "name": "negative_test_losses",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/cache",
+        "--prediction",
+        "ChromBPNet_negative=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/test_predictions",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/losses_final",
+        "--count-weight",
+        "37.5"
+      ],
+      "started_utc": "2026-11-03T22:45:57.461407+00:00",
+      "state": "passed",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_test_losses.log",
+      "pid": 1349588,
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:46:17.463032+00:00"
+    }
+  ],
+  "current_stage": "complete",
+  "finished_utc": "2026-11-03T22:46:17.502292+00:00",
+  "results": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/RESULTS.json"
+}

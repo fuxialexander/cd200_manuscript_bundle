@@ -1,0 +1,122 @@
+{
+  "sample": "SCCAneg.cd200_scc",
+  "configuration": {
+    "seed": 1234,
+    "max_epochs": 50,
+    "patience": 5,
+    "batch_size": 64,
+    "negative_ratio": 0.1,
+    "learning_rate": 0.001,
+    "count_loss_weight": 37.5,
+    "count_weight_rule": "max(1,median centered TRAIN peak counts/10)",
+    "test_chromosomes": [
+      "chr16",
+      "chr8",
+      "chr9"
+    ],
+    "validation_chromosomes": [
+      "chr14"
+    ],
+    "bias_initialization": "random; newly fitted negative-state training nonpeaks only",
+    "positive_or_human_checkpoint_used": false
+  },
+  "bias_training_result": {
+    "best_epoch": 9,
+    "best_validation_loss": 140.0070306979232,
+    "count_transform": "ln1p_stored_atac_count",
+    "epochs_completed": 15,
+    "genome_build": "mm10",
+    "input_length": 2114,
+    "output_length": 1000,
+    "pilot": false,
+    "target_description": "Bundled unsmoothed, unnormalized per-base ATAC counts as stored; ln(1 + central 1000-bp sum)",
+    "target_kind": "stored_atac_signal_counts",
+    "target_provenance_limitation": "Upstream Tn5 shift and fragment-endpoint provenance have not been established; these are not certified +4/-4 insertion tracks",
+    "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+    "test_evaluated": false
+  },
+  "full_training_result": {
+    "best_epoch": 14,
+    "best_validation_loss": 741.1214464879058,
+    "count_transform": "ln1p_stored_atac_count",
+    "epochs_completed": 20,
+    "genome_build": "mm10",
+    "input_length": 2114,
+    "output_length": 1000,
+    "pilot": false,
+    "target_description": "Bundled unsmoothed, unnormalized per-base ATAC counts as stored; ln(1 + central 1000-bp sum)",
+    "target_kind": "stored_atac_signal_counts",
+    "target_provenance_limitation": "Upstream Tn5 shift and fragment-endpoint provenance have not been established; these are not certified +4/-4 insertion tracks",
+    "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+    "test_evaluated": false
+  },
+  "checkpoint_sha256": {
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/bias_model_scaled.h5": "f3c83e47690e6968f5802a9992c66d29bd66671abb14e70c738e1cbd4662c19d",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/best.weights.h5": "5c4295990d8e4d29b3bb8b1a6a780e883b6de2f97239388a09ef1bb69fe7b409",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/best.weights.h5": "883a642b90a10e365bf2cc1ea28176adac569e99e72805677eb3321a15a74916"
+  },
+  "source_unchanged_checks": [
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/run_negative_chrombpnet.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/prepare_negative_cache.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/prepare_mouse_cache.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/models/bpnet_model.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/models/chrombpnet_with_bias_model.py",
+      "unchanged_since_start": true
+    },
+    {
+      "source": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/utils/losses.py",
+      "unchanged_since_start": true
+    }
+  ],
+  "locus_metrics": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/locus_evaluation_final/locus_evaluation.json",
+  "test_metrics": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/evaluation_final/evaluation.json",
+  "locus_predictions": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/locus_predictions",
+  "test_losses": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/losses_final/losses.json",
+  "limits": [
+    "One training seed and one chromosome split",
+    "Stored counts; original Tn5 endpoint provenance unverified",
+    "Per-state counts are not normalized for library depth here; contrast calibration is a separate analysis",
+    "Native bias model motif purity has not been independently established"
+  ]
+}

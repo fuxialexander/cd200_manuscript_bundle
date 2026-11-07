@@ -1,0 +1,11 @@
+{
+  "atol": 3e-05,
+  "max_abs_count_difference": 4.76837158203125e-06,
+  "max_abs_profile_logit_difference": 2.4318695068359375e-05,
+  "n_inputs": 303,
+  "rtol": 3e-05,
+  "scope": "all three observed inputs and all 300 reference sequences",
+  "status": "PASS",
+  "tf32_enabled": false,
+  "weight_conversion": "Conv1D Keras[L,in,out]\u2192PyTorch[out,in,L]; Dense[in,out]\u2192[out,in]; native VALID cropping/residual additions retained"
+}

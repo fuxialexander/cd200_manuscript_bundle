@@ -44,7 +44,9 @@ def run(command: list[str]) -> None:
     pythonpath = [str(ROOT / "src")]
     caesar_src = env.get("CAESAR_SRC")
     if not caesar_src:
-        sibling = ROOT.parent / "Caesarion" / "src"
+        sibling = ROOT / "vendor" / "caesarion" / "src"
+        if not sibling.is_dir():
+            sibling = ROOT.parent / "Caesarion" / "src"
         if sibling.is_dir():
             caesar_src = str(sibling)
     if caesar_src:

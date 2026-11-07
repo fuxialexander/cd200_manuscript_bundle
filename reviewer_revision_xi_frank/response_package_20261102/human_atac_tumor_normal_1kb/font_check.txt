@@ -1,0 +1,4 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CWKGXT+ArialMT                       CID TrueType      Identity-H       yes yes yes     29  0
+CWKGXT+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     36  0

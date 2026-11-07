@@ -1,0 +1,756 @@
+{
+  "assembly": "mm10",
+  "cache_directory": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+  "cache_sequence_length": 3114,
+  "cache_target_length": 2000,
+  "cache_target_sequence_offset": 557,
+  "count_transform": "ln1p_stored_atac_count",
+  "cross_split_chromosomes_overlap": false,
+  "evaluation_cache_offset": 500,
+  "excluded_non_autosomal_source_rows": {
+    "chrX": 6376
+  },
+  "excluded_regions_sha256": "b40cfb463f7d0fa940b636a86b1850eaa108b03ca8f7201d425c036bd0fefd20",
+  "fold": {
+    "test": [
+      "chr16",
+      "chr8",
+      "chr9"
+    ],
+    "train": [
+      "chr1",
+      "chr10",
+      "chr11",
+      "chr12",
+      "chr13",
+      "chr15",
+      "chr17",
+      "chr18",
+      "chr19",
+      "chr2",
+      "chr3",
+      "chr4",
+      "chr5",
+      "chr6",
+      "chr7"
+    ],
+    "valid": [
+      "chr14"
+    ]
+  },
+  "frozen_masks": {
+    "autosomes_only": true,
+    "blacklist": "none supplied; no blacklist filter applied",
+    "context_bounds": "entire3114bp",
+    "exclude_N_fraction_greater_than": 0.05,
+    "signal_threshold": null
+  },
+  "genome_sequence_concordance_checks": [
+    {
+      "center": 3049272,
+      "chrom": "chr1",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3118386,
+      "chrom": "chr2",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3172372,
+      "chrom": "chr3",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3134701,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3096523,
+      "chrom": "chr5",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3345411,
+      "chrom": "chr6",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3108951,
+      "chrom": "chr7",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3151986,
+      "chrom": "chr8",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3067670,
+      "chrom": "chr9",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3141634,
+      "chrom": "chr10",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3202308,
+      "chrom": "chr11",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3157495,
+      "chrom": "chr12",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3256660,
+      "chrom": "chr13",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 7739241,
+      "chrom": "chr14",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3202479,
+      "chrom": "chr15",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3540195,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3061485,
+      "chrom": "chr17",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3201688,
+      "chrom": "chr18",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 3261777,
+      "chrom": "chr19",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 67714537,
+      "chrom": "chr17",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 42975761,
+      "chrom": "chr13",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 101706369,
+      "chrom": "chr2",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 27523737,
+      "chrom": "chr3",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 127163900,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 114364399,
+      "chrom": "chr7",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 36110432,
+      "chrom": "chr19",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 26370279,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 160134872,
+      "chrom": "chr1",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 70373471,
+      "chrom": "chr18",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 112548086,
+      "chrom": "chr11",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 102238739,
+      "chrom": "chr6",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 46671257,
+      "chrom": "chr14",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 60060530,
+      "chrom": "chr18",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 82466762,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 68934639,
+      "chrom": "chr14",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 31865320,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 54157600,
+      "chrom": "chr3",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 24848699,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 25332024,
+      "chrom": "chr12",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 114082104,
+      "chrom": "chr5",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 86464916,
+      "chrom": "chr9",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 10306525,
+      "chrom": "chr19",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 118075386,
+      "chrom": "chr11",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 54482637,
+      "chrom": "chr14",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 111561575,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 131312793,
+      "chrom": "chr1",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 70394457,
+      "chrom": "chr8",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 25136552,
+      "chrom": "chr9",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 93444211,
+      "chrom": "chr11",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 52601002,
+      "chrom": "chr3",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 4192430,
+      "chrom": "chr17",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 53102611,
+      "chrom": "chr18",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 118969744,
+      "chrom": "chr1",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 17646504,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 65552001,
+      "chrom": "chr2",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 113159885,
+      "chrom": "chr5",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 64234899,
+      "chrom": "chr14",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 37644837,
+      "chrom": "chr13",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 67786384,
+      "chrom": "chr11",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 60858749,
+      "chrom": "chr9",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 17900397,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 16998107,
+      "chrom": "chr19",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 61288533,
+      "chrom": "chr19",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 111558357,
+      "chrom": "chr10",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 146657334,
+      "chrom": "chr2",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 103001082,
+      "chrom": "chr9",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 130154373,
+      "chrom": "chr4",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 115192001,
+      "chrom": "chr10",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 145064296,
+      "chrom": "chr2",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45384312,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45356677,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45356664,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45356691,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45408713,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45408500,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    },
+    {
+      "center": 45408926,
+      "chrom": "chr16",
+      "identical": true,
+      "length": 3114
+    }
+  ],
+  "genome_verification_design": "first source center per autosome + 50 random source centers (seed1234, independent of signal) + seven Cd200 windows",
+  "input_length": 2114,
+  "loci_are_descriptive_selected_examples": true,
+  "normalization": "none",
+  "output_length": 1000,
+  "reference": {
+    "fai_sha256": "c08b7b0365da58adcd63373d67de08ac34707eaabad322951bf78ab8b8895927",
+    "path": "/mnt/storage/get_data/mm10.fa",
+    "sha256": "db16cb4633191754f1d9cc70e73d2a1f60d03fdf62bcf4902a31a4717a3d2de7"
+  },
+  "sample": "SCCApos.cd200_scc",
+  "smoothing": "none",
+  "source_chunk_log": {
+    "genome_chunks_and_metadata": 88,
+    "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache/source_chunks.json",
+    "sha256": "186bd5976087b164b6ac2396903946e00854bd06356aafba870ae0695a76bc4c",
+    "signal_chunks_and_metadata": 1232
+  },
+  "source_code_sha256": "841c0abe6e3663965472058bf955deb849dd914a8c4d56bfbdce6bd09f861f2c",
+  "source_regions": {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/training/data/scc_all_peaks.deduplicated.bed",
+    "sha256": "9bae09ac24fe937cb8c8eddbda6fa1d1431268f9cce9b9c42669e56b3eddf1fa"
+  },
+  "splits": {
+    "loci": {
+      "chromosome_counts": {
+        "chr16": 7
+      },
+      "elapsed_seconds": 0.02882900892291218,
+      "excluded": 0,
+      "excluded_reasons": {},
+      "maximum_stored_count": 10,
+      "nonpeaks": 0,
+      "peaks": 7,
+      "region_ids_sha256": "150d7bdfee1dc2940a0fe8e66b598cc7f55a7892563594f9361d3a044a3fec15",
+      "regions": 7,
+      "regions_sha256": "651f11ac0150240ddf3bb44ba71845af26d3abca02b10b3c890a26470df55bbd",
+      "signal_bases": 14000,
+      "x_sha256": "6f80b6dc9a3c8fce3173684236991ca17248d2bbe1771305de274032be54425b",
+      "y_sha256": "35a2945f6fcce54bea0c3f2245f298bee91ffc4bed1910941e6227dca5e88791",
+      "zero_signal_bases": 10046
+    },
+    "test": {
+      "chromosome_counts": {
+        "chr16": 6942,
+        "chr8": 9632,
+        "chr9": 9776
+      },
+      "elapsed_seconds": 1.7704581579891965,
+      "excluded": 5,
+      "excluded_reasons": {
+        "N_fraction_exceeds_0.05_frozen_limit": 5
+      },
+      "maximum_stored_count": 85,
+      "nonpeaks": 12757,
+      "peaks": 13593,
+      "region_ids_sha256": "5b1a13c096a0e17ddb4a7852b8c77fac2b7822b2082543127e79d5be07790fc3",
+      "regions": 26350,
+      "regions_sha256": "e60f8b9b03d574082fdd813d44aef22593398746661972da29ba5c42d1c99dbf",
+      "signal_bases": 52700000,
+      "x_sha256": "09e2915769ea56fb6a04a3ed594873fa98167c2f6349827fca82d4bcc4631a31",
+      "y_sha256": "a359f94df03cb8d5f691ed053895fb89d816a5ece9905522656e41b47e48a9e6",
+      "zero_signal_bases": 43867528
+    },
+    "train": {
+      "chromosome_counts": {
+        "chr1": 13896,
+        "chr10": 9110,
+        "chr11": 10551,
+        "chr12": 8037,
+        "chr13": 8494,
+        "chr15": 7556,
+        "chr17": 6687,
+        "chr18": 6836,
+        "chr19": 4874,
+        "chr2": 13940,
+        "chr3": 10519,
+        "chr4": 10968,
+        "chr5": 10957,
+        "chr6": 10983,
+        "chr7": 10031
+      },
+      "elapsed_seconds": 10.081937865004875,
+      "excluded": 30,
+      "excluded_reasons": {
+        "N_fraction_exceeds_0.05_frozen_limit": 30
+      },
+      "maximum_stored_count": 98,
+      "nonpeaks": 67095,
+      "peaks": 76344,
+      "region_ids_sha256": "2426ed99f4c66c1d50f4814005eae071f43b23613ad8e67f4120b61abb648196",
+      "regions": 143439,
+      "regions_sha256": "26225c3af966f2c1a94a507310830f3dddc36e2ad2283811316d9dbeb4426938",
+      "signal_bases": 286878000,
+      "x_sha256": "2e872a1226b650907a4a9313510ad984fa8b14ee22292f97ec6a3ff04f1197a8",
+      "y_sha256": "98fc3fc0619b6b1de75c272077e499cb1e8922eb185b6d8fa007093d1a9bcc66",
+      "zero_signal_bases": 236970102
+    },
+    "valid": {
+      "chromosome_counts": {
+        "chr14": 7965
+      },
+      "elapsed_seconds": 0.8434582629706711,
+      "excluded": 2,
+      "excluded_reasons": {
+        "N_fraction_exceeds_0.05_frozen_limit": 2
+      },
+      "maximum_stored_count": 68,
+      "nonpeaks": 4143,
+      "peaks": 3822,
+      "region_ids_sha256": "8e6f89ec6d760a9d10f55a9666c7251ecc30fafc17328217394440be9bad1965",
+      "regions": 7965,
+      "regions_sha256": "a25f2105245ccede99b5a29344d9edf9208bd022b694164f203ece540d0812c8",
+      "signal_bases": 15930000,
+      "x_sha256": "2d33fa9f0c96c03f5b67be3ed3c6825f03dfb12cca5b6c3b56588e2f066fc3da",
+      "y_sha256": "56467773b957c17a7bb82d2868b61a0a9dff8269aa9f979721b7da0cfeb47204",
+      "zero_signal_bases": 13569283
+    }
+  },
+  "status": "complete",
+  "stored_signal_locus_audit": [
+    {
+      "all_values_integer": true,
+      "locus": "P1",
+      "maximum_stored_count": 6,
+      "nonzero_bases": 258,
+      "output_end": 45384812,
+      "output_start": 45383812,
+      "role": "central",
+      "stored_signal_sum": 384.0,
+      "window_id": "P1_central"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "P2",
+      "maximum_stored_count": 7,
+      "nonzero_bases": 339,
+      "output_end": 45357177,
+      "output_start": 45356177,
+      "role": "central",
+      "stored_signal_sum": 505.0,
+      "window_id": "P2_central"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "P2",
+      "maximum_stored_count": 7,
+      "nonzero_bases": 341,
+      "output_end": 45357164,
+      "output_start": 45356164,
+      "role": "tile_left",
+      "stored_signal_sum": 507.0,
+      "window_id": "P2_tile_left"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "P2",
+      "maximum_stored_count": 7,
+      "nonzero_bases": 341,
+      "output_end": 45357191,
+      "output_start": 45356191,
+      "role": "tile_right",
+      "stored_signal_sum": 508.0,
+      "window_id": "P2_tile_right"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "promoter",
+      "maximum_stored_count": 10,
+      "nonzero_bases": 450,
+      "output_end": 45409213,
+      "output_start": 45408213,
+      "role": "central",
+      "stored_signal_sum": 777.0,
+      "window_id": "promoter_central"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "promoter",
+      "maximum_stored_count": 7,
+      "nonzero_bases": 406,
+      "output_end": 45409000,
+      "output_start": 45408000,
+      "role": "tile_left",
+      "stored_signal_sum": 647.0,
+      "window_id": "promoter_tile_left"
+    },
+    {
+      "all_values_integer": true,
+      "locus": "promoter",
+      "maximum_stored_count": 10,
+      "nonzero_bases": 462,
+      "output_end": 45409426,
+      "output_start": 45408426,
+      "role": "tile_right",
+      "stored_signal_sum": 805.0,
+      "window_id": "promoter_tile_right"
+    }
+  ],
+  "target_kind": "stored_atac_signal_counts",
+  "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+  "test_outcome_filtering": false,
+  "upstream_provenance": "Stored ATAC signal counts; upstream insertion/Tn5-shift and replicate-merge provenance unverified. Not asserted to be confirmed raw shifted insertions.",
+  "zarr_root_metadata": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/.zattrs": {
+      "content": {
+        "assembly": "mm10",
+        "library_size_annotated": true,
+        "library_size_annotation_date": "2025-08-04T22:26:40.841984",
+        "library_size_blacklist": {
+          "SCC1neg.cd200_scc": 5829682.0,
+          "SCC1pos.cd200_scc": 4759688.0,
+          "SCCAneg.cd200_scc": 5720855.0,
+          "SCCApos.cd200_scc": 6032018.0
+        },
+        "library_size_nonblacklist": {
+          "SCC1neg.cd200_scc": 257089676.0,
+          "SCC1pos.cd200_scc": 207395630.0,
+          "SCCAneg.cd200_scc": 272874511.0,
+          "SCCApos.cd200_scc": 297377386.0
+        },
+        "library_size_total": {
+          "SCC1neg.cd200_scc": 262919358.0,
+          "SCC1pos.cd200_scc": 212155318.0,
+          "SCCAneg.cd200_scc": 278595366.0,
+          "SCCApos.cd200_scc": 303409404.0
+        }
+      },
+      "sha256": "b4908e6c73432209d309e9e08b83dc95a4ee51411add8871819e7e60e71472c4"
+    },
+    "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCApos.cd200_scc/.zattrs": {
+      "content": {
+        "assembly": "mm10",
+        "celltype": "SCCApos",
+        "chunk_size": 2000000,
+        "id": "cd200_scc",
+        "library_size": 297377386.0,
+        "library_size_blacklist": 6032018.0,
+        "library_size_nonblacklist": 297377386.0,
+        "library_size_total": 303409404.0
+      },
+      "sha256": "dd9bb8083720f6e7b397ee9553410f9115034d6eea387e1732fb3f9047d7a0d2"
+    },
+    "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/mm10.zarr/.zattrs": {
+      "content": {
+        "assembly": "mm10"
+      },
+      "sha256": "1300ede6bb44dbe923c208a6b6641cb46f179911dac75e6a44655b07d3d36853"
+    }
+  }
+}

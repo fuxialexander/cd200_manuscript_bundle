@@ -1,0 +1,56 @@
+[
+  {
+    "head": "counts",
+    "locus_index": 0,
+    "pearson_hypothetical_20_vs_100": 0.8977114711082438,
+    "relative_l2_20_vs_100": 0.4875505566596985
+  },
+  {
+    "head": "counts",
+    "locus_index": 1,
+    "pearson_hypothetical_20_vs_100": 0.9167762808271747,
+    "relative_l2_20_vs_100": 0.4315258264541626
+  },
+  {
+    "head": "counts",
+    "locus_index": 2,
+    "pearson_hypothetical_20_vs_100": 0.8318936831859084,
+    "relative_l2_20_vs_100": 0.6827413439750671
+  },
+  {
+    "head": "profile",
+    "locus_index": 0,
+    "pearson_hypothetical_20_vs_100": 0.8943348481873226,
+    "relative_l2_20_vs_100": 0.46707603335380554
+  },
+  {
+    "head": "profile",
+    "locus_index": 1,
+    "pearson_hypothetical_20_vs_100": 0.8273501499975784,
+    "relative_l2_20_vs_100": 0.6274290084838867
+  },
+  {
+    "head": "profile",
+    "locus_index": 2,
+    "pearson_hypothetical_20_vs_100": 0.7722886679298225,
+    "relative_l2_20_vs_100": 1.1916030645370483
+  },
+  {
+    "head": "profile_frozen_input",
+    "locus_index": 0,
+    "pearson_hypothetical_20_vs_100": 0.9292519630080069,
+    "relative_l2_20_vs_100": 0.41031989455223083
+  },
+  {
+    "head": "profile_frozen_input",
+    "locus_index": 1,
+    "pearson_hypothetical_20_vs_100": 0.9385961482069846,
+    "relative_l2_20_vs_100": 0.36465275287628174
+  },
+  {
+    "head": "profile_frozen_input",
+    "locus_index": 2,
+    "pearson_hypothetical_20_vs_100": 0.9205191787325406,
+    "relative_l2_20_vs_100": 0.41580072045326233
+  }
+]

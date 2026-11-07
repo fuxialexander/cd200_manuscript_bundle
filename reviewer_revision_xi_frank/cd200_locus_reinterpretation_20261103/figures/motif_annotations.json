@@ -1,0 +1,21 @@
+{
+  "coordinate_convention": "mm10 zero-based half-open",
+  "intervals": {
+    "P1": [
+      45384058,
+      45384077,
+      "TEAD"
+    ],
+    "P2": [
+      45356358,
+      45356371,
+      "ETS"
+    ]
+  },
+  "P1_definition": "union of archived TEAD interval45384058\u201345384070 and original MoDL scan45384064\u201345384077; not a newly scanned motif",
+  "sources": [
+    "/mnt/storage/cd200/chrombpnet_moa/tead.bed",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/motif_scan_deg_chr16_45383863_45384762.tsv",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/motif_scan_deg_chr16_45356164_45357191.tsv"
+  ]
+}

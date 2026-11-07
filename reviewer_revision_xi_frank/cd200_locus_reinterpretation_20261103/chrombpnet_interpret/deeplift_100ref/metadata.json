@@ -1,0 +1,71 @@
+{
+  "algorithm_relationship": "DeepSHAP also uses DeepLIFT-family rules. Averaging independent single-reference Rescale attributions here is an implementation/baseline comparison, not a claim of unrelated methods.",
+  "checks": [
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9735190868377686,
+      "head": "counts",
+      "locus_index": 0,
+      "max_abs_single_reference_additivity_residual": 1.9371509552001953e-06,
+      "mean_reference_additivity_residual": 7.022917270660401e-07,
+      "references": 100
+    },
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9947718977928162,
+      "head": "counts",
+      "locus_index": 1,
+      "max_abs_single_reference_additivity_residual": 1.5497207641601562e-06,
+      "mean_reference_additivity_residual": -2.765655517578125e-07,
+      "references": 100
+    },
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9697017669677734,
+      "head": "counts",
+      "locus_index": 2,
+      "max_abs_single_reference_additivity_residual": 1.7285346984863281e-06,
+      "mean_reference_additivity_residual": 6.306916475296021e-07,
+      "references": 100
+    },
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9574490785598755,
+      "head": "profile_frozen_input",
+      "locus_index": 0,
+      "max_abs_single_reference_additivity_residual": 8.344650268554688e-07,
+      "mean_reference_additivity_residual": 1.817941665649414e-07,
+      "references": 100
+    },
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9820808172225952,
+      "head": "profile_frozen_input",
+      "locus_index": 1,
+      "max_abs_single_reference_additivity_residual": 1.043081283569336e-06,
+      "mean_reference_additivity_residual": -5.074217915534973e-07,
+      "references": 100
+    },
+    {
+      "first_reference_relative_l2_difference_from_ordinary_gradient_hypothetical": 0.9256134033203125,
+      "head": "profile_frozen_input",
+      "locus_index": 2,
+      "max_abs_single_reference_additivity_residual": 1.1026859283447266e-06,
+      "mean_reference_additivity_residual": 3.697909414768219e-07,
+      "references": 100
+    }
+  ],
+  "forward_parity": {
+    "atol": 3e-05,
+    "max_abs_count_difference": 4.76837158203125e-06,
+    "max_abs_profile_logit_difference": 2.4318695068359375e-05,
+    "n_inputs": 303,
+    "rtol": 3e-05,
+    "scope": "all three observed inputs and all 300 reference sequences",
+    "status": "PASS",
+    "tf32_enabled": false,
+    "weight_conversion": "Conv1D Keras[L,in,out]\u2192PyTorch[out,in,L]; Dense[in,out]\u2192[out,in]; native VALID cropping/residual additions retained"
+  },
+  "method": "standalone Captum DeepLIFT Rescale, independently implemented model mirror",
+  "profile_target": "mean-centered logits weighted by unperturbed-input softmax probabilities held fixed for BOTH input and each reference",
+  "reference_batch_size": 2,
+  "references": 100,
+  "single_reference_sensitivity": "first member in each per-reference NPZ; same seed/reference as DeepSHAP prefix",
+  "source_sha256": "9618b74ed886411a36ef89fe79463d8bd1f621f47008c30dcf99a443b77f0e56",
+  "torch": "2.8.0+cu128"
+}

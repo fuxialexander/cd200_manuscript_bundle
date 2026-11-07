@@ -1,0 +1,147 @@
+[
+  {
+    "path": "export_fp32/bias_free_model.h5",
+    "bytes": 25583944,
+    "sha256": "118d66824b2ec388ef4942b0f9fd85e601a555c13d7e8b20914e9f409ab9b75a"
+  },
+  {
+    "path": "export_fp32/export_metadata.json",
+    "bytes": 2025,
+    "sha256": "6cad04a0ceef0ab459d8759a659878d74b1367c5a51307eae318625caf586e81"
+  },
+  {
+    "path": "export_fp32/inputs_references.npz",
+    "bytes": 418706,
+    "sha256": "765e5d518953dd10ce32327b5860604e5582d33f0970091185cea75461b15544"
+  },
+  {
+    "path": "export_fp32/native_predictions.npz",
+    "bytes": 1012257,
+    "sha256": "576a9e5bdde34dfbfcde881f59c97daa95a133356a1e62fb838db7630b07bd5d"
+  },
+  {
+    "path": "export_fp32/native_weights.npz",
+    "bytes": 23737382,
+    "sha256": "8b42439e762149789526f0f23c7d6310e1017132a2c1d96bef9fb48abdbb7d50"
+  },
+  {
+    "path": "deepshap_100ref/counts_scores.npz",
+    "bytes": 549370,
+    "sha256": "0f25d12abdbb4a0049f9d65555afeffbe61e31e3c3ecb0d6caab59e7c60d8fc7"
+  },
+  {
+    "path": "deepshap_100ref/metadata.json",
+    "bytes": 8198,
+    "sha256": "782a86a87e6760cb05fccd0442e5ba9acb6cb2c6f01c1a9383bbf38e76943141"
+  },
+  {
+    "path": "deepshap_100ref/profile_frozen_input_scores.npz",
+    "bytes": 550441,
+    "sha256": "ae47dabf230b0d517c4f21a93b2df07958399f979bf44dec54fc82935c101bd1"
+  },
+  {
+    "path": "deepshap_100ref/profile_scores.npz",
+    "bytes": 550183,
+    "sha256": "d462897c96898989a483f38cbaf972ff1c9aa533b59ded6c3ef38d820d5ddab7"
+  },
+  {
+    "path": "deepshap_20ref/counts_scores.npz",
+    "bytes": 218612,
+    "sha256": "e7f0b09fe4912fcc2dc95fa08c9e689de0d27341c3fc8cfb315cc456dc4802a4"
+  },
+  {
+    "path": "deepshap_20ref/metadata.json",
+    "bytes": 8197,
+    "sha256": "688e86590cee79061097600096d1574697f311d2ee6e2f0e49ea75ed19ffc2d8"
+  },
+  {
+    "path": "deepshap_20ref/profile_frozen_input_scores.npz",
+    "bytes": 219401,
+    "sha256": "7c18d21628be3de13a99fdb8b3f335d684f3d1a6ec480b851926c2601b5e22b3"
+  },
+  {
+    "path": "deepshap_20ref/profile_scores.npz",
+    "bytes": 219372,
+    "sha256": "f4f32e8d077b811b8192163f14c36f44a7ee2b9624b21f91db5ad17e13f3deac"
+  },
+  {
+    "path": "deeplift_100ref/counts_locus0_per_reference.npz",
+    "bytes": 4351498,
+    "sha256": "ab00302b960363e1736d6240d9015f318ef03e223ae5e1fd28701824d8c7dbc2"
+  },
+  {
+    "path": "deeplift_100ref/counts_locus1_per_reference.npz",
+    "bytes": 4363192,
+    "sha256": "70ac5d0557c44008cf9d31219315f5780531716bf69a36c58da1ab502ea9d069"
+  },
+  {
+    "path": "deeplift_100ref/counts_locus2_per_reference.npz",
+    "bytes": 4375813,
+    "sha256": "e25a5d06a8cc8ca78c61702812cf085a2b2062dcd365adc9fe0e979eb4253751"
+  },
+  {
+    "path": "deeplift_100ref/counts_scores.npz",
+    "bytes": 5338307,
+    "sha256": "6ec907098f2af5d45201a16ccd4bf76d16504ab8e31fbd8ef836ec7057be73d5"
+  },
+  {
+    "path": "deeplift_100ref/forward_parity.json",
+    "bytes": 439,
+    "sha256": "ca4414051a89897aacb6df1fcdcc558c0aa63d64a7cfe698bb1b22529ce0c1de"
+  },
+  {
+    "path": "deeplift_100ref/metadata.json",
+    "bytes": 3271,
+    "sha256": "f49fe6fca44caf684ea21bcca00e577a7149dcf0c0f25a9a0aa916edebb3a48f"
+  },
+  {
+    "path": "deeplift_100ref/profile_frozen_input_locus0_per_reference.npz",
+    "bytes": 4370711,
+    "sha256": "b6dcf041f47b8c61fd4011402a7020e128f414b940c379d8d698bb9456ac294b"
+  },
+  {
+    "path": "deeplift_100ref/profile_frozen_input_locus1_per_reference.npz",
+    "bytes": 4380703,
+    "sha256": "d7f83412b0679765845379f686711282f26053ff6f1c1e8e4629a0c4afdaf586"
+  },
+  {
+    "path": "deeplift_100ref/profile_frozen_input_locus2_per_reference.npz",
+    "bytes": 4395361,
+    "sha256": "a8d2ba4711915034c66927cb7d61d0bedc048571a32a1f89282005d68e1ac87c"
+  },
+  {
+    "path": "deeplift_100ref/profile_frozen_input_scores.npz",
+    "bytes": 5336161,
+    "sha256": "1e9c6fe631741fddf566eccdd83da4e5c7c434dac425e6836c7f1b9f36ba624e"
+  },
+  {
+    "path": "interpret_native.py",
+    "bytes": 12674,
+    "sha256": "43ae36c7f775016aa9cdce57e9d53462db66c68aaff7b24629d74ab1e44378fc"
+  },
+  {
+    "path": "deeplift_rescale.py",
+    "bytes": 8482,
+    "sha256": "9618b74ed886411a36ef89fe79463d8bd1f621f47008c30dcf99a443b77f0e56"
+  },
+  {
+    "path": "README.md",
+    "bytes": 7574,
+    "sha256": "9f489a35d2f0950f7d21db182c29741bf517441aa263c730f472005dd6520f29"
+  },
+  {
+    "path": "validation_summary.json",
+    "bytes": 821,
+    "sha256": "01c6477304fd5455c8e1f16ba0815d386c306b6396de9b436dfeb6832e20087b"
+  },
+  {
+    "path": "implementation_comparison.json",
+    "bytes": 1114,
+    "sha256": "859c3e78a9c3c71274dfc35232ff7e994b04f804ceb86d86bea69e1d5633497e"
+  },
+  {
+    "path": "reference_sensitivity.json",
+    "bytes": 1483,
+    "sha256": "436eebad310372f257bac9a6df353ec962baaec894a57f9d34c2201db80df01b"
+  }
+]

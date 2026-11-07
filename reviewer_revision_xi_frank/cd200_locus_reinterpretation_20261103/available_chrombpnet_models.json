@@ -1,0 +1,188 @@
+{
+  "checked_roots": [
+    "/mnt/storage/cd200/reviewer_benchmarks",
+    "/mnt/storage/cd200/chrombpnet_moa",
+    "/home/xf2217/Repos/cd200_figures",
+    "/home/xf2217/Repos/cd200_figures_crispr"
+  ],
+  "models": [
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/best.weights.h5",
+      "model": "chrombpnet_native_fresh",
+      "assembly": "mm10",
+      "training_chromosomes": [
+        "chr1",
+        "chr10",
+        "chr11",
+        "chr12",
+        "chr13",
+        "chr15",
+        "chr17",
+        "chr18",
+        "chr19",
+        "chr2",
+        "chr3",
+        "chr4",
+        "chr5",
+        "chr6",
+        "chr7"
+      ],
+      "heldout_chromosomes": [
+        "chr16",
+        "chr8",
+        "chr9"
+      ],
+      "pilot": false,
+      "seed": 1234
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/pilots/chrombpnet_bias_seed1234_pilot/best.weights.h5",
+      "model": "mouse_native_bias_bpnet",
+      "assembly": "mm10",
+      "training_chromosomes": [
+        "chr1",
+        "chr10",
+        "chr11",
+        "chr12",
+        "chr13",
+        "chr15",
+        "chr17",
+        "chr18",
+        "chr19",
+        "chr2",
+        "chr3",
+        "chr4",
+        "chr5",
+        "chr6",
+        "chr7"
+      ],
+      "heldout_chromosomes": [
+        "chr16",
+        "chr8",
+        "chr9"
+      ],
+      "pilot": true,
+      "seed": 1234
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/pilots/chrombpnet_native_seed1234_pilot/best.weights.h5",
+      "model": "chrombpnet_native_fresh",
+      "assembly": "mm10",
+      "training_chromosomes": [
+        "chr1",
+        "chr10",
+        "chr11",
+        "chr12",
+        "chr13",
+        "chr15",
+        "chr17",
+        "chr18",
+        "chr19",
+        "chr2",
+        "chr3",
+        "chr4",
+        "chr5",
+        "chr6",
+        "chr7"
+      ],
+      "heldout_chromosomes": [
+        "chr16",
+        "chr8",
+        "chr9"
+      ],
+      "pilot": true,
+      "seed": 1234
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/chrombpnet_seed1234/best.weights.h5",
+      "model": "chrombpnet_native_fresh",
+      "assembly": null,
+      "training_chromosomes": [
+        "chr10",
+        "chr11",
+        "chr12",
+        "chr13",
+        "chr14",
+        "chr15",
+        "chr16",
+        "chr17",
+        "chr18",
+        "chr19",
+        "chr2",
+        "chr21",
+        "chr22",
+        "chr4",
+        "chr5",
+        "chr7",
+        "chr9",
+        "chrX",
+        "chrY"
+      ],
+      "heldout_chromosomes": null,
+      "pilot": false,
+      "seed": 1234
+    },
+    {
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234/best.weights.h5",
+      "model": "chrombpnet_native_fresh",
+      "assembly": "mm10",
+      "training_chromosomes": [
+        "chr1",
+        "chr10",
+        "chr11",
+        "chr12",
+        "chr13",
+        "chr15",
+        "chr17",
+        "chr18",
+        "chr19",
+        "chr2",
+        "chr3",
+        "chr4",
+        "chr5",
+        "chr6",
+        "chr7"
+      ],
+      "heldout_chromosomes": [
+        "chr16",
+        "chr8",
+        "chr9"
+      ],
+      "pilot": false,
+      "seed": 1234,
+      "state": "SCCAneg"
+    }
+  ],
+  "conclusion": "One completed native mouse fold per state; no additional independent native mouse folds recovered. Human models, pilots and epochs are not mouse fold replicates.",
+  "older_fold_named_checkpoint_inspection": {
+    "path": "/home/xf2217/Repos/motif_chip_model/checkpoints/chrombpnet_benchmark_chr_split_fold3_fold4-epoch=20-val_loss=7.00.ckpt",
+    "inspection": "pickle string metadata only; no unpickling/execution",
+    "motif_architecture_keys": [
+      "model._orig_mod.motif_conv.weight",
+      "model._orig_mod.motif_gn.weight",
+      "model._orig_mod.motif_gn.bias",
+      "model._orig_mod.regression_head.0.weight",
+      "model._orig_mod.regression_head.0.bias",
+      "model._orig_mod.regression_head.1.weight",
+      "model._orig_mod.regression_head.1.bias",
+      "model._orig_mod.regression_head.4.weight",
+      "model._orig_mod.regression_head.4.bias",
+      "model._orig_mod.motif_conv",
+      "model._orig_mod.motif_gn",
+      "model._orig_mod.regression_head",
+      "model._orig_mod.regression_head.0",
+      "model._orig_mod.regression_head.1",
+      "model._orig_mod.regression_head.2",
+      "model._orig_mod.regression_head.3",
+      "model._orig_mod.regression_head.4",
+      "model._orig_mod.regression_head.5",
+      "/home/xf2217/Repos/motif_chip_model/checkpoints/chrombpnet_benchmark_chr_split_fold3_fold4-epoch=20-val_loss=7.00.ckpt",
+      "/home/xf2217/Repos/motif_chip_model/checkpoints",
+      "/home/xf2217/Repos/motif_chip_model/checkpoints/chrombpnet_benchmark_chr_split_fold3_fold4-epoch=13-val_loss=7.00.ckpt",
+      "/home/xf2217/Repos/motif_chip_model/checkpoints/chrombpnet_benchmark_chr_split_fold3_fold4-epoch=19-val_loss=7.00.ckpt",
+      "motif_kernels",
+      "use_random_motif_init"
+    ],
+    "conclusion": "Fold-named chrombpnet_benchmark Lightning file includes motif-model parameters; it is not an additional native ChromBPNet mouse fold."
+  }
+}

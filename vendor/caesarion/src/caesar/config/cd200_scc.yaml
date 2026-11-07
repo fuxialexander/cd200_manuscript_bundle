@@ -1,0 +1,13 @@
+defaults:
+  - base_config
+  - machine/pc@_here_
+  - _self_
+
+data_key: cd200_scc
+data_type: encode_bulk
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+assembly: mm10
+gencode_version: 44
+specific_peak_names: peaks

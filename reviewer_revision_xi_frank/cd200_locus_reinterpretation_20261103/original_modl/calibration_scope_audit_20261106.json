@@ -1,0 +1,39 @@
+{
+  "question": "Was the existing differential calibration fit on training regions only?",
+  "conclusion": "Training-only scope is not established. Summary N and observed mean match the entire positive-differential BED pool; the exact prediction/membership list was not recovered.",
+  "recorded_factor": 3.307237044473427,
+  "summary_n": 2123,
+  "full_positive_pool_n": 2123,
+  "recorded_observed_mean": 0.067990695438362,
+  "full_positive_pool_observed_mean": 0.06799069543836204,
+  "absolute_observed_mean_difference": 4.163336342344337e-17,
+  "chr16_positive_regions": 146,
+  "locus_overlap": {
+    "P1": [
+      {
+        "Chromosome": "chr16",
+        "Start": 45383001,
+        "End": 45385049,
+        "Diff_scca": 0.0626042310087422
+      }
+    ],
+    "promoter": [
+      {
+        "Chromosome": "chr16",
+        "Start": 45407695,
+        "End": 45409743,
+        "Diff_scca": 0.1159936651008023
+      }
+    ]
+  },
+  "inference_recommendation": "If calibration is desired, estimate a fixed scalar using verified training-only or training-reserved calibration regions, freeze it before evaluation, save factor/memberships/method/checkpoint hashes, and evaluate raw and calibrated predictions on held-out regions. Do not relabel the existing factor as training-only.",
+  "algebraic_absorption": "For the inspected final Linear layer y=W*h+b, a fixed calibrated output a*y is equivalent to Wprime=a*W,bprime=a*b at inference. No existing weights changed.",
+  "training_alternative_limit": "An additional unconstrained trainable scalar is redundant with the current unconstrained final Linear head; it does not itself guarantee better held-out calibration.",
+  "scientific_definitions_preserved": true,
+  "model_or_figure_changes": false,
+  "sources": {
+    "training/data/scc_all_peaks.deduplicated.bed": "9bae09ac24fe937cb8c8eddbda6fa1d1431268f9cce9b9c42669e56b3eddf1fa",
+    "analysis/results/cd200_deletion_vs_chrombpnet_original/diff_head_shrinkage_factor.csv": "a003bf631372d1ec171864643ca63db29010e35cdd750186aeca52fe8a085357",
+    "src/atac_diff_prediction/bias_model.py": "7a0859c32ad709f2f6930d6d0d9bbdf254006526bc510866e4db197d0a406aa4"
+  }
+}

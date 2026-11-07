@@ -1,0 +1,76 @@
+{
+  "status": "proposed_requires_author_review_and_training_integration",
+  "genome": "mm10",
+  "split": {
+    "test_chromosomes": ["chr16", "chr8", "chr9"],
+    "validation_chromosomes": ["chr14"],
+    "training_chromosomes": ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr10", "chr11", "chr12", "chr13", "chr15", "chr17", "chr18", "chr19"],
+    "exclude": ["chrX", "chrY", "chrM", "noncanonical_contigs"],
+    "rule": "Assign each unique input window once, before phase filtering, curriculum sampling or augmentation; same membership in every phase and model.",
+    "historical_caveat": "Cd200 on chr16 has already informed method development and is not a prospectively unseen biological target. New heldout scores measure sequence prediction for retrained models with fixed specification."
+  },
+  "seeds": [17, 29, 43],
+  "region_universe": {
+    "candidate_source": "training/data/scc_all_peaks.deduplicated.bed",
+    "additional_audit_source": "training/data/total.bed",
+    "not_yet_final": "Existing BED peak/background selection may be target-dependent. Freeze one common accessible-region universe and add separately reported chromosome-wide eligible fixed tiling before calling performance genome-wide.",
+    "keep_all_test_regions": true,
+    "forbid_test_target_based_filtering": true
+  },
+  "leakage_controls": [
+    "No test sequence, target, or background region in any learned main, bias, differential or pretrained component.",
+    "Fit curriculum quantiles, sample balancing, normalization/calibration choices and early stopping only using training and validation as specified.",
+    "No random re-split inside any training phase and no stale caches without manifest hash validation.",
+    "Apply region caps only within training after split; preserve complete validation and test membership.",
+    "Fail benchmark on sequence/target IO errors, invalid shapes or nonfinite predictions; never score zero-filled dummy samples.",
+    "Use same masks, windows, strand convention, scaling and smoothing for all model comparisons."
+  ],
+  "target_adapter_gate": {
+    "existing_modl": "4096 bp input by default, center 2048 bp supervised output; ATAC is library-normalized and conv_size=20; count target is log10(sum of that central target + 1).",
+    "required": "Choose and implement one common output interval and observed ATAC definition before retraining. Prefer common center 2048 bp if ChromBPNet's validated supported geometry permits; otherwise explicitly change and retrain MoDL count target and profile crop to a supported shared geometry. Native head outputs require verified transform into common count units.",
+    "raw_profile_primary": "Use unsmoothed insertion profiles for primary comparison when available; if retraining on bundled smoothed targets, label benchmark as normalized 20 bp-smoothed ATAC and apply identical smoothing to both models."
+  },
+  "metrics": {
+    "count_primary": ["Pearson correlation of log1p common observed and predicted counts", "Spearman correlation", "RMSE on common log1p scale"],
+    "count_secondary": ["calibration slope/intercept", "raw-count Poisson deviance only if true raw counts and compatible outputs are available"],
+    "profile_primary": ["per-window Jensen-Shannon divergence of nonnegative unit-sum profiles", "multinomial cross-entropy only for compatible count profiles"],
+    "profile_secondary": ["per-window Pearson correlation at 1 bp", "per-window Pearson correlation at predeclared 20 bp aggregation"],
+    "differential": ["Pearson and Spearman", "MAE and RMSE", "sign concordance outside prespecified near-zero band", "calibration"],
+    "report_strata": ["each test chromosome", "all test chromosomes", "predeclared peaks", "predeclared background", "eligible chromosome-wide tiles", "each biological context"],
+    "edge_cases": "Keep genuine zero counts. Count undefined correlations and all-zero shape profiles explicitly; do not silently drop prediction zeros or nonfinite cases. Use one fixed epsilon only for numerical log/division stability, not as a biological filtering threshold."
+  },
+  "uncertainty": {
+    "paired_block_bootstrap_replicates": 2000,
+    "interval": "95% percentile confidence interval",
+    "sampling": "Resample common genomic overlap components or larger predeclared genomic blocks within chromosome, preserving every region and all model predictions in each selected block; recompute correlations on resampled regions and report paired model differences.",
+    "seed_variation": "Report individual training seeds and their distribution separately; block bootstrap intervals conditional on a fitted model are not training-seed uncertainty.",
+    "caveat": "Three heldout chromosomes give limited evidence for between-chromosome variation. Report per-chromosome results and sensitivity to larger blocks; bootstrap cells/bases as independent units is invalid."
+  },
+  "models": [
+    "MoDL fixed biological motif filters",
+    "ChromBPNet trained on identical partitions and target intervals",
+    "ExplaiNN-inspired PWM feature baseline on matched scalar count task; label task adaptation",
+    "MoDL PWM-initialized trainable filters",
+    "MoDL random trainable filters with matched capacity",
+    "MoDL fixed shuffled/negative-control motif filters with matched dimensions"
+  ],
+  "interpretation": {
+    "chrombpnet": "Native supported DeepSHAP count and profile contributions followed by TF-MoDISco, with both heads named.",
+    "matched_perturbation": "Run identical deletion/in-silico substitution perturbations on both models and keep signed common-scale effects; raw DeepSHAP and absolute percentage deletion effects are different estimands.",
+    "evaluation": "Evaluate motif recovery on common heldout regions and robustness across training seeds; separately label the previously selected Cd200 illustrations. No objective superiority claim from three chosen loci."
+  },
+  "generalization": {
+    "required_for_broad_claim": "At least one genuinely independent context or assay dataset with heldout chromosomes and target genes specified before analysis; keep donor/replicate units separate.",
+    "existing_bundle": "SC1/SC1C tracks can support additional mouse contexts if independently held out, but do not alone establish human or cross-tissue transfer.",
+    "distinction": "Genome-wide predictive accuracy, cross-context transfer and causal enhancer validation are separate claims. Prediction/deletion scores prioritize experiments and do not prove causation."
+  },
+  "required_outputs": [
+    "immutable source and split hashes and all component checkpoint ancestry",
+    "software/environment lock and complete commands",
+    "per-region observed/predicted profile and count outputs with region IDs, seed, context, eligibility and error flags",
+    "per-region and aggregate metric tables with bootstrap intervals and paired differences",
+    "main-text heldout benchmark figure",
+    "DeepSHAP/TF-MoDISco artifacts and matched perturbation summaries",
+    "source data and a result ledger mapping every response claim to its artifact"
+  ]
+}

@@ -1,0 +1,20 @@
+# htan_gbm.yml
+data_key: "htan_gbm" 
+data_type: "sc"
+root_path: "/pmglocal/alb2281/get_data/htan_gbm"
+annotation_dir: "/pmglocal/alb2281/get_data/htan_gbm/annotations"
+atac_metadata: ""
+labels_column: "cell_type.harmonized.cancer"
+sorted_by_barcode: false
+peak_file: "/pmglocal/alb2281/get_data/htan_gbm/peaks_q0.01/merged/gbm_q0.01_in.merged.bed"
+max_fragment_per_cell: 500
+chunk_size: 2000000
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 64
+tempdir: "/pmglocal/alb2281/tmp"

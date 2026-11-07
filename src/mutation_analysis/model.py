@@ -86,6 +86,11 @@ def load_model(
 
     # Set model to eval mode
     model.eval()
+    # Keep the training labels when unwrapping Lightning for local CLI/UI use.
+    # Older checkpoints may omit these; do not invent a manuscript cell label.
+    celltype_ids = checkpoint.get('hyper_parameters', {}).get('celltype_ids')
+    if celltype_ids is not None:
+        model.celltype_ids = list(celltype_ids)
 
     return model, output_heads
 

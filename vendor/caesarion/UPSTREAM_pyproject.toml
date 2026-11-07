@@ -1,0 +1,188 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+# Build dependencies are self-contained here
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+
+[project]
+name = "caesar"
+description = "A Python library for handling single cell multiomics data"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Xi Fu", email = "fuxialexander@gmail.com" },
+]
+maintainers = [
+    { name = "Xi Fu", email = "fuxialexander@gmail.com" },
+]
+
+readme = "README.md"
+dependencies = [
+    "numpy",
+    "zarr>=3.0.0",
+    "cython",
+    "pandas",
+    "pysam",
+    "tqdm",
+    "pyranges@git+https://github.com/pyranges/pyranges@master",
+    "gcell@git+https://github.com/fuxialexander/gcell@main",
+    "intervaltree",
+    "pyBigWig",
+    "omegaconf",
+    "hydra-core",
+    "scanpy[leiden]>=1.10.0,<1.12.0",
+    "einops>=0.8.1",
+    "fastcluster>=1.3.0",
+    "pywavelets>=1.8.0",
+    "pyliftover>=0.4.1",
+    "ffq>=0.3.1",
+    "scikit-learn>=1.0.0",  # Required for non-torch clustering fallback
+    "scikit-misc>=0.3.0",  # Required for LOWESS smoothing in RNA processing
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/fuxialexander/caesar"
+Repository = "https://github.com/fuxialexander/caesar"
+
+
+[project.optional-dependencies]
+torch = [
+    "torch>=2.0.0",
+    "pytorch-lightning>=2.5.2",
+    "wandb>=0.21.0",
+]
+bpcells = [
+    "bpcells@git+https://github.com/fuxialexander/BPCells@pr-python-libsize-group-name#subdirectory=python",
+]
+test = [
+    "pytest>=8.2",
+    "pytest-nunit",
+    "pytest-mock",
+    "pytest-cov",
+    "pytest-timeout",
+    "pytest-xdist",
+    "profimp",
+]
+dev = [
+    # getting the dev version
+    "setuptools_scm",
+    # static checking
+    "pre-commit",
+]
+doc = [
+    "sphinx>=7",
+    "sphinx-book-theme>=1.1.0",
+    "scanpydoc>=0.14.1",
+    "leidenalg",
+    "sphinx-autodoc-typehints>=1.25.2",
+    "myst-parser>=2",
+    "myst-nb>=1.1.2",
+    "sphinx-design",
+    "sphinx-tabs",
+    "readthedocs-sphinx-search",
+    "sphinxext-opengraph", # for nice cards when sharing on social
+    "sphinx-copybutton",
+    "nbsphinx>=0.9",
+    "ipython>=7.20",  # for nbsphinx code highlighting
+    "matplotlib!=3.6.1",
+    "sphinxcontrib-bibtex",
+    "caesar",
+    "setuptools", # undeclared dependency of sphinxcontrib-bibtex→pybtex
+]
+
+[project.scripts]
+caesar = "caesar.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+version_file = "src/caesar/_version.py"
+
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    "--strict-markers",
+    "--doctest-modules",
+]
+testpaths = ["./tests"]
+norecursedirs = ["tests/io/zarr/scripts", "tests/scripts"]
+xfail_strict = true
+filterwarnings = [
+    "error:The specified parameters:FutureWarning",
+    "ignore:FigureCanvasAgg is non-interactive:UserWarning",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "unit: marks tests as unit tests",
+    "integration: marks tests as integration tests",
+    "requires_data: marks tests that require real data files",
+    "requires_bpcells: marks tests that require BPCells",
+]
+timeout = 1500
+
+[tool.coverage.run]
+data_file = "test-data/coverage"
+source_pkgs = ["gcell"]
+omit = ["tests/*"]
+
+[tool.coverage.xml]
+output = "test-data/coverage.xml"
+
+[tool.coverage.paths]
+source = [".", "**/site-packages"]
+
+[tool.coverage.report]
+exclude_also = [
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    '@(numba\.|nb\.)njit.*',
+]
+
+[tool.uv.extra-build-dependencies]
+sorted-nearest = ["Cython"]
+bpcells = ["pybind11>=2.10.0", "setuptools-scm>=7.0"]
+
+[tool.ruff]
+src = ["src"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E",       # Error detected by Pycodestyle
+    "F",       # Errors detected by Pyflakes
+    "W",       # Warning detected by Pycodestyle
+    "UP",      # pyupgrade
+    "I",       # isort
+    "TCH",     # manage type checking blocks
+    "TID251",  # Banned imports
+    "ICN",     # Follow import conventions
+    "PTH",     # Pathlib instead of os.path
+    "PYI",     # Typing
+    "PLR0917", # Ban APIs with too many positional parameters
+    "PT",      # Pytest style
+    "SIM",     # Simplify control flow
+]
+ignore = [
+    "E501",  # line too long
+    "E402",  # module level import not at top of file
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["gcell"]
+required-imports = ["from __future__ import annotations"]
+

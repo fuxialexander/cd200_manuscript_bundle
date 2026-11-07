@@ -1,0 +1,77 @@
+{
+  "args": {
+    "batch_size": 64,
+    "bias_model": "/tmp/cd200_gm12878_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR637XSC.h5",
+    "cache_dir": "/tmp/cd200_gm12878_benchmark/cache",
+    "count_weight": 93.3,
+    "learning_rate": 0.001,
+    "max_epochs": 50,
+    "max_train_steps": 0,
+    "max_valid_batches": 0,
+    "mode": "train",
+    "negative_ratio": 0.1,
+    "output_dir": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234",
+    "patience": 5,
+    "released_nobias": null,
+    "seed": 1234
+  },
+  "bias_model_sha256": "29f7d2c5f2e6df2b9d4e05107478a548e40cd5a315c9151f206c2db171766399",
+  "cache_metadata_sha256": "dc64437e8df108ccfba15fbe622b9ee0548ab2f2a35f88f4693c309e0bf94e87",
+  "count_weight": 93.3,
+  "count_weight_rule": "explicit",
+  "dilations": 8,
+  "filters": 512,
+  "gpu": {
+    "compute_capability": [
+      12,
+      0
+    ],
+    "device_name": "NVIDIA GeForce RTX 5090"
+  },
+  "input_length": 2114,
+  "keras": "legacy tf_keras",
+  "model": "chrombpnet_native_fresh",
+  "native_changes": [
+    "Cache-backed batch iteration instead of genomic data generator; native model and TFP multinomial loss unchanged",
+    "Deserialize released bias with compile=False; freeze exactly as upstream",
+    "Train-only count-weight estimate unless explicit; released original used train+valid",
+    "No test data read during fitting"
+  ],
+  "output_length": 1000,
+  "parameters": 6595716,
+  "pilot": false,
+  "seed": 1234,
+  "source_hashes": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py": "327d6540f6fa25c9fde13275c88bf3034c0ae21aa6fca74c2e3f4539e6244e54",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/models/chrombpnet_with_bias_model.py": "bedc63a36ee27bb25ab39a00f1d9e3d4d64809754bf46aebe10d17b3a331dd33",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/vendor/chrombpnet/chrombpnet/training/utils/losses.py": "c32e816398274bf7995cf83aab9bebb3b40ddaac7d162cebfa0672c31d259a6d",
+    "/tmp/cd200_gm12878_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR637XSC.h5": "29f7d2c5f2e6df2b9d4e05107478a548e40cd5a315c9151f206c2db171766399"
+  },
+  "tensorflow": "2.21.0",
+  "training_chromosomes": [
+    "chr10",
+    "chr11",
+    "chr12",
+    "chr13",
+    "chr14",
+    "chr15",
+    "chr16",
+    "chr17",
+    "chr18",
+    "chr19",
+    "chr2",
+    "chr21",
+    "chr22",
+    "chr4",
+    "chr5",
+    "chr7",
+    "chr9",
+    "chrX",
+    "chrY"
+  ],
+  "validation_chromosomes": [
+    "chr20",
+    "chr8"
+  ],
+  "validation_indices_sha256": "6c09e8e863df02c4778e7878e534278eb3a5c31d2d4589b04698f203c04dfb9b"
+}

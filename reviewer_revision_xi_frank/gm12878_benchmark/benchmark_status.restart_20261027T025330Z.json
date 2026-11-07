@@ -1,0 +1,147 @@
+{
+  "started_utc": "2026-10-26T23:27:16.938309+00:00",
+  "supervisor_pid": 1798746,
+  "state": "interrupted",
+  "stages": [
+    {
+      "name": "explainn_train",
+      "started_utc": "2026-10-26T23:27:16.938445+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "93.3",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/explainn_train.log",
+      "state": "passed",
+      "pid": 1798747,
+      "last_completed_epoch": {
+        "epoch": 35,
+        "seconds": 76.17457989201648,
+        "train": {
+          "examples": 213283,
+          "logcount_mse": 0.9168563147976606,
+          "loss": 0.9168563147976606,
+          "profile_nll_without_constant": 0.0
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_mse": 0.9591657719720967,
+          "loss": 0.9591657719720967,
+          "profile_nll_without_constant": 0.0
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T00:13:17.035473+00:00"
+    },
+    {
+      "name": "explainn_predict",
+      "started_utc": "2026-10-27T00:13:17.042355+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "93.3",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/explainn_predict.log",
+      "state": "passed",
+      "pid": 1917573,
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T00:13:37.043628+00:00"
+    },
+    {
+      "name": "modl_train",
+      "started_utc": "2026-10-27T00:13:37.050725+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "93.3",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/modl_train.log",
+      "state": "running",
+      "pid": 1918363,
+      "last_completed_epoch": {
+        "epoch": 2,
+        "seconds": 314.98239875998115,
+        "train": {
+          "examples": 213283,
+          "logcount_mse": 1.1848495439968816,
+          "loss": 10017.853925630794,
+          "profile_nll_without_constant": 9907.307452532257
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_mse": 1.081498604500508,
+          "loss": 10207.162902766817,
+          "profile_nll_without_constant": 10106.259091943904
+        }
+      }
+    }
+  ],
+  "configuration": {
+    "seed": 1234,
+    "epochs_max": 50,
+    "early_stopping_patience": 5,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "negative_ratio": 0.1,
+    "count_weight": 93.3,
+    "torch_training_precision": "bfloat16 autocast; stored FP32 weights; FP32 inference",
+    "tensorflow_precision": "FP32",
+    "published_reference": "ENCSR389HIH / ENCFF142IOR fold0 only, no test-fold ensemble",
+    "fresh_native_comparator": true
+  },
+  "cache_manifest_sha256": "dc64437e8df108ccfba15fbe622b9ee0548ab2f2a35f88f4693c309e0bf94e87",
+  "current_stage": "modl_train",
+  "updated_utc": "2026-10-27T00:32:37.098804+00:00",
+  "interruption_detected_utc": "2026-10-27T02:53:30.761260+00:00",
+  "interruption_reason": "Recorded supervisor and running child no longer exist; termination cause is not established"
+}

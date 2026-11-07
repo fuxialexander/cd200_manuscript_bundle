@@ -1,0 +1,93 @@
+cohort	region	metric	n_tumors	normal_id	normal_label	match_class	normal_reference_signal	tumor_median	tumor_min	tumor_max	tumors_above_reference	tumors_equal_reference
+ACC	Promoter	mean_signal	9	Zona_Fasciculata_Cortical_Cell	Adrenal cortical cell	exact_lineage	0.0	0.007964243081972156	0.0015562794363779275	0.01884137725866093	9.0	0.0
+ACC	Promoter	max_bin_signal	9	Zona_Fasciculata_Cortical_Cell	Adrenal cortical cell	exact_lineage	0.0	0.0238226963419017	0.0059346075409498	0.0392847149319146	9.0	0.0
+ACC	TEAD motif	mean_signal	9	Zona_Fasciculata_Cortical_Cell	Adrenal cortical cell	exact_lineage	0.0	0.0012332025298333802	0.0003036920821208759	0.003781195371143308	9.0	0.0
+ACC	TEAD motif	max_bin_signal	9	Zona_Fasciculata_Cortical_Cell	Adrenal cortical cell	exact_lineage	0.0	0.00418380204244	0.0015996935264185	0.0077834908669592	9.0	0.0
+BLCA	Promoter	mean_signal	10	Fetal_Ureteric_Bud_Cell	Urinary epithelial cell (fetal)	developmental_proxy	0.05909456643325963	0.011586104598703413	0.0042937522120018645	0.045067643113409585	0.0	0.0
+BLCA	Promoter	max_bin_signal	10	Fetal_Ureteric_Bud_Cell	Urinary epithelial cell (fetal)	developmental_proxy	0.1380822413558137	0.03048828048374205	0.0105511972427669	0.142409477087853	1.0	0.0
+BLCA	TEAD motif	mean_signal	10	Fetal_Ureteric_Bud_Cell	Urinary epithelial cell (fetal)	developmental_proxy	0.0031633403245685202	0.0019087087033997799	0.0005531249862752596	0.013501321242690146	3.0	0.0
+BLCA	TEAD motif	max_bin_signal	10	Fetal_Ureteric_Bud_Cell	Urinary epithelial cell (fetal)	developmental_proxy	0.0100610986821293	0.0051318275497716	0.0019052727477807	0.0246526183887909	3.0	0.0
+BRCA	Promoter	mean_signal	74	Mammary_Epithelial	Mammary epithelial cell	exact_lineage	0.09320265109921475	0.013750782998221214	0.0014591364823856362	0.056330857472710764	0.0	0.0
+BRCA	Promoter	max_bin_signal	74	Mammary_Epithelial	Mammary epithelial cell	exact_lineage	0.2843136774711464	0.033385154261345945	0.0036623757623328	0.1457688636368681	0.0	0.0
+BRCA	TEAD motif	mean_signal	74	Mammary_Epithelial	Mammary epithelial cell	exact_lineage	0.032311810273259266	0.0036171461137245327	0.00017004446133661003	0.012753523979631705	0.0	0.0
+BRCA	TEAD motif	max_bin_signal	74	Mammary_Epithelial	Mammary epithelial cell	exact_lineage	0.1157493840058799	0.01041232518242075	0.0008940571911222	0.0412919918513988	0.0	0.0
+CESC	Promoter	mean_signal	2	Keratinocyte_1	Keratinocyte	lineage_proxy	0.045895756503526244	0.013437956407587895	0.005678572483443862	0.02119734033173193	0.0	0.0
+CESC	Promoter	max_bin_signal	2	Keratinocyte_1	Keratinocyte	lineage_proxy	0.1575347513757981	0.03467235286470965	0.0157587286089193	0.0535859771205	0.0	0.0
+CESC	TEAD motif	mean_signal	2	Keratinocyte_1	Keratinocyte	lineage_proxy	0.01076969294975	0.0019417040857028019	0.00039822872054845926	0.0034851794508571443	0.0	0.0
+CESC	TEAD motif	max_bin_signal	2	Keratinocyte_1	Keratinocyte	lineage_proxy	0.0229591318720056	0.00397927458323675	0.0014144704939791	0.0065440786724944	0.0	0.0
+CHOL	Promoter	mean_signal	5	Fetal_Cholangiocytes	Cholangiocyte (fetal)	developmental_proxy	0.012345678095795821	0.01792190831883136	0.007617687675007959	0.032745188415993595	3.0	0.0
+CHOL	Promoter	max_bin_signal	5	Fetal_Cholangiocytes	Cholangiocyte (fetal)	developmental_proxy	0.1234567809579582	0.0376878487112105	0.0224714723396402	0.075978192828782	0.0	0.0
+CHOL	TEAD motif	mean_signal	5	Fetal_Cholangiocytes	Cholangiocyte (fetal)	developmental_proxy	9.972759822437297e-27	0.009682265603270988	0.0026900125882890974	0.017135590277856504	5.0	0.0
+CHOL	TEAD motif	max_bin_signal	5	Fetal_Cholangiocytes	Cholangiocyte (fetal)	developmental_proxy	9.972759822437296e-27	0.0308566370501859	0.0099732752011385	0.0432560367216601	5.0	0.0
+COAD	Promoter	mean_signal	38	Colon_Epithelial_Cell_1	Colon epithelial cell	exact_lineage	0.038566225535433575	0.03146288084617588	0.002519107400480472	0.09953936424028433	13.0	0.0
+COAD	Promoter	max_bin_signal	38	Colon_Epithelial_Cell_1	Colon epithelial cell	exact_lineage	0.157895868142659	0.08564585972035921	0.0068916849406725	0.2606599467546111	5.0	0.0
+COAD	TEAD motif	mean_signal	38	Colon_Epithelial_Cell_1	Colon epithelial cell	exact_lineage	0.0012194860751637544	0.003917734048528725	0.00047863930381353677	0.020570413172214197	33.0	0.0
+COAD	TEAD motif	max_bin_signal	38	Colon_Epithelial_Cell_1	Colon epithelial cell	exact_lineage	0.00547132413795	0.009483050419037	0.001587146953664	0.0363249316471033	28.0	0.0
+ESCA	Promoter	mean_signal	18	Esophageal_Epithelial_Cell	Esophageal epithelial cell	exact_lineage	0.0165866511915284	0.021843738304672955	0.0026019614485155557	0.04794087492391126	11.0	0.0
+ESCA	Promoter	max_bin_signal	18	Esophageal_Epithelial_Cell	Esophageal epithelial cell	exact_lineage	0.0733874591844983	0.05641318322291745	0.0062280393811089	0.1784439414943809	6.0	0.0
+ESCA	TEAD motif	mean_signal	18	Esophageal_Epithelial_Cell	Esophageal epithelial cell	exact_lineage	0.0013537618561870546	0.0063366066551773514	0.0010737009477986216	0.012793746309152195	16.0	0.0
+ESCA	TEAD motif	max_bin_signal	18	Esophageal_Epithelial_Cell	Esophageal epithelial cell	exact_lineage	0.0043203895861277	0.0122397048968038	0.0036808227100635	0.0280607501360874	17.0	0.0
+GBM	Promoter	mean_signal	9	Astrocyte_1	Astrocyte	lineage_proxy	0.03947135840745622	0.052186042050056836	0.025980727605523588	0.11156843816897541	8.0	0.0
+GBM	Promoter	max_bin_signal	9	Astrocyte_1	Astrocyte	lineage_proxy	0.1301145663187366	0.1141806236638764	0.0562387038488278	0.2188049229954386	3.0	0.0
+GBM	TEAD motif	mean_signal	9	Astrocyte_1	Astrocyte	lineage_proxy	0.01097545029671046	0.002535262415899384	0.0016060421169550496	0.005462112994738753	0.0	0.0
+GBM	TEAD motif	max_bin_signal	9	Astrocyte_1	Astrocyte	lineage_proxy	0.0327332251392038	0.0054492839748183	0.0025763277824369	0.0161398525460689	0.0	0.0
+HNSC	Promoter	mean_signal	9	Keratinocyte_1	Keratinocyte	lineage_proxy	0.045895756503526244	0.023484017544619113	0.009405903503156067	0.05702920540295622	2.0	0.0
+HNSC	Promoter	max_bin_signal	9	Keratinocyte_1	Keratinocyte	lineage_proxy	0.1575347513757981	0.0663011334161099	0.0230056329296965	0.1445787038219844	0.0	0.0
+HNSC	TEAD motif	mean_signal	9	Keratinocyte_1	Keratinocyte	lineage_proxy	0.01076969294975	0.005940730854727411	0.0005141701271694765	0.015501084501206413	2.0	0.0
+HNSC	TEAD motif	max_bin_signal	9	Keratinocyte_1	Keratinocyte	lineage_proxy	0.0229591318720056	0.0204371972582732	0.0017458156562967	0.0351465382693894	3.0	0.0
+KIRC	Promoter	mean_signal	16	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.11756387727690859	0.04147024971228888	0.01060852742582026	0.09791918631266507	0.0	0.0
+KIRC	Promoter	max_bin_signal	16	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.297415538682385	0.11263904864635291	0.0309194583709766	0.2239843110243009	0.0	0.0
+KIRC	TEAD motif	mean_signal	16	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.0022475444568886647	0.03827165560944933	0.0051180183491507545	0.12977864698557573	16.0	0.0
+KIRC	TEAD motif	max_bin_signal	16	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.0115909584929947	0.1159554682835078	0.0112724026228308	0.4095657741390244	15.0	0.0
+KIRP	Promoter	mean_signal	34	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.11756387727690859	0.09451587285248797	0.0022705688339294456	0.277444891662117	14.0	0.0
+KIRP	Promoter	max_bin_signal	34	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.297415538682385	0.2655940460312059	0.0056740169598482	0.6663744860451881	14.0	0.0
+KIRP	TEAD motif	mean_signal	34	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.0022475444568886647	0.11275191638226574	0.008592472342552435	0.27814436495751466	34.0	0.0
+KIRP	TEAD motif	max_bin_signal	34	Fetal_Metanephric_Cell	Metanephric cell (fetal)	developmental_proxy	0.0115909584929947	0.31789797710908335	0.0273466891076389	0.6996085458234096	34.0	0.0
+LGG	Promoter	mean_signal	13	Astrocyte_1	Astrocyte	lineage_proxy	0.03947135840745622	0.07570117923466588	0.04064894035761856	0.14566711820126607	13.0	0.0
+LGG	Promoter	max_bin_signal	13	Astrocyte_1	Astrocyte	lineage_proxy	0.1301145663187366	0.1519185790908137	0.075135568573736	0.2822464759383958	10.0	0.0
+LGG	TEAD motif	mean_signal	13	Astrocyte_1	Astrocyte	lineage_proxy	0.01097545029671046	0.0037389604777374186	0.0016109351653254929	0.022605482691349616	1.0	0.0
+LGG	TEAD motif	max_bin_signal	13	Astrocyte_1	Astrocyte	lineage_proxy	0.0327332251392038	0.0088941813049805	0.0029735631343878	0.0426041359177037	1.0	0.0
+LIHC	Promoter	mean_signal	17	Hepatocyte	Hepatocyte	exact_lineage	0.0035816647255343505	0.008909409288925509	0.0031696522385682353	0.02711597978286737	16.0	0.0
+LIHC	Promoter	max_bin_signal	17	Hepatocyte	Hepatocyte	exact_lineage	0.009638682358527	0.0245920473264214	0.0063617347028149	0.0752533795462964	16.0	0.0
+LIHC	TEAD motif	mean_signal	17	Hepatocyte	Hepatocyte	exact_lineage	0.0006490796186955489	0.0017633997824860496	0.00044831537851515733	0.008977715711779351	16.0	0.0
+LIHC	TEAD motif	max_bin_signal	17	Hepatocyte	Hepatocyte	exact_lineage	0.0099139356563909	0.0057443934174677	0.0012784300363606	0.0182468112524416	2.0	0.0
+LUAD	Promoter	mean_signal	22	Alveolar_Type_2_AT2_Cell	Alveolar type 2 cell	exact_lineage	0.01634150391183055	0.01620940619670009	0.002330741727658285	0.04384500128788405	11.0	0.0
+LUAD	Promoter	max_bin_signal	22	Alveolar_Type_2_AT2_Cell	Alveolar type 2 cell	exact_lineage	0.0763500057977636	0.0460125878870005	0.0069757864107907	0.1304531330439915	2.0	0.0
+LUAD	TEAD motif	mean_signal	22	Alveolar_Type_2_AT2_Cell	Alveolar type 2 cell	exact_lineage	0.01692602444017741	0.0057262778509341705	0.0013457795314369976	0.031709753935067676	2.0	0.0
+LUAD	TEAD motif	max_bin_signal	22	Alveolar_Type_2_AT2_Cell	Alveolar type 2 cell	exact_lineage	0.0639619980436082	0.01574551142151235	0.0044337167937334	0.1054533500004882	2.0	0.0
+LUSC	Promoter	mean_signal	16	Club_Cell	Club cell	lineage_proxy	0.00404448961327896	0.025503275338641433	0.007063096946830637	0.13476740898335143	16.0	0.0
+LUSC	Promoter	max_bin_signal	16	Club_Cell	Club cell	lineage_proxy	0.0202224480663948	0.06059781516944155	0.0244078914424215	0.3404735154243997	16.0	0.0
+LUSC	TEAD motif	mean_signal	16	Club_Cell	Club cell	lineage_proxy	0.0	0.005068063551458617	0.001859734277334415	0.05807149153883291	16.0	0.0
+LUSC	TEAD motif	max_bin_signal	16	Club_Cell	Club cell	lineage_proxy	0.0	0.013205956988787449	0.0060923462800401	0.1132967209741227	16.0	0.0
+MESO	Promoter	mean_signal	7	Mesothelial_Cell	Mesothelial cell	exact_lineage	0.12906018655791787	0.09338615620862141	0.028433673059144383	0.19817533199574497	2.0	0.0
+MESO	Promoter	max_bin_signal	7	Mesothelial_Cell	Mesothelial cell	exact_lineage	0.4535856323188737	0.2168905148869057	0.0766937347091744	0.405211430830674	0.0	0.0
+MESO	TEAD motif	mean_signal	7	Mesothelial_Cell	Mesothelial cell	exact_lineage	0.01568185031137066	0.03973195220209874	0.026564339649615794	0.0652052142149449	7.0	0.0
+MESO	TEAD motif	max_bin_signal	7	Mesothelial_Cell	Mesothelial cell	exact_lineage	0.0320406316978381	0.1057395573945867	0.0801651607614649	0.2012147995549865	7.0	0.0
+PCPG	Promoter	mean_signal	9	Fetal_Adrenal_Chromaffin_Cell	Adrenal chromaffin cell (fetal)	developmental_proxy	0.1492998248130818	0.14110493857690634	0.0749476440471606	0.22448774006377786	4.0	0.0
+PCPG	Promoter	max_bin_signal	9	Fetal_Adrenal_Chromaffin_Cell	Adrenal chromaffin cell (fetal)	developmental_proxy	0.4689538103109513	0.4033137266491402	0.1987706778113562	0.6061136937770477	3.0	0.0
+PCPG	TEAD motif	mean_signal	9	Fetal_Adrenal_Chromaffin_Cell	Adrenal chromaffin cell (fetal)	developmental_proxy	0.002622847491389328	0.0032319191376919093	0.0011258909895545438	0.015200226816640051	5.0	0.0
+PCPG	TEAD motif	max_bin_signal	9	Fetal_Adrenal_Chromaffin_Cell	Adrenal chromaffin cell (fetal)	developmental_proxy	0.008307797476701	0.0080949613437105	0.0025106840649665	0.0390246351555199	4.0	0.0
+PRAD	Promoter	mean_signal	26					0.013127933478647175	0.003542157966641094	0.04598933232581579		
+PRAD	Promoter	max_bin_signal	26					0.035526191763980905	0.0080541802281843	0.109858787043121		
+PRAD	TEAD motif	mean_signal	26					0.0041660064047212425	0.0005813536140767513	0.03784969283718237		
+PRAD	TEAD motif	max_bin_signal	26					0.0126638907477831	0.0035703971910749	0.089749206706022		
+SKCM	Promoter	mean_signal	13	Melanocyte	Melanocyte	exact_lineage	0.02411873781401426	0.04527749890870564	0.007539048577311287	0.14627004762124116	9.0	0.0
+SKCM	Promoter	max_bin_signal	13	Melanocyte	Melanocyte	exact_lineage	0.0565862694439559	0.1196165664787243	0.0183130371563792	0.3200551376034162	9.0	0.0
+SKCM	TEAD motif	mean_signal	13	Melanocyte	Melanocyte	exact_lineage	0.0	0.00476953396646719	0.0010988222281850012	0.024477035163313985	13.0	0.0
+SKCM	TEAD motif	max_bin_signal	13	Melanocyte	Melanocyte	exact_lineage	0.0	0.0140230034563009	0.0024174330606731	0.0665273468562109	13.0	0.0
+STAD	Promoter	mean_signal	21	Foveolar_Cell	Gastric foveolar cell	exact_lineage	9.91918431800585e-27	0.013056189402897751	0.0017210421697324136	0.06376035029522123	21.0	0.0
+STAD	Promoter	max_bin_signal	21	Foveolar_Cell	Gastric foveolar cell	exact_lineage	9.91918431800585e-27	0.0304497880223059	0.0058673542981179	0.1408517245060301	21.0	0.0
+STAD	TEAD motif	mean_signal	21	Foveolar_Cell	Gastric foveolar cell	exact_lineage	0.00613967725468496	0.004710642498651204	0.0002373023716834652	0.031145165104266334	7.0	0.0
+STAD	TEAD motif	max_bin_signal	21	Foveolar_Cell	Gastric foveolar cell	exact_lineage	0.0306983863768742	0.0112804068308872	0.0018713832003674	0.0762458919014675	2.0	0.0
+TGCT	Promoter	mean_signal	9					0.04758169953815867	0.018093916016047783	0.11605759061086326		
+TGCT	Promoter	max_bin_signal	9					0.1083508271821313	0.0460928443122298	0.2595048720329264		
+TGCT	TEAD motif	mean_signal	9					0.0033828403938345867	0.0008322149384408347	0.010654147521049361		
+TGCT	TEAD motif	max_bin_signal	9					0.008856972780347	0.0018294472935688	0.0246333828131071		
+THCA	Promoter	mean_signal	14	Thyroid_Follicular_Cell	Thyroid follicular cell	exact_lineage	0.0783957682500137	0.0719928739677686	0.022346180258631953	0.15373720799117369	6.0	0.0
+THCA	Promoter	max_bin_signal	14	Thyroid_Follicular_Cell	Thyroid follicular cell	exact_lineage	0.274708458982799	0.17875072518887214	0.0703456703672894	0.3919568019610198	2.0	0.0
+THCA	TEAD motif	mean_signal	14	Thyroid_Follicular_Cell	Thyroid follicular cell	exact_lineage	0.0355345248041327	0.015302280090079098	0.003288188949420346	0.04500224084006821	2.0	0.0
+THCA	TEAD motif	max_bin_signal	14	Thyroid_Follicular_Cell	Thyroid follicular cell	exact_lineage	0.1533366343701453	0.0385608332542312	0.0092887185758841	0.1197509586611278	0.0	0.0
+UCEC	Promoter	mean_signal	13	Smooth_Muscle_Uterine	Uterine smooth-muscle cell	tissue_proxy	0.12974614513165622	0.07178333598254849	0.008639128456158458	0.17409626633346748	2.0	0.0
+UCEC	Promoter	max_bin_signal	13	Smooth_Muscle_Uterine	Uterine smooth-muscle cell	tissue_proxy	0.4773167535749194	0.1851142748799937	0.0247536185458198	0.4481933067736047	0.0	0.0
+UCEC	TEAD motif	mean_signal	13	Smooth_Muscle_Uterine	Uterine smooth-muscle cell	tissue_proxy	0.025803777201565473	0.007538046016373195	0.0014145033570715387	0.05055011293607005	4.0	0.0
+UCEC	TEAD motif	max_bin_signal	13	Smooth_Muscle_Uterine	Uterine smooth-muscle cell	tissue_proxy	0.0843926775069795	0.0244308948982097	0.0053235401845686	0.1700375099343725	4.0	0.0

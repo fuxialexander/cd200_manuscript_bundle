@@ -1,0 +1,11 @@
+{
+  "inputs": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/plot_regenerated_s5.py": "af3cf6a14497ecb6ce53453f811186a142ae7e31723954e9bbedb7a23ee99d32",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/profile_metrics.tsv": "fb54ddeb3239115afd1e4374b127a4d0c5583837029c3a321c0962c3f40f5753",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/state_contrast_source_data.tsv": "6e72ba6e586dacea6cdf75cec47350f2e66a66d36a57f4a1b47e4de7010b19fb"
+  },
+  "width_mm": 183,
+  "height_mm": 75,
+  "model_folds_per_state": 1,
+  "legacy_modl_differential_multiplier": null
+}

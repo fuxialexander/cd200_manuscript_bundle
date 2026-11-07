@@ -1,9 +1,23 @@
 [project]
 name = "cd200-mutation-manuscript-bundle"
-version = "0.1.0"
+version = "0.2.0"
 description = "Minimal CD200 mutation analysis and checkpoint training bundle"
 requires-python = ">=3.12"
 dependencies = [
+    "cython",
+    "pysam",
+    "gcell @ git+https://github.com/fuxialexander/gcell@5a2fac9a8f464cc0b52ee1b7b5aaa59b6c4fe3ff",
+    "intervaltree",
+    "omegaconf",
+    "hydra-core",
+    "scanpy[leiden]>=1.10.0,<1.12.0",
+    "einops>=0.8.1",
+    "fastcluster>=1.3.0",
+    "pywavelets>=1.8.0",
+    "ffq>=0.3.1",
+    "scikit-learn>=1.0.0",
+    "scikit-misc>=0.3.0",
+
     "matplotlib>=3.10.8",
     "numba>=0.65.0",
     "numpy<=2.2",
@@ -33,4 +47,8 @@ packages = [
     "src/atac_prediction",
     "src/atac_diff_prediction",
     "model_studio",
+    "vendor/caesarion/src/caesar",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true

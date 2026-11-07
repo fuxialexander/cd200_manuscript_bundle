@@ -1,0 +1,335 @@
+{
+  "figure_message": "MoDL leads peak metrics in these runs; full-region count results retain ChromBPNet advantages.",
+  "profile": "main research figure; conservative Nature baseline",
+  "dimensions": {
+    "width_mm": 180,
+    "height_mm": 80,
+    "font_family": "Arial",
+    "font_file": "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf",
+    "editable_svg_text": true,
+    "pdf_fonttype": 42,
+    "preview_dpi": 450,
+    "png_size_px": [
+      3188,
+      1417
+    ],
+    "text_clipping_failures": [],
+    "series": [
+      {
+        "model": "MoDL",
+        "color": "#1964B0",
+        "marker": "o"
+      },
+      {
+        "model": "ChromBPNet_fresh",
+        "color": "#DB5829",
+        "marker": "s"
+      },
+      {
+        "model": "ChromBPNet_published",
+        "color": "#008A69",
+        "marker": "^"
+      },
+      {
+        "model": "ExplaiNN",
+        "color": "#882D71",
+        "marker": "D"
+      }
+    ]
+  },
+  "input_provenance": [
+    {
+      "role": "evaluation",
+      "dataset": "GM12878",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluation_matched_training_restart_20261027T025330Z/evaluation.json",
+      "sha256": "db0727087d492068c47639053121fd32d4acc8d2e17079a38af57aa979e84489"
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "GM12878",
+      "model": "ChromBPNet_published",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "sha256": "a4da52ec1563c5d563f27cd197b8e15dd13f8e70b6a0819cdfa28a00d7de79f0"
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "GM12878",
+      "model": "ExplaiNN",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "5690c7e680af7903831882209c9107398f71bb9ad270e287fdae691cc47a0fe6"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "GM12878",
+      "model": "ExplaiNN",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/metadata.json",
+      "sha256": "bc42d6440e6cce48b431a6aec36e606a09cde2015b6e830731bfb59ce6b2157c",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "GM12878",
+      "model": "MoDL",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions/prediction_metadata.json",
+      "sha256": "bb5346b6dd60ed1b999dde6033c92ad5574871dc78e7812c3609331c116521e6"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "GM12878",
+      "model": "MoDL",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/metadata.json",
+      "sha256": "c77cba51b6cf128861672f0c088fa10a0f74ba7b8c9428e11cc081ef83e3ebf8",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "GM12878",
+      "model": "ChromBPNet_fresh",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "4747b47202b10877dcf009c9f68ca6c0e002b24a60deb347e76d9361a61c85f0"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "GM12878",
+      "model": "ChromBPNet_fresh",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234/metadata.json",
+      "sha256": "d5de5d1b3821c965c123761aecbf31ff9c401f46d89e6e44c6fd4f3cc4603f9f",
+      "seed": 1234
+    },
+    {
+      "role": "evaluation",
+      "dataset": "K562",
+      "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/k562_benchmark/evaluation_matched_training_storage_retry/evaluation.json",
+      "sha256": "e83588fd65e35e77b3b4e2d0aeb43d0f6d82e26f76546095514fb4fb3d89f8a2"
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "K562",
+      "model": "ChromBPNet_published",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "sha256": "c9c8557b27c602361f368476bb55b038f18a6c36aa5660c9e69da5b386fe446b"
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "K562",
+      "model": "ExplaiNN",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/explainn_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "4edb5cb0b3b0b48ab8ffe3bf3f8b94111e16b29e98e4e42bad1c1862d898d4ae"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "K562",
+      "model": "ExplaiNN",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/explainn_seed1234/metadata.json",
+      "sha256": "706cf05c02c65de4cd105771bfeefee67556c7dc37936728ce6809dc1bf48c42",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "K562",
+      "model": "MoDL",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/modl_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "80bef2b4fcf39482c709ea4e6bdd70cce88253c1098bced24545044b322b0a54"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "K562",
+      "model": "MoDL",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/modl_seed1234/metadata.json",
+      "sha256": "3264f617a1a400b905b0a1d6844e8a94fb826ee55ec3c4d07ed44a5098ef3af6",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "K562",
+      "model": "ChromBPNet_fresh",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/chrombpnet_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "aaf39a70d504f4ee8f17de875afd6777c0bcf4cc77c71988bbd6ab4a9506d73e"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "K562",
+      "model": "ChromBPNet_fresh",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/k562/runs/chrombpnet_seed1234/metadata.json",
+      "sha256": "f67ab6e41eca1a46ff3130208469c970ea7903b4643ace7725630478273aea56",
+      "seed": 1234
+    },
+    {
+      "role": "evaluation",
+      "dataset": "Mouse cSCC",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/evaluation_final/evaluation.json",
+      "sha256": "ce10974b8f78cd84720129e9d8c8d4da1c41e68aca9f79a4d16961523817f38b"
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "MoDL",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "f739245d1d391b2515d0818b22fd5b7e306839938af85a93bc76f96a3ddd45d2"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "MoDL",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/metadata.json",
+      "sha256": "7a9961d68ae02a4199f18a85147c0de2e7a96323eebeaef3a0a855e3785c01c4",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "ChromBPNet",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "30c5b8134f20e61309d40381217534239aef33890c9416d42a26e365952b1a8a"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "ChromBPNet",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/metadata.json",
+      "sha256": "187935e61b0e9e68edf753559f3639405a958783ab7db2819a400bb3a8161428",
+      "seed": 1234
+    },
+    {
+      "role": "prediction_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "ExplaiNN",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/test_predictions/prediction_metadata.json",
+      "sha256": "52ce5e4e9f48d5d4c13796328bbbaafc74d45835ce9b253e339a9fc59726fba0"
+    },
+    {
+      "role": "training_metadata",
+      "dataset": "Mouse cSCC",
+      "model": "ExplaiNN",
+      "path": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/metadata.json",
+      "sha256": "40cdac880c41b8390662b32ed0bfcea35db53dc41e9fc986f82c475563e382ad",
+      "seed": 1234
+    }
+  ],
+  "uncertainty": "2000 paired genomic-block bootstrap replicates, conditional on checkpoint; training seed1234 once per fresh model",
+  "runtime": {
+    "python": "3.14.4",
+    "matplotlib": "3.10.7+dfsg1",
+    "numpy": "2.3.5",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43"
+  },
+  "source_script": {
+    "path": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/response_package_20261102/benchmark_figure/plot_benchmark.py",
+    "sha256": "eaf74a2686ab405c1ac70647e02dc0898ac126fc907af3dbe94ab98afa60197d"
+  },
+  "skill_helper": {
+    "path": "/home/xf2217/.codex/skills/nature-figure/scripts/nature_matplotlib.py",
+    "sha256": "05f4dd62bce3197074b0b6ae9d25d05bf20862198055c8a16a6dc228f73129a3"
+  },
+  "warnings": [
+    "180mm canvas follows requested size; strict Nature main-figure baseline is183mm. Resize only if target journal requires it.",
+    "Target journal not specified; final journal-specific artwork requirements remain to be confirmed.",
+    "SVG retains editable text but font is referenced, not embedded; PDF font embedding checked separately.",
+    "Error bars are region-sampling intervals, not seed-to-seed reproducibility."
+  ],
+  "artifacts": [
+    {
+      "path": "benchmark_main.pdf",
+      "sha256": "f79cdffd07a54edbdedec96ef245a5739c062452068ec7bede06050e614dbd46",
+      "bytes": 34776
+    },
+    {
+      "path": "benchmark_main.png",
+      "sha256": "4f02916b3b07f53f87b8fb8e1ddaa6a4fe228b37a88838d6865a20b28d51b266",
+      "bytes": 175064
+    },
+    {
+      "path": "benchmark_main.svg",
+      "sha256": "450e87cec778686a8bd6522550d3d41bc417b5a1f5ed21fde75015f568928edc",
+      "bytes": 43171
+    },
+    {
+      "path": "benchmark_main_deuteranopia.png",
+      "sha256": "d698fcd501da70035103258f86c95e11f3983dc9f0c2666062007d40d8b67146",
+      "bytes": 154350
+    },
+    {
+      "path": "benchmark_main_grayscale.png",
+      "sha256": "dbf03b7fd57d2574e5031ba4a6f450c90359d444ebc346a829c5e5d675f05fa3",
+      "bytes": 74548
+    },
+    {
+      "path": "benchmark_main_protanopia.png",
+      "sha256": "0396fd828ad855760af3e9abb82eda101a37244a43d2f4075649abab055b1c0a",
+      "bytes": 154576
+    },
+    {
+      "path": "benchmark_main_tritanopia.png",
+      "sha256": "49e29a037b853c9102014953848c19e59094ba24bd9e040920430b99dd3cad19",
+      "bytes": 153672
+    },
+    {
+      "path": "caption.txt",
+      "sha256": "28292307e4510ce0247374f6fac923878e2a404a40712173f294e383b6e071e8",
+      "bytes": 2523
+    },
+    {
+      "path": "paired_comparisons.tsv",
+      "sha256": "ee47f128c094c9c40bd22986cca2e3adeda267d7278595df272666a6f14686e4",
+      "bytes": 2675
+    },
+    {
+      "path": "pdffonts.txt",
+      "sha256": "aa6d1f287ab49bf2365b0ef64a6105f09b0f5b918a956b5a794ec60453984684",
+      "bytes": 376
+    },
+    {
+      "path": "pdfinfo.txt",
+      "sha256": "6a6abf0913f13324629af8e424a163e8ac9301043a1cc75867936be9ed6e70ae",
+      "bytes": 475
+    },
+    {
+      "path": "plot_benchmark.py",
+      "sha256": "eaf74a2686ab405c1ac70647e02dc0898ac126fc907af3dbe94ab98afa60197d",
+      "bytes": 15677
+    },
+    {
+      "path": "preflight_pdf.json",
+      "sha256": "8f8872b1ae037e746955e94f2c6a4e04c7b639ca3ffcb32acd8e7b9ab1f3dcbd",
+      "bytes": 586
+    },
+    {
+      "path": "preflight_report.md",
+      "sha256": "aa049c0c0aa0e25631ec9795ef6bf4c1f64437c1d7f5ce6177ac86952cb7458c",
+      "bytes": 3380
+    },
+    {
+      "path": "preflight_svg.json",
+      "sha256": "7829c71072e929aa04a8f8ee657dc42bf43c23620792e8e88dd70611877c0225",
+      "bytes": 730
+    },
+    {
+      "path": "source_data.tsv",
+      "sha256": "b6e13595b6a1bab4213f5f018c0c3699cd77e2ed25d666bf06a6b68b5bdad3d1",
+      "bytes": 5054
+    }
+  ],
+  "preflight": {
+    "status": "no_blocking_failures",
+    "report": "preflight_report.md",
+    "svg_editable_text_elements": 36,
+    "svg_font_sizes_points": [
+      6.5,
+      7.0,
+      8.0
+    ],
+    "visual_checks": [
+      "color",
+      "grayscale",
+      "protanopia",
+      "deuteranopia"
+    ],
+    "additional_supplied_proof": "tritanopia",
+    "source_table_checks": {
+      "total_rows": 36,
+      "plotted_estimates": 30,
+      "explicit_NA_rows": 6
+    },
+    "cvd_matrix_source": "https://github.com/njsmith/colorspacious/blob/master/colorspacious/cvd.py"
+  }
+}

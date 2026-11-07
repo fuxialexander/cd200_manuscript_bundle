@@ -1,0 +1,39 @@
+{
+  "training_rows": 143439,
+  "validation_rows": 7965,
+  "gates": {
+    "peak_count_quantile": 0.01,
+    "training_peak_count_quantile_value": 112.0,
+    "bias_threshold_factor": 0.5,
+    "background_count_upper_cutoff": 56.0,
+    "outlier_quantile": 0.9999,
+    "strict_count_lower": 4.296699999999857,
+    "strict_count_upper": 55.0,
+    "count_loss_weight": 4.4,
+    "training_nonpeaks_before_filtering": 67095,
+    "training_nonpeaks_below_background_cutoff": 12968,
+    "training_nonpeaks_selected": 12320,
+    "fitted_on": "training chromosomes only"
+  },
+  "validation_bias_backgrounds": 1029,
+  "training_background_count_quantiles": [
+    4.0,
+    24.0,
+    83.0,
+    201.05999999999767,
+    473.0
+  ],
+  "training_peak_count_quantiles": [
+    36.0,
+    112.0,
+    353.0,
+    3514.5699999999924,
+    7802.0
+  ],
+  "train_bias_region_ids_sha256": "ec08def9e43becb5952d0e918edd37ca40c944b5b88b186ee7c7f1fe5f0ef8d1",
+  "valid_bias_region_ids_sha256": "a5fddae9c2ff940126e5ea87ebb178a079ea337104d4a983ee44800b3c136a46",
+  "target_units": "Bundled unsmoothed, unnormalized per-base ATAC counts as stored; ln(1 + central 1000-bp sum)",
+  "target_provenance_limitation": "Upstream Tn5 shift and fragment-endpoint provenance have not been established; these are not certified +4/-4 insertion tracks",
+  "gpu_used": false,
+  "test_values_read": false
+}

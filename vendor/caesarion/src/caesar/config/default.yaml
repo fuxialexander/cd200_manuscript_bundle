@@ -1,0 +1,21 @@
+data_key: "default_template" 
+root_path: "/home/xf2217/Projects/default_template"
+annotation_dir: "/home/xf2217/Projects/annotations"
+output_dir: "/home/xf2217/Projects/default_template/dense"
+
+labels_column: "celltype"
+peak_file: "/home/xf2217/Projects/default_template/raw/demo_peaks.bed"
+
+max_fragment_per_cell: 500
+chunk_size: 2000000
+n_insertions: 1000000000
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+
+# system
+n_jobs: 16
+tempdir: "/tmp"
+seed: 42
+

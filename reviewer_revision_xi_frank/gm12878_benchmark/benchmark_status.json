@@ -1,0 +1,268 @@
+{
+  "started_utc": "2026-10-27T02:53:30.761434+00:00",
+  "supervisor_pid": 2302338,
+  "state": "complete",
+  "stages": [
+    {
+      "name": "modl_train",
+      "started_utc": "2026-10-27T02:53:30.761628+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "93.3",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/modl_train_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 2302339,
+      "last_completed_epoch": {
+        "epoch": 34,
+        "seconds": 315.0536297340004,
+        "train": {
+          "examples": 213283,
+          "logcount_mse": 0.6245740655370832,
+          "loss": 9820.378464019197,
+          "profile_nll_without_constant": 9762.105694773787
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_mse": 0.7590697295808166,
+          "loss": 10097.9472859246,
+          "profile_nll_without_constant": 10027.126073981604
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T05:58:11.275969+00:00"
+    },
+    {
+      "name": "modl_predict",
+      "started_utc": "2026-10-27T05:58:11.283062+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--count-weight",
+        "93.3",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/modl_predict_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 2736779,
+      "last_completed_epoch": {
+        "epoch": 34,
+        "seconds": 315.0536297340004,
+        "train": {
+          "examples": 213283,
+          "logcount_mse": 0.6245740655370832,
+          "loss": 9820.378464019197,
+          "profile_nll_without_constant": 9762.105694773787
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_mse": 0.7590697295808166,
+          "loss": 10097.9472859246,
+          "profile_nll_without_constant": 10027.126073981604
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T06:01:31.289996+00:00"
+    },
+    {
+      "name": "evaluation_published_reference",
+      "started_utc": "2026-10-27T06:01:31.297082+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+        "--data-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluation_published_reference_restart_20261027T025330Z",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "ChromBPNet_published=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions",
+        "--prediction",
+        "ExplaiNN=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions",
+        "--prediction",
+        "MoDL=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/evaluation_published_reference_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 2745805,
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T06:01:51.298531+00:00"
+    },
+    {
+      "name": "chrombpnet_train",
+      "started_utc": "2026-10-27T06:01:51.306041+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/tmp/cd200_gm12878_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR637XSC.h5",
+        "--count-weight",
+        "93.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--mode",
+        "train",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/chrombpnet_train_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 2746458,
+      "last_completed_epoch": {
+        "epoch": 11,
+        "seconds": 456.5227215740015,
+        "train": {
+          "examples": 213283,
+          "logcount_predictions_loss": 0.5853835945394147,
+          "logits_profile_predictions_loss": 854.6978320535026,
+          "loss": 909.31412265982
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_predictions_loss": 0.898332931956022,
+          "logits_profile_predictions_loss": 935.0099514991349,
+          "loss": 1018.8244180346762
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T07:33:31.618580+00:00"
+    },
+    {
+      "name": "chrombpnet_predict",
+      "started_utc": "2026-10-27T07:33:31.620472+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+        "--cache-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output-dir",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/tmp/cd200_gm12878_benchmark/models/fold_0/model.bias_scaled.fold_0.ENCSR637XSC.h5",
+        "--count-weight",
+        "93.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--mode",
+        "predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/chrombpnet_predict_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 270857,
+      "last_completed_epoch": {
+        "epoch": 11,
+        "seconds": 456.5227215740015,
+        "train": {
+          "examples": 213283,
+          "logcount_predictions_loss": 0.5853835945394147,
+          "logits_profile_predictions_loss": 854.6978320535026,
+          "loss": 909.31412265982
+        },
+        "valid": {
+          "examples": 20590,
+          "logcount_predictions_loss": 0.898332931956022,
+          "logits_profile_predictions_loss": 935.0099514991349,
+          "loss": 1018.8244180346762
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T07:37:31.634392+00:00"
+    },
+    {
+      "name": "evaluation_matched_training",
+      "started_utc": "2026-10-27T07:37:31.641849+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+        "--data-dir",
+        "/tmp/cd200_gm12878_benchmark/cache",
+        "--output",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/evaluation_matched_training_restart_20261027T025330Z",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "ChromBPNet_published=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions",
+        "--prediction",
+        "ExplaiNN=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions",
+        "--prediction",
+        "MoDL=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234_restart_20261027T025330Z/test_predictions",
+        "--prediction",
+        "ChromBPNet_fresh=/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/logs/evaluation_matched_training_restart_20261027T025330Z.log",
+      "state": "passed",
+      "pid": 281660,
+      "exit_code": 0,
+      "finished_utc": "2026-10-27T07:38:11.652176+00:00"
+    }
+  ],
+  "configuration": {
+    "seed": 1234,
+    "epochs_max": 50,
+    "early_stopping_patience": 5,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "negative_ratio": 0.1,
+    "count_weight": 93.3,
+    "torch_training_precision": "bfloat16 autocast; stored FP32 weights; FP32 inference",
+    "tensorflow_precision": "FP32",
+    "published_reference": "ENCSR389HIH / ENCFF142IOR fold0 only, no test-fold ensemble",
+    "fresh_native_comparator": true
+  },
+  "cache_manifest_sha256": "dc64437e8df108ccfba15fbe622b9ee0548ab2f2a35f88f4693c309e0bf94e87",
+  "prior_status_archive": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/benchmark_status.restart_20261027T025330Z.json",
+  "recovery": "Completed outputs reused; incomplete training restarts from scratch in a fresh directory because optimizer state was not saved",
+  "reused_completed_predictions": [
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/explainn_seed1234/test_predictions"
+  ],
+  "preserved_partial_runs": [
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/runs/modl_seed1234"
+  ],
+  "current_stage": "evaluation_matched_training",
+  "updated_utc": "2026-10-27T07:38:11.665151+00:00",
+  "initial_comparison_available": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/EVALUATION_PUBLISHED_REFERENCE.md",
+  "matched_comparison_available": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/gm12878_benchmark/EVALUATION_MATCHED_TRAINING.md",
+  "finished_utc": "2026-10-27T07:38:11.665147+00:00"
+}

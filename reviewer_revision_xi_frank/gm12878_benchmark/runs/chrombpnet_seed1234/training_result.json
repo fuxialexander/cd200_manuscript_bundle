@@ -1,0 +1,7 @@
+{
+  "best_epoch": 6,
+  "best_validation_loss": 1014.2805898361613,
+  "epochs_completed": 12,
+  "pilot": false,
+  "test_evaluated": false
+}

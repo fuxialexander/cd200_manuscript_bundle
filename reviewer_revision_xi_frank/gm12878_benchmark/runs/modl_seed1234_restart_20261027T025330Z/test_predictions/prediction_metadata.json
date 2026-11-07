@@ -1,0 +1,27 @@
+{
+  "checkpoint_sha256": "61c41121f199fdb27e422df1a667d6ea6b59104c06de6ea42df6991fd07ea4a2",
+  "count_transform": "ln1p_raw_insertion_count",
+  "model": "modl",
+  "pilot": false,
+  "prediction_counts_units": "predicted natural_log(1+raw insertions)",
+  "prediction_profiles_units": "unit-sum probability shape",
+  "prediction_source_sha256": "56ad485e54cd3e9a640590d3b7c6f6e8681bad2a2b1efc673007731558040d10",
+  "region_ids_sha256": "427bf4380710d6e9cba77840f68235469daa8aa6ce410ab26dfb57376ee6a0f8",
+  "region_order": "/tmp/cd200_gm12878_benchmark/cache/test.regions.tsv",
+  "source_compatibility": null,
+  "target_end": 1500,
+  "target_start": 500,
+  "test_chromosomes": [
+    "chr1",
+    "chr3",
+    "chr6"
+  ],
+  "test_files_sha256": {
+    "/tmp/cd200_gm12878_benchmark/cache/test.regions.tsv": "3af5d585827a29971bcd9aae8cec29660f6020168e2d2bc081c41799db95752d",
+    "/tmp/cd200_gm12878_benchmark/cache/test.x.npy": "6796adfdee9eb20cc30afa6fa6e1e8c6bc4fa9e79b6e0d5b36ad2cefd02a99c4",
+    "/tmp/cd200_gm12878_benchmark/cache/test.y.npy": "ce1ef8fc3ffd5c9f6fecdddc29d5773c7e278e00d42f76c0424da97eea203c91"
+  },
+  "test_offset": 500,
+  "test_rows": 314645,
+  "training_source_sha256": "56ad485e54cd3e9a640590d3b7c6f6e8681bad2a2b1efc673007731558040d10"
+}

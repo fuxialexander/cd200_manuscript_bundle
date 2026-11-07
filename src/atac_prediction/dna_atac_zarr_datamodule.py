@@ -159,8 +159,8 @@ class DNAATACZarrDataModule(pl.LightningDataModule):
                     self.cdz = CelltypeDenseBPCellsIO(path=self.atac_zarr_path, mode="r")
                 # Don't load to memory - use chunk-based loading
                 self.cdz = self.cdz.subset(self.celltype_ids)
-                if isinstance(self.cdz, CelltypeDenseZarrIO):
-                    self.cdz.load_to_memory_dense()
+                # Read only requested chunks. Loading an entire genome-wide
+                # float32 track here consumes ~12 GB per human pseudobulk.
 
             if self.genome is None:
                 print(f"Loading genome zarr from {self.genome_zarr_path}")

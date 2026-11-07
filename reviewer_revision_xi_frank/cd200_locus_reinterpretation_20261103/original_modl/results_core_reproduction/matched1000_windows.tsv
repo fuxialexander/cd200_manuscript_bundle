@@ -1,0 +1,8 @@
+window_id	locus	chrom	output_start	output_end	role
+P1_central	P1	chr16	45383812	45384812	central
+P2_central	P2	chr16	45356177	45357177	central
+P2_tile_left	P2	chr16	45356164	45357164	tile_left
+P2_tile_right	P2	chr16	45356191	45357191	tile_right
+promoter_central	promoter	chr16	45408213	45409213	central
+promoter_tile_left	promoter	chr16	45408000	45409000	tile_left
+promoter_tile_right	promoter	chr16	45408426	45409426	tile_right

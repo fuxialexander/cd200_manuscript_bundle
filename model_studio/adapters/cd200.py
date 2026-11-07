@@ -56,7 +56,7 @@ class CD200MotifCNNAdapter(SequenceModelAdapter):
             details={
                 "checkpoint_size_bytes": self.checkpoint.stat().st_size,
                 "cell_types": list(
-                    self.options.get("cell_types", ["SCCApos.cd200_scc"])
+                    self.options.get("cell_types", getattr(self.model, "celltype_ids", []))
                 ),
             },
         )

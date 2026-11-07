@@ -1,0 +1,612 @@
+{
+  "repository": "https://github.com/fuxialexander/Caesarion",
+  "upstream_commit": "af0212e506996e7ff312f763828d5dded5bf452a",
+  "upstream_declared_license": "MIT",
+  "scope": "Tracked source code only; no upstream data, settings, or history",
+  "files": [
+    {
+      "path": "src/caesar/analysis/__init__.py",
+      "sha256": "8c5bcb91edb3c16f3c1e3e57d32d5740ee85c59900ea7443ca5fc64431ee199c"
+    },
+    {
+      "path": "src/caesar/analysis/benchmark_pybigwig_zarr.py",
+      "sha256": "704366c922751970a8ad8840c877b441ee54680f3e9ce006c33ef8ec4cde9fdf"
+    },
+    {
+      "path": "src/caesar/analysis/clustering_ops.py",
+      "sha256": "a9eaf1752015eefc15ba817623996d82337355d1b596e8a0597d27140f5e4f75"
+    },
+    {
+      "path": "src/caesar/analysis/cnv_detection.py",
+      "sha256": "0219e78a7f220a7f94cc6b033620a19c4ce43e47e0f6875cdb5040c09b4195eb"
+    },
+    {
+      "path": "src/caesar/analysis/data_utils.py",
+      "sha256": "aa786393b08d302a84e4fefff541a013855f0710e63f3d64db402873bd367d66"
+    },
+    {
+      "path": "src/caesar/analysis/footprint.py",
+      "sha256": "e01170f012109b182a409867546b606c58e84714a425af46ca50081f0cb94f19"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/README.md",
+      "sha256": "a7cda9fe957beb82bd079cc62c9e4d5878bd328fd1940f3194702e0420202f5c"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/__init__.py",
+      "sha256": "48ac03cf54cc16c0f9c19284508e019af9c6fff06b4f824c4f52ac51208dbe2a"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/__main__.py",
+      "sha256": "451c78e478cd3e9e13717aebc41e10526f0d3e1ebc1850bd9f0cced28344b4e3"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/accumulation.py",
+      "sha256": "588f803bb1c76267ad767ffde154d43b412020373ebf017612791bf4300e3d17"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/chip_atlas.py",
+      "sha256": "5036c5b405f37d4fbfc20e25add9535c48b36d83858d0700fe960fdcd2f81550"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/collection.py",
+      "sha256": "059aab7432f5dd86c7159a0061c436678634192c79e7ca40b3bcce31de4764d7"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/config_utils.py",
+      "sha256": "6ff7003401d413c476bab51211d791b0a0a8f3725b70dca3011e85a074378866"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/context_ranking.py",
+      "sha256": "f85914ae08a42263eca6a7b6b796883a450322ba73f0abe299261c023bb4d9f3"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/data_utils.py",
+      "sha256": "becd0f9265945ecb7e2167d2cbffedcb5a5bcf2a79b2309f32376fcc5e88cadd"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/dense_subset.py",
+      "sha256": "57b7ad93239c50585ab6d5e198b7909ee5247ecbd6de0dde9d746d8bfe44d559"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/dense_subset_workflow.py",
+      "sha256": "609c2b98255e608c12138c450aacf7cc817c21dafd156d21838a62cb6ef8e56b"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/full_curve_reuse.py",
+      "sha256": "70379d21f7b2bde0bef63be58a5f60e24b06804a0a269969da2fc392fb14047a"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/main.py",
+      "sha256": "882e0c52e212b144604de1b3ced50ce0e97c38164c9668687ca21298306435d3"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/motif_source.py",
+      "sha256": "80f366c08b458904bf199be6e4602acbecaee78f55389634d3df0922477d2416"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/peak_set_memberships.py",
+      "sha256": "f3b9c5de55629e9ecd8e37ad8fedeccc55db7d5a331188f1daed9946dd5ca1ee"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/positional_cache.py",
+      "sha256": "2380027db44caa2e1a5150e61e5aed9ce3c5bca110e112ceaba24b558359930b"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/processing.py",
+      "sha256": "e8d00475463a50b2cb43453503bb372f095bebd1574ef393b8f2440fdad4c3b4"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/subset_planner.py",
+      "sha256": "ed55cc0e49a3ec937715f3f2a8155db67525b508adfa1d83f8acf44256061bc0"
+    },
+    {
+      "path": "src/caesar/analysis/genome_motif_analysis/visualization.py",
+      "sha256": "dba7e5ae3f531684bc903c93dbeeba6f955c1fb90f5b35f1b03a679f27d38555"
+    },
+    {
+      "path": "src/caesar/analysis/genomic_query.py",
+      "sha256": "e5585ecf17669dc11dbacf8a768cc9af9a296310969e484a1454e5327cf1fab3"
+    },
+    {
+      "path": "src/caesar/analysis/iso_libsize_sampler.py",
+      "sha256": "aeadd92e4f68ae90e0aa9b4b19dd63b451516221d670119424dbe7065d33aa89"
+    },
+    {
+      "path": "src/caesar/analysis/lsi.py",
+      "sha256": "3b7f2953111db22311f74e279b73e758ed23cddd4d231743208199e378bd2dab"
+    },
+    {
+      "path": "src/caesar/analysis/plot_utils.py",
+      "sha256": "4850971c22827eb1c7a2c81e3f8e98adf34b37e075f047e5ee00f5abc485196b"
+    },
+    {
+      "path": "src/caesar/analysis/pyEpiAneuFinder.py",
+      "sha256": "66bc69718c2264d3d95e9b6d51c15398f9567093f699b505d717d1169c1505da"
+    },
+    {
+      "path": "src/caesar/analysis/tf.py",
+      "sha256": "96bbfaec661170b775e7f3de6521af0320f4b9b6be1360a2c7e058007dffb6fc"
+    },
+    {
+      "path": "src/caesar/analysis/track.py",
+      "sha256": "548d506fc92ef50be1cf5e0b3351231394b2ac733f2df4c1815d3081d8a6d2e3"
+    },
+    {
+      "path": "src/caesar/cli.py",
+      "sha256": "7d0586c3009669f13d30d428ee9a5065eeef077545d9b6d7e0facf479b690550"
+    },
+    {
+      "path": "src/caesar/config/4dn_h1esc.yaml",
+      "sha256": "a708c4ed92845bd429cf100685e701996b3713efb943c59204f0e1e24defe04a"
+    },
+    {
+      "path": "src/caesar/config/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/caesar/config/archr_cellline.yaml",
+      "sha256": "a86c75ae878fb7ab86e77edcc39dce25eba3f48abb59f6e3c641010304ea28cf"
+    },
+    {
+      "path": "src/caesar/config/bingren_adult.yaml",
+      "sha256": "b1dcb745d12548d535686c6b50d78b31a6deaae2087832b2f8dacf774adb5fd3"
+    },
+    {
+      "path": "src/caesar/config/bingren_brain.yaml",
+      "sha256": "2f6e46dbc2679df4b184581f574384ccbeda40972e650b6d251c61b4813a36dc"
+    },
+    {
+      "path": "src/caesar/config/cd200_scc.yaml",
+      "sha256": "93b692310c3c647e12be0dd4145bbd961cb3c1f353a9bdbfde13dff1c4f141c9"
+    },
+    {
+      "path": "src/caesar/config/config.py",
+      "sha256": "224af475f476a3a6e58969d7e17d7f633cf60c02fbcf194946c3f27afbc48e92"
+    },
+    {
+      "path": "src/caesar/config/default.yaml",
+      "sha256": "1c6d4e10ee77aea245f6e83ef660f2d9e513a575bbceb26cd953365ac75ec499"
+    },
+    {
+      "path": "src/caesar/config/encode_hg38atac.yaml",
+      "sha256": "35ce1446ddc6f424222fca7beb6368de8e22314d478f79e00479624a81962566"
+    },
+    {
+      "path": "src/caesar/config/greenleaf_hematopoiesis.yaml",
+      "sha256": "a89ba298ba4819e5994215002bf13748184f4f0b0a0820f2489f86ce9ae684d5"
+    },
+    {
+      "path": "src/caesar/config/greenleaf_texhaustion.yaml",
+      "sha256": "d5cee528568380f6b73bcd377f3a1b8d5fd0f3d35b5bb349bb485e925fd6e5e1"
+    },
+    {
+      "path": "src/caesar/config/htan_gbm.yaml",
+      "sha256": "d43a77629f0ff6d1771c34415d79abb9d5412067b9a299e32e159c0ca3bbc839"
+    },
+    {
+      "path": "src/caesar/config/htan_rcc.yaml",
+      "sha256": "c10255a67934c6867196fec5385b1b342e15b301ad32440222b37e9980251b7d"
+    },
+    {
+      "path": "src/caesar/config/joung_tfatlas.yaml",
+      "sha256": "cfb732615f53b20afd8c9ef53215c04cfc20b50460d3ca26bc825ceb7c751769"
+    },
+    {
+      "path": "src/caesar/config/linnarsson_brain.yaml",
+      "sha256": "ed92f347f2bc213b13ab5be50a7183edfe62dab191d2f321edf5ad9b3e246681"
+    },
+    {
+      "path": "src/caesar/config/machine/manitou.yaml",
+      "sha256": "f2e69e8fd704041ca59aeebadef8b796eb94600c7d0366ff09cffd4ed4fbc8bd"
+    },
+    {
+      "path": "src/caesar/config/machine/pc.yaml",
+      "sha256": "dbb72e8a4acf960abd47914044087cd51615bd0c7c3d8bb02e10d1fc6549d846"
+    },
+    {
+      "path": "src/caesar/config/shendure_fetal.yaml",
+      "sha256": "b46a52f4bde34b41908c2299842f27805aaaf0ec0a6143ecece3f5ef5f6f749a"
+    },
+    {
+      "path": "src/caesar/config/tcga_atac.yaml",
+      "sha256": "58e02e3fec099ac630c1b0e07d625952fbc400d7767a6bb2d792d15795f05947"
+    },
+    {
+      "path": "src/caesar/config/vijay_hematopoiesis.yaml",
+      "sha256": "f17717e588e05a3ac68f5033d7d11d824d2256d106bb416c836201f9f38d1b0e"
+    },
+    {
+      "path": "src/caesar/io/__init__.py",
+      "sha256": "062830ea1eb7653c48dce609d01c49d4e37dd5556aef3835964f7c4e5e8bba5c"
+    },
+    {
+      "path": "src/caesar/io/adata_io.py",
+      "sha256": "4839bf87736b7e5ab4cf605e51ce44b05633b914cb6d1e2797f51182e19be62b"
+    },
+    {
+      "path": "src/caesar/io/aggregator.py",
+      "sha256": "e47a16849b4dba89a6e2b326cd69703f2649f867d97fdcb3409cd86362cd0c08"
+    },
+    {
+      "path": "src/caesar/io/bpcell_io.py",
+      "sha256": "aee88a4e0858a489691cbdef2ad055d8978c88557cb372f3aef778ae71003b50"
+    },
+    {
+      "path": "src/caesar/io/design_doc.md",
+      "sha256": "bb9c567a0f9b98d97ed892b3d7e9f8dc3d6980982542d899d8a31bbe336303c5"
+    },
+    {
+      "path": "src/caesar/io/genomic_io.py",
+      "sha256": "19998ab5f75710f598182669d76d47f3d74c6e099689680aa984dbda9d97d1fd"
+    },
+    {
+      "path": "src/caesar/io/interface.py",
+      "sha256": "b5538845397cc18617cefcbe50ac91d1d09dab8784ec7a36fb9829d288272a05"
+    },
+    {
+      "path": "src/caesar/io/metadata_io.py",
+      "sha256": "96a858795c66b7b3a44277a1c2852b3d8929ba419baf2aa79273cc60d785394c"
+    },
+    {
+      "path": "src/caesar/io/mixins/__init__.py",
+      "sha256": "1b84485250dc8949f2e8ece69010a7116c90b4894779b5f3aff8bfa3e60cd54e"
+    },
+    {
+      "path": "src/caesar/io/mixins/call_peaks.py",
+      "sha256": "09cbe85a70296e7c0929826e9e9a31b4749a6064d904488f9d3a3c800b8ab046"
+    },
+    {
+      "path": "src/caesar/io/mixins/clustering.py",
+      "sha256": "613df0c15638241750b71d2ec852e0f1e7cc7f65d5423c798d5dfc33c0e6b454"
+    },
+    {
+      "path": "src/caesar/io/mixins/footprint.py",
+      "sha256": "af6d3661be90fe4cf94192e7d19008ce2db8c8c6d3b7cb35bed014626002dc08"
+    },
+    {
+      "path": "src/caesar/io/mixins/footprint/__init__.py",
+      "sha256": "756059db590530ec5990ec5cedfcaa0a16d94c9254d51b1d84238821a1c6c65e"
+    },
+    {
+      "path": "src/caesar/io/mixins/footprint/_kernels.py",
+      "sha256": "e416f1b9cb0fc69f0891c64708b51e62b7723ab547a5c05d68f238987b35e94b"
+    },
+    {
+      "path": "src/caesar/io/mixins/footprint/_ml_features.py",
+      "sha256": "38b6db13360edc93f1394278b23855fac8808f4b9c86db992d4e0298b705fc08"
+    },
+    {
+      "path": "src/caesar/io/mixins/footprint/_traditional.py",
+      "sha256": "166a6d45aaffb25cbdfa8a4060e80036b3aea6abaaa387ddc1652c0914761ea9"
+    },
+    {
+      "path": "src/caesar/io/mixins/genomic_masking.py",
+      "sha256": "7650770633f465468f525a018ab3c523ae8c264c49eb353e19a3e951e9b5a079"
+    },
+    {
+      "path": "src/caesar/io/mixins/label.py",
+      "sha256": "49195169fba07c816785fca492df6292808ddcfcf237ccfa95af3cb00b0a44ab"
+    },
+    {
+      "path": "src/caesar/io/mixins/library_size_annotation.py",
+      "sha256": "071c0254cb4e57b6b881d7cc748b86e433dd2cf804cfa47448c891c5ad61659b"
+    },
+    {
+      "path": "src/caesar/io/mixins/quantile_normalization.py",
+      "sha256": "cd8967228a320a90345b405a68e09df0271930bf021fea300846a6f5a09bfb31"
+    },
+    {
+      "path": "src/caesar/io/mixins/tss_extraction.py",
+      "sha256": "a398c7f35cbcd8e1f060516c6e605251f8dfc296726f745bdf62dbf1160c88f8"
+    },
+    {
+      "path": "src/caesar/io/mixins/tss_tes_accessibility.py",
+      "sha256": "f7b72ad57070e0d1edd749e1e240e7836880c8e04bcbc2d52133f861ff12808d"
+    },
+    {
+      "path": "src/caesar/io/normalizer.py",
+      "sha256": "e5dea6e56c27fe87e39ab40e0fa5fe84b8be6fd52b827a0c0c973885d1caabb4"
+    },
+    {
+      "path": "src/caesar/io/parallel_processing.py",
+      "sha256": "5bcca2a85c7602d69d1ddda230136cabbe8b80fb48f78babfef16ed16cf5edca"
+    },
+    {
+      "path": "src/caesar/io/peak_io/create_deduplicated_peaks.py",
+      "sha256": "144901fc4c7d4518374c6c189cdf1637a7a70cbcd1103aeabc56f1db696994c3"
+    },
+    {
+      "path": "src/caesar/io/peak_io/mmseqs_cluster_analysis.py",
+      "sha256": "a84768bb8d745e2d4564a427b98ddab88dfa08e388c2b34976b1756a15fcab0b"
+    },
+    {
+      "path": "src/caesar/io/query.py",
+      "sha256": "702e82fa053ad83f2990125c99fdbc44a4b0f0de774cd79ec889b42f4b4db1dd"
+    },
+    {
+      "path": "src/caesar/io/utils/__init__.py",
+      "sha256": "972771f6093cdb80c86cbbb87a92492ba51fe1eafe1b3b49c5eef943f2bef1a4"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/__init__.py",
+      "sha256": "0e8a5eee471655f80824ce4efd7b1ce37b2074178d3d2136842eeba5dc9218e6"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/base.py",
+      "sha256": "13e64f523127eaf76e25804b5e2589a8b48dc00e0bf0c0e242dcc4990b0ef6fc"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/dense.py",
+      "sha256": "695e5604e1e925d4b334db8e0860f958619f1889a4dc4e55951244184eac1458"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/motif_hits.py",
+      "sha256": "cb310ee4bc9ec7e1f2c10b37e3b51e3d56720dd80228550e39ebda5cc0b0fd89"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/multiome.py",
+      "sha256": "7dd081e32f9a674adedff9842bdbd41c4b07bc9a25dab09b3f74bef76c5cad70"
+    },
+    {
+      "path": "src/caesar/io/zarr_io/sparse.py",
+      "sha256": "d0c5b635ef25b77c42929e6ce2ea4f5f729626cad8b2d85631845064628dc33f"
+    },
+    {
+      "path": "src/caesar/preprocess/README.md",
+      "sha256": "73d6b3bd6bcffbf31bcb843dc7db78985970c76e151d6a88b4dafbcd7c67cdff"
+    },
+    {
+      "path": "src/caesar/preprocess/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/add_expression_cdz.py",
+      "sha256": "4ce9450e6c39672e9f00262d635ef4d6e7c5e395fa03b990118ad2797388142c"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/add_peak_to_cdz.py",
+      "sha256": "5094fcae24ba3dcc38bb963ca528b147afd18c66f0d72891ed34eb977092de2d"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/add_peaks_to_msz.py",
+      "sha256": "70f13ed195e323a3a893cb8b40b2dc1cbe9bb2efc6dbee2e64ac8543cb9f0db3"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/bulk_accessibility.py",
+      "sha256": "54e225f421417ed1717efc36c771e57a84b25b5e6d648e82630e06f1d0c2b4c2"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/create_cdz.py",
+      "sha256": "c9f7a5c57b89e2225959d8bb828b2fe035797e96406853e7e092369117f5b65d"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/fragment_to_zarr.py",
+      "sha256": "132abf8b6498607dd3d0bccb29ded09172d13a7fdee225d30ac788f55a9a720e"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/metadata_filters.py",
+      "sha256": "7e03f51c0b5230f478f411660fe18f26d26a8f00f6e341841762412106c951c9"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/motif_to_zarr.py",
+      "sha256": "ce5a2953443daa264da948922ef51da41639495c649df89c955065dd03ab5a51"
+    },
+    {
+      "path": "src/caesar/preprocess/archive/pseudobulk.py",
+      "sha256": "49d7d7ad591f50a699929f465d4502afad56636cecfa03ad092d96f0a778c5ac"
+    },
+    {
+      "path": "src/caesar/preprocess/core/__init__.py",
+      "sha256": "6e373c2ba9dc1c08db92d31c25250e6bcd409f76eb7fed5da7ef1b1338079eb6"
+    },
+    {
+      "path": "src/caesar/preprocess/core/base.py",
+      "sha256": "7744617e3cdab81360503b8c862bcefba32ee28acff972d4eb3f1f25b9bf509b"
+    },
+    {
+      "path": "src/caesar/preprocess/core/chromosome_filter.py",
+      "sha256": "42dc6696d4b72cac393f07fe815771f3b5a580678226e20292265e8c825a65ef"
+    },
+    {
+      "path": "src/caesar/preprocess/core/config.py",
+      "sha256": "33819d5d274468c96e99244175bc9354dcdf8dc82ec55ff5f912ca4cb3cb8c19"
+    },
+    {
+      "path": "src/caesar/preprocess/core/constants.py",
+      "sha256": "e0c9113df7ca32d9f46b417eb489d9fc738e36ebee4817115224b63a89e296e2"
+    },
+    {
+      "path": "src/caesar/preprocess/core/exceptions.py",
+      "sha256": "b858e327617cba38dd90734ccfa3727ddb586c7ae69cbd14af438b8671f83ea3"
+    },
+    {
+      "path": "src/caesar/preprocess/core/factory.py",
+      "sha256": "e73d320deb5d2815798ddf5657b326696876be0f953cddda34294a9e9eaee4de"
+    },
+    {
+      "path": "src/caesar/preprocess/core/mixins.py",
+      "sha256": "f08a099225497ddd95d5a70b4ba11c3fe9495aa1458e32101344406bdeec4105"
+    },
+    {
+      "path": "src/caesar/preprocess/core/output_spec.py",
+      "sha256": "be9a5470f4b2c06cc3963ba0856aca7f703a816b7590d822c4706ac17235654e"
+    },
+    {
+      "path": "src/caesar/preprocess/core/tile_filtering.py",
+      "sha256": "85e28bfbeb92f71d2a6c00a75c8f427ca46ce317633980d884f45b878e795cb9"
+    },
+    {
+      "path": "src/caesar/preprocess/core/workflow.py",
+      "sha256": "518fd0f8e77b0fd61d86355f35565a4fdd415802ee38110fff20e342b6e9f880"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/add_expression.py",
+      "sha256": "3a962da9476406280eb20bcb91c870a1b4db1a40255c30bc27d8cce91f1b74c6"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/add_peak_processor.py",
+      "sha256": "06288ff421732feda873ac634953192df7a1c384292fab617b3c4e65459226fe"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/bam_processor.py",
+      "sha256": "758c9a7c33b021e703981e8e40b5de2dd8d46d070512d34034cefd639eb5c8ac"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/bigwig_processor.py",
+      "sha256": "fd50886400f059bf7626da22b58e5d05c39e9534838b8ce23ebf20c55ea72f9c"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/bpcells_processor.py",
+      "sha256": "498c260b4e280f54ed457814b03bc6d20b0626997d714c2e6fd9251d9913e386"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/cellstate_tile_count_processor.py",
+      "sha256": "5d8e443849c8de3a8f10288df41e6975a89a27eea57501685eb66f2daf34f1f2"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/clustering_processor.py",
+      "sha256": "00132b70310db5e4f4a090d04b7f27d25088133535aefe58e0bfc881ad15b78f"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/cnv_detection_processor.py",
+      "sha256": "5b5a3c66b17c6802744e96238ac809d4bc06148481c8b9636be02346d7c4fc4a"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/differential_signal_processor.py",
+      "sha256": "9907075c8901c8b1344861ce7dee4969cdea3b53af17c0cd6a5fab9ff3998e72"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/footprint_processor.py",
+      "sha256": "84a35c87eae3949c112b3e64a3d0be36cb1729eff7ab6268e8f509eca44959bd"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/fragment_processor.py",
+      "sha256": "997054646f0860a8332826db67411f8c48c701cc954098de09bb4d539fd5d790"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/isolibsize_metacell_processor.py",
+      "sha256": "94e24cd93c81d26d6530d6e9ad067c997c3f6da79e598d85922d988cd2d7abd5"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/library_size_processor.py",
+      "sha256": "8895931527a48f213521df12070af07e602420d8defff2c4362489872107d3a9"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/metadata_filter_processor.py",
+      "sha256": "bfba0cc1ff96184de570dcd8253c507b5c0da9e4e1f026e81974ad977a518c8e"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/motif_curator_processor.py",
+      "sha256": "c89f914787ee3e80ac64624288bb4fd4ed8d7009831c653490b156e26871c739"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/motif_processor.py",
+      "sha256": "2b0d8cc9076b52f996c68cb7de0c6db901a5d426378049e69e3ddead7f0b8791"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/multiome_processor.py",
+      "sha256": "76678bbcae4b56414de397d12842a2476c4edbbca0c496614b574cf53bb9e555"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/multiome_pseudobulk_processor.py",
+      "sha256": "678298904a4c4ff7385997d2f28efdf1e8674ac0fa133f4d1cf8e265cff2e748"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/multiome_rna_processor.py",
+      "sha256": "3c8ae8ab56931cfaee45e8ada00c9e7118b450a155c1cbc4ad91da3db2bd1671"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/normalization_processor.py",
+      "sha256": "385515841e8cc35077ab589147542250a96947de7ad63ea4a803eabcfe6311de"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/peak_calling_processor.py",
+      "sha256": "82242184eb7c1aa5e204b7cf28bdb4ee666058db20e553fa44f65f9c5997dc9c"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/peak_deduplication_processor.py",
+      "sha256": "7d41827e6487c22da005d4df17027df5a1e296a2d81f0c71ced9282a770aa626"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/pseudobulk_processor.py",
+      "sha256": "bbbcc0f3e68f2b1157b8bbc4d546657a01d505676d0c8be1ce118238c9685bb7"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/split_annotator_processor.py",
+      "sha256": "1bf3f993069dfe74c39000e768c16c23b29951dc7fff69e58dc5b6eb8cfff72f"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/tes_accessibility_processor.py",
+      "sha256": "325d31747f7f515059a6d92d23d50349668f2e1769ae4c397cf69402008e86cc"
+    },
+    {
+      "path": "src/caesar/preprocess/processor/tss_accessibility_processor.py",
+      "sha256": "8694ba520472353a7fa36e128081f6fd409a8aa5c48b475b5f58d4628eafdec5"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/__init__.py",
+      "sha256": "45aea4d1e8dd9eddb5532ee0032d4c930e206eefbc8c55bc3a92f3178f12702f"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/bam_utils.py",
+      "sha256": "b55922b5537ecb5e997dce1748f04df26743f298c4ab8e88cb989a4c56ab2f63"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/bigwig_utils.py",
+      "sha256": "99d183019a688630cb0056ae194a5e4d7cdb1fabd046ae331d5bf8f35a64ac88"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/determine_assembly.py",
+      "sha256": "155bb356e9feb09ed447d823caecbed62790c49a81062f0f789591ecc4479072"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/encode_bam2ta.py",
+      "sha256": "f963020c5977c1273755fc0a17071e4e39aaa7a9fbeea5ebfc2705bdd32061d0"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/encode_lib_common.py",
+      "sha256": "626fb02805c939805b85b0110b30a7dc5a13ecdfe2ac6645c2f2cd464b2d4de4"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/encode_lib_genomic.py",
+      "sha256": "b07984f4f72dbf46e898f472ed64ffc888f3c7cc72e0540b1358fce7adb31340"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/fasta_to_onehot_zarr.py",
+      "sha256": "7a8d17f27f67f9b5479274b52d70bf425a5677b7a28f38dbde00598d044bc788"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/fragment_info.py",
+      "sha256": "13ac58e4b59c46484ce9f13576a3670285af35a588fbbf05aeecdd5066729fe5"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/fragment_utils.py",
+      "sha256": "f8c29827455cd568589800c6e397b194581033d6d34e6d8ea2bfbc3e11ec2c34"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/geo_supplementary.py",
+      "sha256": "8278bc1ba5bde770b70ee1d0dc3f2a583dbdc7e1de01cd991cf7d8ab8f1033d1"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/liftover.py",
+      "sha256": "ede45f3d506f5e299c97a2c962af828489d99b20d86ce586bec5218cd73ba530"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/peak_utils.py",
+      "sha256": "99845f6aedd171c88df716e36e48afe38ddf77b3ea5c6685eaad0119af53cfd2"
+    },
+    {
+      "path": "src/caesar/preprocess/utils/vcf_to_onehot_zarr.py",
+      "sha256": "7156fed31646210beca1280852bf8bddd4f32a93a4ea73ab12715664f5c32a8c"
+    },
+    {
+      "path": "src/caesar/utils/__init__.py",
+      "sha256": "8c11cf5491483802322022ee1a32ba917c39dde685f693e36f97cb8a469fc0e6"
+    },
+    {
+      "path": "src/caesar/utils/_optional.py",
+      "sha256": "c0ce413616bb2053f90044d5d4343e0767b6c8f64537e0b582a96ef4a9275e33"
+    }
+  ]
+}

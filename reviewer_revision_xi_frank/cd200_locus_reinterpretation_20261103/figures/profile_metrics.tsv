@@ -1,0 +1,7 @@
+locus	model	pearson	ci_lower	ci_upper	bootstrap_valid	n_genomic_positions	block_bp	n_blocks	input_context_bp	adapted2114_modl_pearson	ci_interpretation
+P2	MoDL	0.8733007723861799	0.773012394891637	0.9265524454422391	2000	980	98	10	4096	0.863213676984203	spatial block resampling of this locus; not across model folds or biological replicates
+P2	ChromBPNet	0.8143238089049665	0.6963786540826374	0.9275521137413724	2000	980	98	10	2114		spatial block resampling of this locus; not across model folds or biological replicates
+P1	MoDL	0.8541339682172308	0.7478479600610944	0.8995400077955622	2000	980	98	10	4096	0.8484089006276532	spatial block resampling of this locus; not across model folds or biological replicates
+P1	ChromBPNet	0.8445847109573691	0.7207571831964	0.8949387162240934	2000	980	98	10	2114		spatial block resampling of this locus; not across model folds or biological replicates
+promoter	MoDL	0.8893969592935992	0.8010084337808894	0.9365154020406339	2000	980	98	10	4096	0.8457194177515565	spatial block resampling of this locus; not across model folds or biological replicates
+promoter	ChromBPNet	0.5179758171980845	0.27260360830318237	0.8366098355876044	2000	980	98	10	2114		spatial block resampling of this locus; not across model folds or biological replicates

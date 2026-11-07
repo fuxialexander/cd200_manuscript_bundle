@@ -1,0 +1,52 @@
+{
+  "state": "pos",
+  "sample": "SCCApos.cd200_scc",
+  "loci_order": [
+    "P2",
+    "P1",
+    "promoter"
+  ],
+  "interval_length": 2048,
+  "input_length": 2114,
+  "output_length": 1000,
+  "count_transform": "ln1p(stored ATAC counts)",
+  "profile_reconstruction": "softmax(logits)*expm1(predicted_logcount)",
+  "tiling": "three1000bpwindows starting at interval_start+[0,524,1048]; average overlapping per-base counts, sum each base once",
+  "checkpoint": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/best.weights.h5",
+  "checkpoint_sha256": "ded077e7d84e528f44076c27f94bfe09c1df53aaa4483e68fff8a46b619c5871",
+  "bias_checkpoint": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/mouse_bias_seed1234/bias_model_scaled.h5",
+  "bias_checkpoint_sha256": "34bf5850d7e4dff855d5e4f46ed517741a0a00c3b720044da06514b69237ebe4",
+  "training_metadata_sha256": "187935e61b0e9e68edf753559f3639405a958783ab7db2819a400bb3a8161428",
+  "libraries": {
+    "pos": 57847436.0,
+    "neg": 65910183.0
+  },
+  "contrast_definition": "log10(pos_sum / lib_pos *1e5+1) - log10(neg_sum / lib_neg *1e5+1)",
+  "contrast_limit": "BED denominator descriptive contrast; equivalence to historical curated Diff_scca labels not established. Store raw sums separately.",
+  "library_source": "/home/xf2217/Repos/cd200_manuscript_bundle/training/data/scc_all_peaks.deduplicated.bed",
+  "library_source_sha256": "9bae09ac24fe937cb8c8eddbda6fa1d1431268f9cce9b9c42669e56b3eddf1fa",
+  "source_sha256": "744c8af2f5f5dd32e0072bb37243de6617973eb1943c8f831dd66a1c7a8aae31",
+  "signal_source_chunks": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCApos.cd200_scc/chrs/chr16/.zarray": {
+      "sha256": "95a951192102a80edbc99ebb397d6a9138ef036316a316ee103a575224114120",
+      "kind": "array_metadata"
+    },
+    "/home/xf2217/Repos/cd200_manuscript_bundle/data/zarr/cd200_scc_dense_new.zarr/SCCApos.cd200_scc/chrs/chr16/22": {
+      "sha256": "c9706b103be8c0c627dbfd95feb6579c74c110729906a382fe42739fcc5bc33a",
+      "kind": "data_chunk"
+    }
+  },
+  "reference_fasta": "/mnt/storage/get_data/mm10.fa",
+  "reference_fai_sha256": "c08b7b0365da58adcd63373d67de08ac34707eaabad322951bf78ab8b8895927",
+  "upstream_target_limitation": "Upstream Tn5 shift and fragment-endpoint provenance have not been established; these are not certified +4/-4 insertion tracks",
+  "observed_totals": [
+    748.0,
+    512.0,
+    1069.0
+  ],
+  "predicted_totals": [
+    413.017506248941,
+    396.24807554359165,
+    517.0718266188173
+  ]
+}

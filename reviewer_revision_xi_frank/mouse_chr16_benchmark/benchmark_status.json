@@ -1,0 +1,629 @@
+{
+  "state": "complete",
+  "started_utc": "2026-11-01T18:47:32.532904+00:00",
+  "updated_utc": "2026-11-01T21:11:53.228671+00:00",
+  "supervisor_pid": 3540632,
+  "storage": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16",
+  "stages": [
+    {
+      "name": "modl_train",
+      "state": "passed",
+      "started_utc": "2026-11-01T18:47:32.744268+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234",
+        "--count-weight",
+        "35.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/modl_train.log",
+      "pid": 3540665,
+      "last_completed_epoch": {
+        "epoch": 33,
+        "seconds": 120.96273379400373,
+        "train": {
+          "examples": 83978,
+          "logcount_mse": 0.38394956351939125,
+          "loss": 3628.51550518858,
+          "profile_nll_without_constant": 3614.9620878198753
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_mse": 0.420259627271674,
+          "loss": 3418.655125698739,
+          "profile_nll_without_constant": 3403.819959645947
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:56:12.871917+00:00"
+    },
+    {
+      "name": "modl_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:56:12.878832+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_torch.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234",
+        "--count-weight",
+        "35.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/modl_predict.log",
+      "pid": 3632126,
+      "last_completed_epoch": {
+        "epoch": 33,
+        "seconds": 120.96273379400373,
+        "train": {
+          "examples": 83978,
+          "logcount_mse": 0.38394956351939125,
+          "loss": 3628.51550518858,
+          "profile_nll_without_constant": 3614.9620878198753
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_mse": 0.420259627271674,
+          "loss": 3418.655125698739,
+          "profile_nll_without_constant": 3403.819959645947
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:56:32.880459+00:00"
+    },
+    {
+      "name": "modl_loci_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:56:32.887438+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+        "--model",
+        "modl",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--run-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/modl_loci_predict.log",
+      "pid": 3632633,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:56:52.889207+00:00"
+    },
+    {
+      "name": "evaluate_modl_preliminary",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:56:52.896327+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/evaluation_modl_preliminary",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/evaluate_modl_preliminary.log",
+      "pid": 3633129,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:57:12.897462+00:00"
+    },
+    {
+      "name": "losses_modl_preliminary",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:57:12.904423+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/losses_modl_preliminary",
+        "--count-weight",
+        "35.3",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/losses_modl_preliminary.log",
+      "pid": 3633601,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:57:32.906067+00:00"
+    },
+    {
+      "name": "loci_modl_preliminary",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:57:32.913045+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/locus_evaluation_modl_preliminary",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/loci_modl_preliminary.log",
+      "pid": 3634073,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:57:52.914271+00:00"
+    },
+    {
+      "name": "mouse_bias_train",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:57:52.921607+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--mode",
+        "bias",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/mouse_bias_seed1234",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/mouse_bias_train.log",
+      "pid": 3634548,
+      "last_completed_epoch": {
+        "epoch": 12,
+        "seconds": 3.6456965908873826,
+        "train": {
+          "examples": 12320,
+          "logcount_predictions_loss": 0.06691272740627265,
+          "logits_profile_predictions_loss": 155.67058418571176,
+          "loss": 155.96500034084568
+        },
+        "valid": {
+          "examples": 1029,
+          "logcount_predictions_loss": 0.07469497505933828,
+          "logits_profile_predictions_loss": 154.62223295428663,
+          "loss": 154.95089189327376
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T19:59:12.924515+00:00"
+    },
+    {
+      "name": "chrombpnet_train",
+      "state": "passed",
+      "started_utc": "2026-11-01T19:59:12.931452+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/mouse_bias_seed1234/bias_model_scaled.h5",
+        "--count-weight",
+        "35.3",
+        "--mode",
+        "train",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/chrombpnet_train.log",
+      "pid": 3729798,
+      "last_completed_epoch": {
+        "epoch": 19,
+        "seconds": 172.9905508949887,
+        "train": {
+          "examples": 83978,
+          "logcount_predictions_loss": 0.31382866024959655,
+          "logits_profile_predictions_loss": 700.5565321458355,
+          "loss": 711.6346838542581
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_predictions_loss": 0.5163175095046395,
+          "logits_profile_predictions_loss": 689.6799867522932,
+          "loss": 707.9059956384544
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:57:13.103342+00:00"
+    },
+    {
+      "name": "chrombpnet_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:57:13.110422+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--heldout-chroms",
+        "chr16",
+        "chr8",
+        "chr9",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/mouse_bias_seed1234/bias_model_scaled.h5",
+        "--count-weight",
+        "35.3",
+        "--mode",
+        "predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/chrombpnet_predict.log",
+      "pid": 549813,
+      "last_completed_epoch": {
+        "epoch": 19,
+        "seconds": 172.9905508949887,
+        "train": {
+          "examples": 83978,
+          "logcount_predictions_loss": 0.31382866024959655,
+          "logits_profile_predictions_loss": 700.5565321458355,
+          "loss": 711.6346838542581
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_predictions_loss": 0.5163175095046395,
+          "logits_profile_predictions_loss": 689.6799867522932,
+          "loss": 707.9059956384544
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:57:53.112701+00:00"
+    },
+    {
+      "name": "chrombpnet_loci_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:57:53.119656+00:00",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+        "--model",
+        "chrombpnet",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--run-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/mouse_bias_seed1234/bias_model_scaled.h5",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/chrombpnet_loci_predict.log",
+      "pid": 550851,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:58:13.121379+00:00"
+    },
+    {
+      "name": "evaluate_modl_chrombpnet",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:58:13.122323+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/evaluation_modl_chrombpnet",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/evaluate_modl_chrombpnet.log",
+      "pid": 551493,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:58:33.123751+00:00"
+    },
+    {
+      "name": "losses_modl_chrombpnet",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:58:33.130676+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/losses_modl_chrombpnet",
+        "--count-weight",
+        "35.3",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/losses_modl_chrombpnet.log",
+      "pid": 551968,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:58:53.132039+00:00"
+    },
+    {
+      "name": "loci_modl_chrombpnet",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:58:53.138984+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/locus_evaluation_modl_chrombpnet",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/locus_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/loci_modl_chrombpnet.log",
+      "pid": 552443,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T20:59:13.147499+00:00"
+    },
+    {
+      "name": "explainn_train",
+      "state": "passed",
+      "started_utc": "2026-11-01T20:59:13.148910+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234",
+        "--count-weight",
+        "35.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--workers",
+        "4",
+        "--max-epochs",
+        "50",
+        "--patience",
+        "5",
+        "--amp"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/explainn_train.log",
+      "pid": 552918,
+      "last_completed_epoch": {
+        "epoch": 21,
+        "seconds": 29.783002401003614,
+        "train": {
+          "examples": 83978,
+          "logcount_mse": 0.528833586537275,
+          "loss": 0.528833586537275,
+          "profile_nll_without_constant": 0.0
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_mse": 0.6196379501631326,
+          "loss": 0.6196379501631326,
+          "profile_nll_without_constant": 0.0
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:10:13.177101+00:00"
+    },
+    {
+      "name": "explainn_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T21:10:13.183990+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_torch.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234",
+        "--count-weight",
+        "35.3",
+        "--seed",
+        "1234",
+        "--batch-size",
+        "64",
+        "--workers",
+        "4",
+        "--predict"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/explainn_predict.log",
+      "pid": 570203,
+      "last_completed_epoch": {
+        "epoch": 21,
+        "seconds": 29.783002401003614,
+        "train": {
+          "examples": 83978,
+          "logcount_mse": 0.528833586537275,
+          "loss": 0.528833586537275,
+          "profile_nll_without_constant": 0.0
+        },
+        "valid": {
+          "examples": 4204,
+          "logcount_mse": 0.6196379501631326,
+          "loss": 0.6196379501631326,
+          "profile_nll_without_constant": 0.0
+        }
+      },
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:10:33.185355+00:00"
+    },
+    {
+      "name": "explainn_loci_predict",
+      "state": "passed",
+      "started_utc": "2026-11-01T21:10:33.192275+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+        "--model",
+        "explainn",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--run-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/explainn_loci_predict.log",
+      "pid": 570682,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:10:53.193843+00:00"
+    },
+    {
+      "name": "evaluate_final",
+      "state": "passed",
+      "started_utc": "2026-11-01T21:10:53.200801+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/evaluation_final",
+        "--bootstrap",
+        "2000",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/test_predictions",
+        "--prediction",
+        "ExplaiNN=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/evaluate_final.log",
+      "pid": 571106,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:11:13.202775+00:00"
+    },
+    {
+      "name": "losses_final",
+      "state": "passed",
+      "started_utc": "2026-11-01T21:11:13.209926+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+        "--cache-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/losses_final",
+        "--count-weight",
+        "35.3",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/test_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/test_predictions",
+        "--prediction",
+        "ExplaiNN=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/test_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/losses_final.log",
+      "pid": 571578,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:11:33.211785+00:00"
+    },
+    {
+      "name": "loci_final",
+      "state": "passed",
+      "started_utc": "2026-11-01T21:11:33.218929+00:00",
+      "command": [
+        "/home/xf2217/Repos/motif_chip_model/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+        "--data-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache",
+        "--output",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/locus_evaluation_final",
+        "--prediction",
+        "MoDL=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/modl_seed1234/locus_predictions",
+        "--prediction",
+        "ChromBPNet=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/locus_predictions",
+        "--prediction",
+        "ExplaiNN=/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/explainn_seed1234/locus_predictions"
+      ],
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/mouse_chr16_benchmark/logs/loci_final.log",
+      "pid": 572054,
+      "exit_code": 0,
+      "finished_utc": "2026-11-01T21:11:53.220974+00:00"
+    }
+  ],
+  "error": null,
+  "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+  "sample": "SCCApos.cd200_scc",
+  "configuration": {
+    "seed": 1234,
+    "test_chromosomes": [
+      "chr16",
+      "chr8",
+      "chr9"
+    ],
+    "validation_chromosomes": [
+      "chr14"
+    ],
+    "max_epochs": 50,
+    "patience": 5,
+    "batch_size": 64,
+    "negative_ratio": 0.1,
+    "historical_weights_used": false,
+    "count_weight": 35.3
+  },
+  "cache_manifest_sha256": "b781ae471214d8b6c28d383727f14c022cc2c81a0ffc83db6e72800bceb56816",
+  "current_stage": "complete",
+  "latest_evaluation": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/evaluation_final/evaluation.json",
+  "latest_locus_evaluation": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/locus_evaluation_final/locus_evaluation.json",
+  "finished_utc": "2026-11-01T21:11:53.228665+00:00"
+}

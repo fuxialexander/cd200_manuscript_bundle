@@ -4,6 +4,13 @@ Minimal, self-contained package for the CD200 ATAC deletion figures: train the
 motif CNN checkpoints, regenerate the manuscript deletion scans, or explore the
 same models in a local browser app (Model Studio).
 
+For new local datasets, including 10x fragment files, see
+[the agent/CLI workflow](AGENT_WORKFLOW.md). It covers FASTA/fragments or raw
+bigWig conversion, barcode-defined pseudobulk tracks, chromosome holdouts,
+local training, and checkpoint deletion analysis. Start with
+`bash scripts/modl.sh doctor`; Codex and Claude can follow the same Markdown
+instructions and JSON command results.
+
 ## What this model does
 
 The model is a **DNA → chromatin accessibility** predictor built around
@@ -160,7 +167,7 @@ Bootstrap order for the Python env:
 4. sibling `../motif_chip_model/.venv` if present
 5. otherwise create `.venv` with `uv sync`
 
-Caesarion (zarr IO) is expected at `../Caesarion/src`, or set `CAESAR_SRC`.
+Embeds a tracked source snapshot of the Caesarion package (151 source files with a cryptographic source-hash manifest and upstream MIT license metadata, excluding upstream datasets/git history) so that launchers automatically resolve the bundled snapshot without requiring access to a private repository, alongside a pinned public gcell dependency.
 
 Smoke test (no full GPU deletion scan):
 

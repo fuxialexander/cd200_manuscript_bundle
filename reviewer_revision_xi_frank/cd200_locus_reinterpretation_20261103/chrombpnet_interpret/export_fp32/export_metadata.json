@@ -1,0 +1,59 @@
+{
+  "all_native_forward_inputs": 303,
+  "bias_free_model_sha256": "118d66824b2ec388ef4942b0f9fd85e601a555c13d7e8b20914e9f409ab9b75a",
+  "bias_sha256": "34bf5850d7e4dff855d5e4f46ed517741a0a00c3b720044da06514b69237ebe4",
+  "checkpoint": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/best.weights.h5",
+  "checkpoint_sha256": "ded077e7d84e528f44076c27f94bfe09c1df53aaa4483e68fff8a46b619c5871",
+  "component_recombination": "PASS",
+  "inputs_references_sha256": "765e5d518953dd10ce32327b5860604e5582d33f0970091185cea75461b15544",
+  "no_negative_state_difference_claimed": true,
+  "reference_policy": "100 dinucleotide shuffles per locus; numpy.RandomState(seed+locus_index); first20 subset preserved",
+  "seed": 1234,
+  "source_sha256": "a8f69a86ad642efea57e3c5afee6c0e50a028fab46b817478fd673e4c92eed10",
+  "state": "SCCApos",
+  "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+  "tensorflow": "2.21.0",
+  "tf32_enabled": false,
+  "weights_sha256": "8b42439e762149789526f0f23c7d6310e1017132a2c1d96bef9fb48abdbb7d50",
+  "windows": [
+    {
+      "center": "45384312",
+      "chrom": "chr16",
+      "input_end": 45385369,
+      "input_start": 45383255,
+      "is_peak": "1",
+      "locus": "P1",
+      "output_end": 45384812,
+      "output_start": 45383812,
+      "region_id": "P1_central",
+      "role": "central",
+      "split": "loci"
+    },
+    {
+      "center": "45356677",
+      "chrom": "chr16",
+      "input_end": 45357734,
+      "input_start": 45355620,
+      "is_peak": "1",
+      "locus": "P2",
+      "output_end": 45357177,
+      "output_start": 45356177,
+      "region_id": "P2_central",
+      "role": "central",
+      "split": "loci"
+    },
+    {
+      "center": "45408713",
+      "chrom": "chr16",
+      "input_end": 45409770,
+      "input_start": 45407656,
+      "is_peak": "1",
+      "locus": "promoter",
+      "output_end": 45409213,
+      "output_start": 45408213,
+      "region_id": "promoter_central",
+      "role": "central",
+      "split": "loci"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+root_path: /pmglocal/xf2217/4dn_h1esc/
+annotation_dir: /burg/pmg/users/xf2217/repos/caesar/data/
+output_dir: /pmglocal/xf2217/4dn_h1esc/dense/
+tempdir: /pmglocal/xf2217/tmp/
+n_jobs: 16

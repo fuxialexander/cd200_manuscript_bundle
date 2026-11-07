@@ -1,0 +1,26 @@
+# shendure_fetal.yaml
+data_key: "bingren_adult"
+data_type: "sc"
+root_path: "/pmglocal/xf2217/bingren_adult/"
+codebase: "/manitou/pmg/users/xf2217/bmms/caesar/"
+annotation_dir: "/manitou/pmg/users/xf2217/bmms/caesar/data/"
+atac_metadata: ""
+peak_file: "/pmglocal/xf2217/shendure_fetal/cCRE_hg38.bed"
+output_dir: "/pmglocal/xf2217/shendure_fetal/dense/"
+labels_column: "cell type"
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 64
+tempdir: "/pmglocal/xf2217/tmp/"
+
+# peak
+specific_peak_name: "peaks_q0.01"
+merged_peak_name: "peaks_q0.01_tissue"

@@ -1,0 +1,194 @@
+[
+  {
+    "epoch": 0,
+    "seconds": 466.8693433740118,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 2.1874562662335713,
+      "logits_profile_predictions_loss": 1078.352853452663,
+      "loss": 1282.4425295506503
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 1.1313092723351303,
+      "logits_profile_predictions_loss": 1024.2109855811186,
+      "loss": 1129.7621464763122
+    }
+  },
+  {
+    "epoch": 1,
+    "seconds": 456.0702545439999,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 1.021665197260381,
+      "logits_profile_predictions_loss": 971.4900309534777,
+      "loss": 1066.8113972703804
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 1.1785231751281697,
+      "logits_profile_predictions_loss": 977.9178630308251,
+      "loss": 1087.8740805419802
+    }
+  },
+  {
+    "epoch": 2,
+    "seconds": 457.08589793599094,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.9439925202865805,
+      "logits_profile_predictions_loss": 935.1328029510856,
+      "loss": 1023.2073081204388
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9506038964228933,
+      "logits_profile_predictions_loss": 951.7990211371949,
+      "loss": 1040.4903701759995
+    }
+  },
+  {
+    "epoch": 3,
+    "seconds": 457.3454632119974,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.8968905065928936,
+      "logits_profile_predictions_loss": 912.8352627550785,
+      "loss": 996.5151500199229
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9254949476227938,
+      "logits_profile_predictions_loss": 943.1297513275368,
+      "loss": 1029.4784328377323
+    }
+  },
+  {
+    "epoch": 4,
+    "seconds": 456.85840902401833,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.8469115904247858,
+      "logits_profile_predictions_loss": 898.5635751608783,
+      "loss": 977.5804285728457
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9189344084338114,
+      "logits_profile_predictions_loss": 938.1451977100345,
+      "loss": 1023.8817808131791
+    }
+  },
+  {
+    "epoch": 5,
+    "seconds": 456.5281486249878,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.8039293639625217,
+      "logits_profile_predictions_loss": 886.5926074944934,
+      "loss": 961.5992198274865
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9050107235263539,
+      "logits_profile_predictions_loss": 935.8794186014525,
+      "loss": 1020.3169227159157
+    }
+  },
+  {
+    "epoch": 6,
+    "seconds": 456.57592006601044,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.7682377254818774,
+      "logits_profile_predictions_loss": 877.818419492982,
+      "loss": 949.4950014378202
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.8766946124474709,
+      "logits_profile_predictions_loss": 932.484981272671,
+      "loss": 1014.2805898361613
+    }
+  },
+  {
+    "epoch": 7,
+    "seconds": 456.6961258680094,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.7253220216435592,
+      "logits_profile_predictions_loss": 869.4750443119075,
+      "loss": 937.1475910715055
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9115692980895058,
+      "logits_profile_predictions_loss": 935.1535784446712,
+      "loss": 1020.2029986610802
+    }
+  },
+  {
+    "epoch": 8,
+    "seconds": 456.3979306410183,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.6856381582229147,
+      "logits_profile_predictions_loss": 865.2522713544173,
+      "loss": 929.2223130173538
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 1.2200403793104764,
+      "logits_profile_predictions_loss": 941.3957449336374,
+      "loss": 1055.22551648963
+    }
+  },
+  {
+    "epoch": 9,
+    "seconds": 456.1775488189887,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.6511306425965107,
+      "logits_profile_predictions_loss": 859.9238246151273,
+      "loss": 920.6743160199208
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.8686354719590886,
+      "logits_profile_predictions_loss": 936.239990530806,
+      "loss": 1017.2836820153138
+    }
+  },
+  {
+    "epoch": 10,
+    "seconds": 456.5592071620049,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.6169313278866851,
+      "logits_profile_predictions_loss": 856.8887677702182,
+      "loss": 914.4484620709408
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.9112252976432363,
+      "logits_profile_predictions_loss": 932.9510860404208,
+      "loss": 1017.9684107761467
+    }
+  },
+  {
+    "epoch": 11,
+    "seconds": 456.5227215740015,
+    "train": {
+      "examples": 213283,
+      "logcount_predictions_loss": 0.5853835945394147,
+      "logits_profile_predictions_loss": 854.6978320535026,
+      "loss": 909.31412265982
+    },
+    "valid": {
+      "examples": 20590,
+      "logcount_predictions_loss": 0.898332931956022,
+      "logits_profile_predictions_loss": 935.0099514991349,
+      "loss": 1018.8244180346762
+    }
+  }
+]

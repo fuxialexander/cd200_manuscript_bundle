@@ -1,0 +1,19 @@
+{
+  "training_peak_count": 76344,
+  "training_background_count": 67095,
+  "peak_quantiles": [
+    36.0,
+    112.0,
+    353.0,
+    3514.5699999999924,
+    7802.0
+  ],
+  "background_quantiles": [
+    4.0,
+    24.0,
+    83.0,
+    201.05999999999767,
+    473.0
+  ],
+  "fit_source": "training only"
+}

@@ -1,0 +1,20 @@
+# default.yaml
+data_key: "greenleaf_hematopoiesis"
+data_type: "sc"
+root_path: "/home/xf2217/Projects/geo/Tcell/"
+annotation_dir: "/home/xf2217/Projects/caesar/data"
+atac_metadata: ""
+labels_column: "Clusters"
+sorted_by_barcode: false
+peak_file: "/home/xf2217/Projects/geo/Tcell/peaks.tsv"
+max_fragment_per_cell: 500
+chunk_size: 2000000
+
+# annotation
+assembly: "hg19"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 16
+tempdir: "/home/xf2217/tmp"

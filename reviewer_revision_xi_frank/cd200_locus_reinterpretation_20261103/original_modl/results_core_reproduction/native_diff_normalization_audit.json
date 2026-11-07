@@ -1,0 +1,48 @@
+{
+  "status": "original_native_Diff_scca_transform_recovered",
+  "method": "For every row with positive SumValue/logSumValue, L=SumValue*1e5/expm1(logSumValue*ln(10)); all rows independently encode the same integerL within numerical precision.",
+  "no_fitted_calibration": true,
+  "normalization_formula": "log10(1+pos_sum/Lpos*1e5)-log10(1+neg_sum/Lneg*1e5)",
+  "positive_state": {
+    "rows_used": 95366,
+    "denominator": 97975505,
+    "inverse_denominator_min": 97975504.99999975,
+    "inverse_denominator_max": 97975505.00000134,
+    "maximum_inverse_denominator_absolute_residual": 1.341104507446289e-06,
+    "maximum_log_column_reconstruction_absolute_residual": 1.1102230246251565e-16,
+    "current_final_BED_SumValue_sum": 57847436.0
+  },
+  "negative_state": {
+    "rows_used": 95366,
+    "denominator": 110158866,
+    "inverse_denominator_min": 110158865.99999979,
+    "inverse_denominator_max": 110158866.00000252,
+    "maximum_inverse_denominator_absolute_residual": 2.518296241760254e-06,
+    "maximum_log_column_reconstruction_absolute_residual": 2.220446049250313e-16,
+    "current_final_BED_SumValue_sum": 65910183.0
+  },
+  "all_rows": 184167,
+  "log_pos_minus_log_neg_vs_Diff_scca_maximum_absolute_residual": 3.191891195797325e-16,
+  "recovered_formula_vs_Diff_scca_maximum_absolute_residual": 9.996344030316351e-17,
+  "source_trace": {
+    "path": "/home/xf2217/Repos/motif_chip_model/atac_prediction/cd200_plot.py",
+    "log_normalization_lines": [
+      60,
+      62
+    ],
+    "Diff_scca_line": 69,
+    "later_signal_filter_line": 89,
+    "interpretation": "Log columns and Diff are computed before later filtering/deduplication; summing the final BED is not the original normalization denominator."
+  },
+  "historical_S5B_mixed_normalizers": "P1/promoter used stored native BED labels; P2 had no overlapping BED row and original S5B used a fallback with finalBED summed denominators. Recover native units before constructing a uniform revised comparison.",
+  "remaining_observation_difference": "Current Zarr sums over the final representative BED intervals differ from retained historical SumValue. Original physical windows/curation of those retained sums remain unverified; recovered units do not make those observations identical.",
+  "new_comparison_contract": "New CBP pos/neg predicted sums and current observed sums over the SAME central2048 coordinates may use recovered historical constants. Show retained native training labels separately where available. Original unscaled MoDL differential remains its learned native target; no extra scale is fitted.",
+  "legacy_scale": "3.307237044473427 retained only as historical display variant, not needed to recover native normalization",
+  "sources_sha256": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/training/data/scc_all_peaks.deduplicated.bed": "9bae09ac24fe937cb8c8eddbda6fa1d1431268f9cce9b9c42669e56b3eddf1fa",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/s5b_original_and_redefined_contrasts.tsv": "fb35e643079e460d2efedca350ba5e3fad8194a811da72208c6d51736d9338db",
+    "/home/xf2217/Repos/motif_chip_model/atac_prediction/cd200_plot.py": "7b821624c3c5d9c7cf2bf7120cc0f8a8a16f7b048e037b63bdfcae7f7a397704",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/recover_native_diff_normalization.py": "1b0eb6fe9eb136881a4a19f299ab0981496d3a367f786c00e71b0b7f22cff11b"
+  },
+  "contrast_table_sha256": "ffc5b2457b4e6bb50c28aafa8635b54cb2fb0fd3f79f896fd476228d037394f5"
+}

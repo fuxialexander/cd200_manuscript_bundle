@@ -1,0 +1,90 @@
+{
+  "R1_3_BULK_RESPONSE.txt": {
+    "bytes": 4214,
+    "sha256": "d9c5d3c1923da76efd683ce721b91ed4d475613164bf69340401aa869b91a5cf"
+  },
+  "README.txt": {
+    "bytes": 2681,
+    "sha256": "71a8f72c83c4c399d28bb432b12df7a400a02c9b47736c45c99c04e3b91d3008"
+  },
+  "all_cohorts_max_bin_signal.pdf": {
+    "bytes": 141526,
+    "sha256": "6fb9cc9d3410fccdb6587fe36d856414e0e811cf06ff3665513345dc062d450c"
+  },
+  "all_cohorts_max_bin_signal.png": {
+    "bytes": 504158,
+    "sha256": "d9174ba92bfe02092cf92b442552b36ecf4c136f791355899508948e7f7920d4"
+  },
+  "all_cohorts_max_bin_signal.svg": {
+    "bytes": 388729,
+    "sha256": "98509b6022f8b6591d74045de160ebc30b9c0c9578770c22e9e21926393d99ca"
+  },
+  "all_cohorts_mean_signal.pdf": {
+    "bytes": 141109,
+    "sha256": "a8e0e828711f9f177e48e8b0066959d675ed73655c6c92753c33ab432b246ca6"
+  },
+  "all_cohorts_mean_signal.png": {
+    "bytes": 518718,
+    "sha256": "23d6e141bf689684bad4f5b7c9447168d8d6c4784e39c03932265930c97d7dfe"
+  },
+  "all_cohorts_mean_signal.svg": {
+    "bytes": 391398,
+    "sha256": "696304c2470eb15058904a295fdc7b415eb9449f0931b9077f9f50fb533369f1"
+  },
+  "audit.json": {
+    "bytes": 2789,
+    "sha256": "30689ca65b2a74ea3cac7d13ec30c0f014de78db7c0c944ef6e0858bd0fab3fc"
+  },
+  "caption.txt": {
+    "bytes": 1086,
+    "sha256": "c5e56f1b92fcaf64dc87bb39cd2e690d288a41c4cdee185486ac88b35d53f9f5"
+  },
+  "cohort_summary.tsv": {
+    "bytes": 15419,
+    "sha256": "efdd3a468f6132ea991c86a9139b359a65d5fab51f390846e63bcce53f69d241"
+  },
+  "fig4d_cohorts_max_bin_signal.pdf": {
+    "bytes": 65466,
+    "sha256": "f5766dfc9f6730bc3afeded1f78f7459455fd2db5ee41cc4fdb1e9d45945a439"
+  },
+  "fig4d_cohorts_max_bin_signal.png": {
+    "bytes": 251092,
+    "sha256": "c80266b8de54c1bdbb86cc1c690279a5fc7eb6a5bbe4878cdcfb903fadcd86d0"
+  },
+  "fig4d_cohorts_max_bin_signal.svg": {
+    "bytes": 130515,
+    "sha256": "8739fb67f1d27efe15bbed2d06d9690f87407f2acdd0ba3f7253d1e61f5e7266"
+  },
+  "fig4d_cohorts_mean_signal.pdf": {
+    "bytes": 65015,
+    "sha256": "1677ac7eb243f37ee7bf4a63255ae590a5a06762aaa0a32e8fcc9239f80a7f88"
+  },
+  "fig4d_cohorts_mean_signal.png": {
+    "bytes": 252295,
+    "sha256": "6895e6f95e67d8c5af7ee15c327a427b34a17bd52aeaf00c10404d9563f276a4"
+  },
+  "fig4d_cohorts_mean_signal.svg": {
+    "bytes": 129638,
+    "sha256": "3904f313bd825df89bdecee40df97d4b1149245e98f1710586c2ff2c4966707c"
+  },
+  "font_check.txt": {
+    "bytes": 376,
+    "sha256": "c27c1b54337496955c35e5b13fbafe13e1d33b4921749b72feef7d199948b264"
+  },
+  "interval_bin_weights.tsv": {
+    "bytes": 2221,
+    "sha256": "ed98957311f11f18366aaadc3f7066fd5b986c591ae297fa31d59dcc10bc5f1a"
+  },
+  "plot_tumor_normal.py": {
+    "bytes": 14118,
+    "sha256": "87bfc8b5572f30ad52d227e3a8d64d2aecb1ebb5287a6785e989ce223ac1e0d2"
+  },
+  "preflight.json": {
+    "bytes": 1288,
+    "sha256": "b1367ec66aebb2cfcc2373124bbd514a6fc1d59654ff01e2dd70317cb79a85d6"
+  },
+  "source_data.tsv": {
+    "bytes": 138337,
+    "sha256": "0708c53d3a853b337ff46fc7cc781446db731f9496126ad2dec7374296896d50"
+  }
+}

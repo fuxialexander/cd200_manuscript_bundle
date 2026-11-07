@@ -6,7 +6,9 @@ cd "${CD200_BUNDLE_ROOT}"
 
 # Optional Caesarion IO package (sibling checkout or CAESAR_SRC override).
 if [ -z "${CAESAR_SRC:-}" ]; then
-    if [ -d "${CD200_BUNDLE_ROOT}/../Caesarion/src" ]; then
+    if [ -d "${CD200_BUNDLE_ROOT}/vendor/caesarion/src" ]; then
+        CAESAR_SRC="${CD200_BUNDLE_ROOT}/vendor/caesarion/src"
+    elif [ -d "${CD200_BUNDLE_ROOT}/../Caesarion/src" ]; then
         CAESAR_SRC="$(cd "${CD200_BUNDLE_ROOT}/../Caesarion/src" && pwd)"
     fi
 fi

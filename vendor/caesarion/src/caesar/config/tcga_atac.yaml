@@ -1,0 +1,26 @@
+# default.yaml
+defaults:
+  - base_config
+  - _self_
+  
+data_key: "tcga_atac" 
+root_path: "/pmglocal/xf2217/tcga_atac"
+annotation_dir: "/pmglocal/xf2217/"
+output_dir: "/pmglocal/xf2217/tcga_atac/dense"
+
+barcode_column: "barcodes"
+labels_column: "celltype"
+peak_file: '/burg/pmg/users/xf2217/repos/caesar/data/cPeaks_hg38.bed'
+max_fragment_per_cell: 500
+chunk_size: 2000000
+n_insertions: 40000000
+
+# annotation
+assembly: "hg38"
+gencode_version: 44
+
+# system
+n_jobs: 32
+tempdir: "/pmglocal/xf2217/tmp"
+seed: 42
+

@@ -1,0 +1,26 @@
+# default.yaml
+data_key: "archr_cellline"
+data_type: "sc"
+root_path: "/pmglocal/xf2217/archr_cellline/"
+codebase: "/manitou/pmg/users/xf2217/bmms/caesar/"
+annotation_dir: "/manitou/pmg/users/xf2217/bmms/caesar/data/"
+atac_metadata: ""
+output_dir: "/pmglocal/xf2217/archr_cellline/dense/"
+labels_column: "DemuxletClassify2"
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+
+# annotation
+assembly_to_liftover_from: "hg19"
+assembly: "hg38"
+gencode_version: 44
+pathway_file: "gprofiler_full_hsapiens.name.gmt"
+
+# system
+n_jobs: 72
+tempdir: "/pmglocal/xf2217/tmp/"
+
+# peak
+specific_peak_name: "peaks_q0.01"
+merged_peak_name : "peaks_q0.01_tissue"

@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-01",
+  "code": [
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_chrombpnet.py",
+      "sha256": "8b2f531054e5cfa8cebc53745df743a7936f498a0ff681906ae23b16226a1261"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_loci.py",
+      "sha256": "04530721f40ac1cb63f3ed1c7b1916662b20dbb316d7f83dcad508ab3af06ea5"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/test_evaluate_loci.py",
+      "sha256": "fa8cd91068706f24f600625afce064f80a584aaca30e5c4d93d824b5bf04ed0a"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_mouse.py",
+      "sha256": "b394937b7446b56337255d5f698a2c2e3042a1775f42f73119d514936b6f4113"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/run_mouse_benchmark.py",
+      "sha256": "e2541e0ee2a1e7eec167360ec8f3d7c6bdab0956d4ae758c8c919ec3a2114cfb"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/predict_loci.py",
+      "sha256": "d5c2fa4ba99f10e0c6642935670013734295356598a6af98a7cbc0ea81a71321"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/test_prepare_mouse_cache.py",
+      "sha256": "2decda89cab630a8d4ae7efb30ecd71d01b24b2e200845ef026465d57c2b70b7"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/train_mouse_torch.py",
+      "sha256": "ad53a8085f28a073f32b4b883d192bb5aba822abc9c92699afe6646ee19711d3"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/prepare_mouse_cache.py",
+      "sha256": "841c0abe6e3663965472058bf955deb849dd914a8c4d56bfbdce6bd09f861f2c"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/evaluate_losses.py",
+      "sha256": "4eb4fc6beeb6362c8e993e71726f4dc40dfd2546d83abe1aa3db59429b4c69fa"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/test_evaluate_losses.py",
+      "sha256": "4fad8baff7a348867dba4def50cff515c6141a9a8a119462d15bcd7c8d6845bb"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/mouse_chr16_benchmark/test_train_mouse_chrombpnet.py",
+      "sha256": "dfdcf103975e6f20fecf136ff419ce856e6e0f60e8828e48da518c8efcccbbc3"
+    }
+  ],
+  "tests_log": "reviewer_revision_xi_frank/mouse_chr16_benchmark/tests.log",
+  "large_artifact_location": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/",
+  "validation": "28 focused tests; actual MoDL and native bias/main GPU pilots; locus prediction/evaluation smoke; source split/cache shape checks",
+  "result_status": "full fitting in progress; pilot metrics are not benchmark results"
+}

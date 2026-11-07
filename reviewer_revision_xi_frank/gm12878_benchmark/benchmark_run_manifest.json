@@ -1,0 +1,92 @@
+{
+  "status": "Benchmark inputs and code registered; training and matched evaluation remain in progress",
+  "supervisor_pid": 1798746,
+  "configuration": {
+    "seed": 1234,
+    "epochs_max": 50,
+    "early_stopping_patience": 5,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "negative_ratio": 0.1,
+    "count_weight": 93.3,
+    "torch_training_precision": "bfloat16 autocast; stored FP32 weights; FP32 inference",
+    "tensorflow_precision": "FP32",
+    "published_reference": "ENCSR389HIH / ENCFF142IOR fold0 only, no test-fold ensemble",
+    "fresh_native_comparator": true
+  },
+  "source_files": [
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/LOCAL_MODEL_INTEGRATION.md",
+      "sha256": "ea6543c9cb1674e9f072d1c168310ed721432eae0fb0c5e560d0437b9090ae7c"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/PUBLISHED_SETTING.md",
+      "sha256": "21fc6f4082bc1446ea4aa888f5526dec9939c18c2a6c132562c58a1f022a0a02"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/README.md",
+      "sha256": "fe51906e764c5a302e65d638366568a30e8409e1802c36db48946920e7174fc9"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/evaluate.py",
+      "sha256": "41ff075f8360941414c99293a8410214de743dfc5427f87a89bd87a833ccd08b"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/prepare_cache.py",
+      "sha256": "eae910c16e057a045025975fe1790a72894b598325ac05dd7349564edba993b3"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/run_benchmark.py",
+      "sha256": "ade83dac15369b20bdc4412b4811b1862685d962c68cb240c892eb361cb775ee"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/source_snapshots/train_chrombpnet_released.py",
+      "sha256": "860833011c3a01b718364e72d24a44499ba8e92d36063284389f115dc2394a95"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/source_snapshots/train_torch_initial.py",
+      "sha256": "e7f1d16803164609accddfb1dff5584c90373b8f29e0e662a99236d709043095"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/test_evaluate.py",
+      "sha256": "27d72379ed9c1786080428aba0b6c6ae48d1b88cecd4ec9ee4735fdc6402afac"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/test_train_chrombpnet.py",
+      "sha256": "cbdec7a3c21b0c186ef77bc7c1daac7170b4f22ec9015dcc35ce0fe7a2ae2244"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/test_train_torch.py",
+      "sha256": "7fd8420573cfe98c4cef789bb27e669703656e54902ec3b9bfbf413045afeaa6"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/train_chrombpnet.py",
+      "sha256": "327d6540f6fa25c9fde13275c88bf3034c0ae21aa6fca74c2e3f4539e6244e54"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/train_torch.py",
+      "sha256": "56ad485e54cd3e9a640590d3b7c6f6e8681bad2a2b1efc673007731558040d10"
+    }
+  ],
+  "vendor_commits": {
+    "chrombpnet": "09938fdb4397ec0006510e5251e48920a505d4de",
+    "ExplaiNN": "4ed332abc610499f4761307eb7ac283115ca7314"
+  },
+  "completed_reference_outputs": [
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_counts.npy",
+      "bytes": 1258708,
+      "sha256": "40d025c8257d61964bb2cdfedf44698abce62474ea2ac226d36430a5c19c9f4b"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_metadata.json",
+      "bytes": 805,
+      "sha256": "a4da52ec1563c5d563f27cd197b8e15dd13f8e70b6a0819cdfa28a00d7de79f0"
+    },
+    {
+      "path": "reviewer_revision_xi_frank/gm12878_benchmark/runs/chrombpnet_published_fold0/test_predictions/prediction_profiles.npy",
+      "bytes": 1258580128,
+      "sha256": "eae8c6d5a26387e588311a54f301579979f435b4a282a8d9214c511a7c99afad"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "bias_pilot_exit_code": 0,
+  "main_pilot_exit_code": 0,
+  "validation_scope": "native CUDA forward/backward and held-out-validation batch only; no scientific metrics or final fits claimed",
+  "bias_input_shape": [
+    null,
+    2114,
+    4
+  ],
+  "bias_output_shapes": [
+    [
+      null,
+      1000
+    ],
+    [
+      null,
+      1
+    ]
+  ],
+  "bias_trainable_weights_after_freezing": 0,
+  "bias_model_sha256": "c9a66d8ec13d46230f831977a1ef6d3420cb13a13c03a80ecffb3fe300304c54",
+  "bias_train_regions": 12320,
+  "bias_validation_regions": 1029,
+  "excluded_test_chromosomes": [
+    "chr16",
+    "chr8",
+    "chr9"
+  ],
+  "target_contract": {
+    "count_transform": "ln1p_stored_atac_count",
+    "target_units": "unsmoothed_per_base_ATAC_counts_from_bundled_Zarr",
+    "genome_build": "mm10",
+    "target_kind": "stored_atac_signal_counts",
+    "input_length": 2114,
+    "output_length": 1000
+  },
+  "bias_dir": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/pilots/chrombpnet_bias_seed1234_pilot",
+  "main_dir": "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/pilots/chrombpnet_native_seed1234_pilot",
+  "bias_pilot": true,
+  "main_pilot": true,
+  "all_pilot_metadata_contracts_passed": true,
+  "cpu_audit_gpu_visible": false,
+  "test_evaluated": false
+}

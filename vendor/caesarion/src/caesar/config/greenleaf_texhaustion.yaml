@@ -1,0 +1,38 @@
+# default.yaml
+defaults:
+  - base_config
+  - _self_
+
+data_key: "greenleaf_texhaustion"
+data_type: "sc"
+integrated: true
+
+# path
+root_path: "/home/xf2217/Projects/greenleaf_texhaustion"
+annotation_dir: "/home/xf2217/Projects/annotations"
+output_dir: "/home/xf2217/Projects/greenleaf_texhaustion/dense/"
+labels_column: "Clusters"
+barcode_column: "Barcodes"
+sorted_by_barcode: false
+max_fragment_per_cell: 500
+chunk_size: 2000000
+peak_file: /home/xf2217/Projects/greenleaf_texhaustion/annot/greenleaf_texhaustion_peaks.hg38.bed
+
+# annotation
+assembly_to_liftover_from: "hg19"
+assembly: "hg38"
+gencode_version: 44
+
+# system
+n_jobs: 64
+tempdir: "/home/xf2217/Projects/tmp"
+seed: 42
+
+# peak
+specific_peak_names: "peaks_q0.01"
+merged_peak_names : "peaks_q0.01_tissue"
+
+# cdz
+n_insertions: 10000000
+n_cells: null
+

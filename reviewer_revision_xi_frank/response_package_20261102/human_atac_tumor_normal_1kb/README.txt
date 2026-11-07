@@ -1,0 +1,13 @@
+AUTHOR REVIEW — first-pass comparison using the existing Fig.4D normalization.
+
+Start with fig4d_cohorts_mean_signal.pdf: the seven TCGA cancer types visible in submitted Fig4D; all 120 donors, rather than only the strongest donor. Cell lines remain in the original browser figure and are not pooled with patient donors here.
+fig4d_cohorts_max_bin_signal.pdf uses the maximum overlapping 100bp bin. Both endpoints use exactly 1kb windows. Mean equals area divided by 1000bp; area is retained in source_data.tsv. The promoter is centered on original TRANSCRIPT_START_0=112333155, and enhancer on original TEAD motif midpoint=112360767. This updates the original asymmetric promoter/501bp ROI windows.
+all_cohorts files include every recovered TCGA donor (404/23 cohorts), including those without a normal reference. Normal matching follows original priority and stable manifest order, without choosing references by their signal. cohort_summary.tsv records each exact normal identity and proxy class.
+
+Source bin grids differ slightly between tumors and normals. This summary respects each source genomic headers and uses overlap weighting separately. The original browser builder relabels normal bins using tumor headers by position; no such relabeling is used here. This is a minor coordinate-alignment correction, not a change to normalized source values.
+
+Normalization check: original tracks subtract mean of the lowest 80% of 100bp bins in a 1Mb window, clip negative values, and divide by their own background-subtracted 1Mb maximum. Tumor/normal share the plotted y-axis within a pair; that does not create an absolute calibration. These plots compare relative local signal using those SAME stored normalized tracks, never mixing publisher-normalized tumors with maximum-normalized normals. No extra normalization or background subtraction is performed.
+
+Normal lines are one cell-type pseudobulk per cohort, not normal-donor distributions; all are displayed as solid blue lines labeled Normal. Reference identities and match classes, including developmental/lineage/tissue proxies, remain in cohort_summary.tsv. The same reference may serve multiple cohorts. PRAD and TGCT have no normal line. There are no p-values, independent normal replicates, or biological activity thresholds. All tumor donors retained, no noise/outlier exclusions. Cross-study assay, cell composition, proxy-lineage and independent maximum normalization limitations remain. Promoter accessibility is not an RNA expression measurement.
+
+Rebuild: python /home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/response_package_20261102/human_atac_tumor_normal_1kb/plot_tumor_normal.py

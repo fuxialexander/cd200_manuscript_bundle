@@ -1,0 +1,46 @@
+{
+  "state": "complete",
+  "started_utc": "2026-11-03T21:57:07.693044+00:00",
+  "commands": [
+    {
+      "name": "negative_state_contrast",
+      "command": [
+        "/home/xf2217/Repos/get_model_seq/.venv/bin/python",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/predict_state_contrast.py",
+        "--state",
+        "neg",
+        "--run-dir",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/chrombpnet_seed1234",
+        "--bias-model",
+        "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16_negative_20261103/runs/negative_bias_seed1234/bias_model_scaled.h5",
+        "--output",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast"
+      ],
+      "source_sha256": "b55bcb82d1663d951a44beaca98b5693bc8911608d75de4b64efc4674df38bf3",
+      "state": "passed",
+      "started_utc": "2026-11-03T22:46:27.726028+00:00",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/negative_state_contrast.log",
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:46:31.501595+00:00"
+    },
+    {
+      "name": "plot_state_contrast",
+      "command": [
+        "/usr/bin/python3",
+        "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/plot_state_contrast.py"
+      ],
+      "source_sha256": "910c4f7f9cf7601767c4f098d1ef777f3947501cc5cf327700d5cc2141854bd7",
+      "state": "passed",
+      "started_utc": "2026-11-03T22:46:31.501970+00:00",
+      "log": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_negative/logs/plot_state_contrast.log",
+      "exit_code": 0,
+      "finished_utc": "2026-11-03T22:46:34.355996+00:00"
+    }
+  ],
+  "current_stage": "plot_state_contrast",
+  "updated_utc": "2026-11-03T22:46:31.502004+00:00",
+  "finished_utc": "2026-11-03T22:46:34.356259+00:00",
+  "negative_prediction_metadata": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/negative_contrast/metadata.json",
+  "figure": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/regenerated_s5b_contrast.pdf",
+  "source_values": "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/state_contrast_source_data.tsv"
+}

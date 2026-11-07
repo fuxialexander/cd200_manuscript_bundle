@@ -1,0 +1,18 @@
+[
+  {
+    "epoch": 0,
+    "seconds": 0.6534363180107903,
+    "train": {
+      "examples": 64,
+      "logcount_mse": 33.315874099731445,
+      "loss": 15004.22119140625,
+      "profile_nll_without_constant": 11895.850341796875
+    },
+    "valid": {
+      "examples": 64,
+      "logcount_mse": 8.39639949798584,
+      "loss": 25256.0400390625,
+      "profile_nll_without_constant": 24472.65625
+    }
+  }
+]

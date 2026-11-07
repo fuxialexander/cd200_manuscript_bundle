@@ -1,0 +1,17 @@
+{
+  "inputs": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/matched1000_profiles.npz": "c179a91e5c8047b631e6358d7ec36a2b87942b2fb54fc157e36a7e58a918a58b",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/matched1000_windows.tsv": "513934869fd7ef36c85458d7847dc0842e67a253cf487511e0d326733b34f5da",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/manifest.json": "a8c2257cfdb9bf67fc40a1d332738ce6ccf83bd3c7543284af43803d39ed7712",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/locus_predictions/prediction_profiles.npy": "6520ee81cf25ab86282079b870e476ac34102fac77d0a8358f54c46d1d8283b6",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/runs/chrombpnet_seed1234/locus_predictions/prediction_metadata.json": "932b2fef78ef80d40ad08ad1747419ea67efc5bfe0123cbf22bb96bfd80427bb",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache/observed_profiles.npy": "73aff9fe02903830c21e870e47dcb09b0c63bae7e70636821d73a83002f0756d",
+    "/mnt/storage/cd200/reviewer_benchmarks/mouse_chr16/cache/locus_windows.tsv": "513934869fd7ef36c85458d7847dc0842e67a253cf487511e0d326733b34f5da",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/plot_profile_comparison.py": "7598a0e833dabec0f855c147427be14a612faa7485909af6d5e63ee30c2b3948"
+  },
+  "model_fold_replicates": 1,
+  "target": "original20bpmeanstoredATAC",
+  "n_loci": 3,
+  "bootstrap_replicates": 2000,
+  "base_level_independence_assumed": false
+}

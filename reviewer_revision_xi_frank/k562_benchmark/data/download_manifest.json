@@ -1,0 +1,46 @@
+[
+  {
+    "accession": "ENCFF874FUM",
+    "output_type": "observed signal profile",
+    "file_size": 1241886467,
+    "md5sum": "7265bdcfaf55605530eff48f98901ff2",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2023/08/30/3a71c260-ff67-48f3-b010-8c6b1f420ad8/ENCFF874FUM.bigWig",
+      "md5sum_base64": "cmW9z69VYFUw7/SPmJAf8g==",
+      "file_size": 1241886467
+    },
+    "derived_from": [
+      "/files/ENCFF077FBI/",
+      "/files/ENCFF128WZG/",
+      "/files/ENCFF534DCE/"
+    ]
+  },
+  {
+    "accession": "ENCFF991RUK",
+    "output_type": "training and test regions",
+    "file_size": 76166026,
+    "md5sum": "103ee3a49e9ff701da2acfdb59b67d70",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2024/09/06/14a41e47-78cd-40a9-b5c5-316a27caee4e/ENCFF991RUK.tar.gz",
+      "md5sum_base64": "ED7jpJ6f9wHaKs/bWbZ9cA==",
+      "file_size": 76166026
+    },
+    "derived_from": null
+  },
+  {
+    "accession": "ENCFF984RAF",
+    "output_type": "models",
+    "file_size": 727035546,
+    "md5sum": "0da121e548f1fc977e6ea206ef5b7a52",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2024/09/06/356dd29e-20d8-4647-a484-2b62c7689fe3/ENCFF984RAF.tar.gz",
+      "md5sum_base64": "DaEh5Ujx/Jd+bqIG71t6Ug==",
+      "file_size": 727035546
+    },
+    "derived_from": [
+      "/files/ENCFF874FUM/",
+      "/files/ENCFF991RUK/",
+      "/files/ENCFF427ZIR/"
+    ]
+  }
+]

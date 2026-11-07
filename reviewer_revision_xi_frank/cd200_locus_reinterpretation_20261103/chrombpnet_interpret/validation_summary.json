@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "native-to-Torch forward parity on 303 inputs",
+    "single-reference DeepLIFT scalar conservation",
+    "official DeepSHAP count and fixed-profile scalar conservation",
+    "official dynamic-profile partial conservation",
+    "matched DeepSHAP/DeepLIFT score agreement",
+    "final score shape, finite-value and exact projection contracts",
+    "executed source hashes match metadata"
+  ],
+  "remaining_limits": [
+    "positive-state model only; no fabricated positive-minus-negative attribution",
+    "upstream Tn5 endpoint/shift provenance unknown",
+    "reference-sample sensitivity is material",
+    "no biological validation inferred from numerical attribution agreement"
+  ],
+  "diagnostic_artifacts": "retained; export/ and smoke_shap_2ref/ excluded from final analyses"
+}

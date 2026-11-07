@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/plot_interpretation_comparison.py": "43b1cd6c0eb2fa4593b2499984fd4ef1fb4191876e31f650c055d9e11fe41ff3",
+    "reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/deepshap_100ref/counts_scores.npz": "0f25d12abdbb4a0049f9d65555afeffbe61e31e3c3ecb0d6caab59e7c60d8fc7",
+    "reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/deepshap_100ref/profile_scores.npz": "d462897c96898989a483f38cbaf972ff1c9aa533b59ded6c3ef38d820d5ddab7",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/deeplift_100ref/counts_scores.npz": "6ec907098f2af5d45201a16ccd4bf76d16504ab8e31fbd8ef836ec7057be73d5",
+    "reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/deepshap_100ref/profile_frozen_input_scores.npz": "ae47dabf230b0d517c4f21a93b2df07958399f979bf44dec54fc82935c101bd1",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/deeplift_100ref/profile_frozen_input_scores.npz": "1e9c6fe631741fddf566eccdd83da4e5c7c434dac425e6836c7f1b9f36ba624e",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/export_fp32/export_metadata.json": "6cad04a0ceef0ab459d8759a659878d74b1367c5a51307eae318625caf586e81",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/chrombpnet_interpret/export_fp32/inputs_references.npz": "765e5d518953dd10ce32327b5860604e5582d33f0970091185cea75461b15544",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/figures/profile_source_data.tsv": "b6444e7617d41b0e3bf928da1e52d57a4bded1e69a1439be92356d68bceb177e",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/matched1000_windows.tsv": "513934869fd7ef36c85458d7847dc0842e67a253cf487511e0d326733b34f5da",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/archived_deletion_tracks/P2_regression_epoch105.csv": "09424bfe688051d049a2d62956c0f37fd0a0d85955b908a758cbb5006ce529b7",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/archived_deletion_tracks/P1_regression_epoch105.csv": "12640fb1034f0acc81b9fd352517c33a0ef27486117b8529b52c3cb3a0b72a8b",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/reviewer_revision_xi_frank/cd200_locus_reinterpretation_20261103/original_modl/results_core_reproduction/archived_deletion_tracks/promoter_regression_epoch105.csv": "aa73ec9245ea70a41afe4bc0e9c773fb7f0925689f089c20185542534799185e",
+    "/mnt/storage/cd200/chrombpnet_moa/tead.bed": "7748790fc86f9650b25d6e2f0e63059d0895c537a267674470c96e3f630b7ef4",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/motif_scan_deg_chr16_45383863_45384762.tsv": "dd3088760ce3bb0725b32a4f0e97cbc7954a8bf66a9296d0f9404085d19d0b79",
+    "/home/xf2217/Repos/cd200_manuscript_bundle/analysis/results/cd200_analysis_new/motif_scan_deg_chr16_45356164_45357191.tsv": "687c244e547d2f2ca75e97f8a7cef7492a8a7da13577df7417d212fa63813999"
+  },
+  "score_units_shared_between_models": false,
+  "n_references": 100
+}

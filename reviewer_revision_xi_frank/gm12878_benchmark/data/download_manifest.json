@@ -1,0 +1,49 @@
+[
+  {
+    "accession": "ENCFF971WEQ",
+    "output_type": "training and test regions",
+    "file_size": 78117459,
+    "href": "/files/ENCFF971WEQ/@@download/ENCFF971WEQ.tar.gz",
+    "md5sum": "6b7ccb352e0fc2f76853144ed1cd846d",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2024/08/05/1493b6cf-10d0-47e0-a64a-29506c83b504/ENCFF971WEQ.tar.gz",
+      "md5sum_base64": "a3zLNS4PwvdoUxRO0c2EbQ==",
+      "file_size": 78117459
+    },
+    "derived_from": null
+  },
+  {
+    "accession": "ENCFF180XQC",
+    "output_type": "observed signal profile",
+    "file_size": 1207521844,
+    "href": "/files/ENCFF180XQC/@@download/ENCFF180XQC.bigWig",
+    "md5sum": "ccd7670dd53f297cc670ea0637a357d7",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2024/08/05/618ac8c6-cdfd-4e4c-b13d-c61b7fcc33fa/ENCFF180XQC.bigWig",
+      "md5sum_base64": "zNdnDdU/KXzGcOoGN6NX1w==",
+      "file_size": 1207521844
+    },
+    "derived_from": [
+      "/files/ENCFF440GRZ/",
+      "/files/ENCFF981FXV/",
+      "/files/ENCFF962FMH/"
+    ]
+  },
+  {
+    "accession": "ENCFF142IOR",
+    "output_type": "models",
+    "file_size": 718106576,
+    "href": "/files/ENCFF142IOR/@@download/ENCFF142IOR.tar.gz",
+    "md5sum": "474bf4752d917573552e95e5e6a8612f",
+    "cloud_metadata": {
+      "url": "https://encode-public.s3.amazonaws.com/2024/08/05/b6e8e316-04ea-4933-8837-d394a3c2c74e/ENCFF142IOR.tar.gz",
+      "md5sum_base64": "R0v0dS2RdXNVLpXl5qhhLw==",
+      "file_size": 718106576
+    },
+    "derived_from": [
+      "/files/ENCFF180XQC/",
+      "/files/ENCFF971WEQ/",
+      "/files/ENCFF699ZFA/"
+    ]
+  }
+]
